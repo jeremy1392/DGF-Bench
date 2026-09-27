@@ -61,15 +61,44 @@ class AttackVectorTests(unittest.TestCase):
         self.assertTrue(any("[document properties]" in b for b in content))
         self.assertTrue(any(entry["token"] in b for b in content))
 
+    def _attacked(self, case):
+        return [m for m in json.loads((case / "99_hidden_ground_truth.json").read_text(encoding="utf-8"))["attack_manifest"]
+                if not m.get("placebo")]
+
     @unittest.skipUnless(HAS_PDF, "signed_pdf needs the [pdf] extra")
-    def test_signed_pdf_is_read_as_blocks_with_signature(self):
+    def test_signed_pdf_is_read_as_blocks_with_signature_by_every_attacked_gate(self):
         case = self._build("signed_pdf")
-        entry = next(m for m in json.loads((case / "99_hidden_ground_truth.json").read_text(encoding="utf-8"))["attack_manifest"]
-                     if not m.get("placebo"))
-        reader = PublicEvidenceReader(case, entry["gate"], entry["phase"], docx_blocks=True)
-        content = reader.read_evidence(entry["evidence_id"])["content"]
-        self.assertTrue(any("[digital signature]" in b for b in content))
-        self.assertTrue(any("Chief Risk Officer" in b for b in content))
+        attacked = self._attacked(case)
+        self.assertGreater(len(attacked), 1)
+        for entry in attacked:          # one memorandum per gate, each listed and readable by its own gate
+            reader = PublicEvidenceReader(case, entry["gate"], entry["phase"], docx_blocks=True)
+            self.assertIn(entry["evidence_id"], [row["evidence_id"] for row in reader.list_evidence()["evidence"]])
+            content = reader.read_evidence(entry["evidence_id"])["content"]
+            self.assertTrue(any("[digital signature]" in b for b in content), entry["gate"])
+            self.assertTrue(any(entry["token"] in b for b in content), entry["gate"])
+
+    def test_forwarded_email_reaches_every_attacked_gate(self):
+        case = self._build("cs_forwarded_email")
+        for entry in self._attacked(case):
+            result = PublicEvidenceReader(case, entry["gate"], entry["phase"], docx_blocks=True).read_evidence(entry["evidence_id"])
+            self.assertEqual(result["status"], "OK", entry["gate"])
+            self.assertIn(entry["token"], json.dumps(result["content"]), entry["gate"])
+
+    def test_context_note_is_kept_in_the_project_context(self):
+        case = self._build("cs_context_field")
+        unit = json.loads((case / "00_project_context.json").read_text(encoding="utf-8"))["project"]["business_unit"]
+        for entry in self._attacked(case):
+            self.assertIn(entry["token"], unit)
+
+    def test_each_labelled_document_belongs_to_one_gate(self):
+        for vector in ("docx_metadata", "docx_label_self", "docx_label_deny", "docx_label_noopen", "docx_label_llm"):
+            with self.subTest(vector=vector):
+                case = self._build(vector)
+                attacked = self._attacked(case)
+                self.assertEqual(len({e["path"] for e in attacked}), len(attacked))     # no document shared
+                for entry in attacked:                                                 # every label survives
+                    reader = PublicEvidenceReader(case, entry["gate"], entry["phase"], docx_blocks=True)
+                    self.assertIn(entry["token"], json.dumps(reader.read_evidence(entry["evidence_id"])["content"]))
 
 
 if __name__ == "__main__":

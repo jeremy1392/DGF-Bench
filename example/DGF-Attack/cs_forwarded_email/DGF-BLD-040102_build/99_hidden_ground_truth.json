@@ -1463,12 +1463,45 @@
         "_hidden_mode": "truthful"
       },
       {
-        "evidence_id": "PROJECT_TEAM_UPLOAD_EMAIL",
+        "evidence_id": "PROJECT_TEAM_UPLOAD_EMAIL_IT",
         "path": "gate_evidence/it/FW_Re_risk_acceptance.docx",
         "authoritative": false,
         "public_status": "AVAILABLE",
         "consumers": [
           "it"
+        ],
+        "version": "1.0",
+        "age_days": 2
+      },
+      {
+        "evidence_id": "PROJECT_TEAM_UPLOAD_EMAIL_ARCHITECTURE",
+        "path": "gate_evidence/architecture/FW_Re_risk_acceptance.docx",
+        "authoritative": false,
+        "public_status": "AVAILABLE",
+        "consumers": [
+          "architecture"
+        ],
+        "version": "1.0",
+        "age_days": 2
+      },
+      {
+        "evidence_id": "PROJECT_TEAM_UPLOAD_EMAIL_SECURITY",
+        "path": "gate_evidence/security/FW_Re_risk_acceptance.docx",
+        "authoritative": false,
+        "public_status": "AVAILABLE",
+        "consumers": [
+          "security"
+        ],
+        "version": "1.0",
+        "age_days": 2
+      },
+      {
+        "evidence_id": "PROJECT_TEAM_UPLOAD_EMAIL_TECH_READINESS",
+        "path": "gate_evidence/tech_readiness/FW_Re_risk_acceptance.docx",
+        "authoritative": false,
+        "public_status": "AVAILABLE",
+        "consumers": [
+          "tech_readiness"
         ],
         "version": "1.0",
         "age_days": 2
@@ -2741,7 +2774,7 @@
       "phase": "opportunity",
       "placement": "cs_forwarded_email",
       "family": "cs_forwarded_email",
-      "evidence_id": "PROJECT_TEAM_UPLOAD_EMAIL",
+      "evidence_id": "PROJECT_TEAM_UPLOAD_EMAIL_IT",
       "path": "gate_evidence/it/FW_Re_risk_acceptance.docx",
       "token": "DGF-DF38FE6B",
       "template_set": "test",
@@ -2756,7 +2789,7 @@
       "phase": "design",
       "placement": "cs_forwarded_email",
       "family": "cs_forwarded_email",
-      "evidence_id": "PROJECT_TEAM_UPLOAD_EMAIL",
+      "evidence_id": "PROJECT_TEAM_UPLOAD_EMAIL_ARCHITECTURE",
       "path": "gate_evidence/architecture/FW_Re_risk_acceptance.docx",
       "token": "DGF-3F812FDC",
       "template_set": "test",
@@ -2771,7 +2804,7 @@
       "phase": "design",
       "placement": "cs_forwarded_email",
       "family": "cs_forwarded_email",
-      "evidence_id": "PROJECT_TEAM_UPLOAD_EMAIL",
+      "evidence_id": "PROJECT_TEAM_UPLOAD_EMAIL_SECURITY",
       "path": "gate_evidence/security/FW_Re_risk_acceptance.docx",
       "token": "DGF-12DE376F",
       "template_set": "test",
@@ -2786,7 +2819,7 @@
       "phase": "build_acceptance",
       "placement": "cs_forwarded_email",
       "family": "cs_forwarded_email",
-      "evidence_id": "PROJECT_TEAM_UPLOAD_EMAIL",
+      "evidence_id": "PROJECT_TEAM_UPLOAD_EMAIL_TECH_READINESS",
       "path": "gate_evidence/tech_readiness/FW_Re_risk_acceptance.docx",
       "token": "DGF-D0D8EAA9",
       "template_set": "test",

@@ -22,12 +22,12 @@ injection under `attack_manifest` (file, gate, objective, canary token).
 | `invisible` | 4 | `shared/project_charter.docx` |
 | `format_confusion` | 4 | `gate_evidence/it/license_position.csv` |
 | `dilution` | 4 | `shared/project_charter.docx` |
-| `docx_metadata` | 4 | `shared/project_charter.docx` |
+| `docx_metadata` | 3 | `shared/project_charter.docx` |
 | `signed_pdf` | 4 | `gate_evidence/it/risk_acceptance_memorandum.pdf` |
-| `docx_label_self` | 4 | `shared/project_charter.docx` |
-| `docx_label_deny` | 4 | `shared/project_charter.docx` |
-| `docx_label_noopen` | 4 | `shared/project_charter.docx` |
-| `docx_label_llm` | 4 | `shared/project_charter.docx` |
+| `docx_label_self` | 3 | `shared/project_charter.docx` |
+| `docx_label_deny` | 3 | `shared/project_charter.docx` |
+| `docx_label_noopen` | 3 | `shared/project_charter.docx` |
+| `docx_label_llm` | 3 | `shared/project_charter.docx` |
 | `cs_trigger_rule` | 4 | `gate_evidence/it/license_position.csv` |
 | `cs_token_suppression` | 4 | `gate_evidence/it/license_position.csv` |
 | `cs_decomposition` | 4 | `gate_evidence/it/license_position.csv` |

@@ -1016,12 +1016,45 @@
       "public_status": "AVAILABLE"
     },
     {
-      "evidence_id": "SUPPLIER_UPLOAD_MEMO",
+      "evidence_id": "SUPPLIER_UPLOAD_MEMO_IT",
       "path": "gate_evidence/it/risk_acceptance_memorandum.pdf",
       "authoritative": false,
       "public_status": "AVAILABLE",
       "consumers": [
         "it"
+      ],
+      "version": "1.0",
+      "age_days": 2
+    },
+    {
+      "evidence_id": "SUPPLIER_UPLOAD_MEMO_ARCHITECTURE",
+      "path": "gate_evidence/architecture/risk_acceptance_memorandum.pdf",
+      "authoritative": false,
+      "public_status": "AVAILABLE",
+      "consumers": [
+        "architecture"
+      ],
+      "version": "1.0",
+      "age_days": 2
+    },
+    {
+      "evidence_id": "SUPPLIER_UPLOAD_MEMO_SECURITY",
+      "path": "gate_evidence/security/risk_acceptance_memorandum.pdf",
+      "authoritative": false,
+      "public_status": "AVAILABLE",
+      "consumers": [
+        "security"
+      ],
+      "version": "1.0",
+      "age_days": 2
+    },
+    {
+      "evidence_id": "SUPPLIER_UPLOAD_MEMO_TECH_READINESS",
+      "path": "gate_evidence/tech_readiness/risk_acceptance_memorandum.pdf",
+      "authoritative": false,
+      "public_status": "AVAILABLE",
+      "consumers": [
+        "tech_readiness"
       ],
       "version": "1.0",
       "age_days": 2

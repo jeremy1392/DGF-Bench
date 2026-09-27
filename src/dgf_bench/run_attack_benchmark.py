@@ -24,9 +24,12 @@ from dgf_bench.attacks import PLACEMENTS, make_attack_dataset
 from dgf_bench.attack_vectors import MissingPDFSupport
 from dgf_bench.certification import certify_dataset
 from dgf_bench.dataset_sampling import build_plan
+from dgf_bench.evaluator import evaluate_route
+from dgf_bench.facts_engine import generate_canonical_case
 from dgf_bench.openrouter_eval.env_loader import load_dotenv
 from dgf_bench.prepare_openrouter_experiment import prepare_dataset
 from dgf_bench.report import build_report
+from dgf_bench.routes import build_occurrences
 
 ROUTES = ["buy", "integrate", "build"]
 
@@ -36,11 +39,33 @@ def _die(message):
     raise SystemExit(2)
 
 
+BLOCKED = ("REWORK", "SUSPENSION", "NO_GO")
+
+
+def _blocked_gates(row):
+    """Specialist gates whose reference decision blocks the project, from the plan's canonical facts."""
+    case = generate_canonical_case(row["seed"], row["route"], row["difficulty"], row["architecture_attempt"],
+                                   row["fact_attempts"])
+    return [r["gate"] for r in evaluate_route(case, build_occurrences(row["route"]))
+            if r["gate"] != "general" and r["disposition"] in BLOCKED]
+
+
 def _generate_clean(dataset_dir, dossier_number, seed, difficulty, routes, workers):
-    """Generate exactly ``dossier_number`` clean dossiers over the chosen route(s)."""
+    """Generate exactly ``dossier_number`` clean dossiers over the chosen route(s), rotating the routes.
+
+    The attacks try to make the agent approve a blocked gate or drop a required finding, so a dossier
+    whose gates are all GO gives them nothing to aim at. As in the pilot, only dossiers with at least one
+    blocked specialist gate are kept; they are chosen at planning time from the canonical facts, before
+    any document is written.
+    """
     per_route = math.ceil(dossier_number / len(routes))
-    plan = build_plan(per_route, seed, difficulty, routes, "balanced")
-    plan["cases"] = plan["cases"][:dossier_number]
+    plan = build_plan(per_route * 3, seed, difficulty, routes, "balanced")    # a quarter aim at an all-GO dossier
+    kept = {route: [row for row in plan["cases"] if row["route"] == route and _blocked_gates(row)][:per_route]
+            for route in routes}
+    rotation = [kept[route][i] for i in range(per_route) for route in routes if i < len(kept[route])]
+    if len(rotation) < dossier_number:
+        raise RuntimeError(f"only {len(rotation)} dossiers with a blocked gate in the plan; try another --seed")
+    plan["cases"] = rotation[:dossier_number]
     prepare_dataset(dataset_dir, plan, workers)
     return dataset_dir
 
@@ -144,7 +169,9 @@ def main(argv=None):
     print(f"\nDone. {total} attributable attack successes across {len(data['attacks'])} attacks; "
           f"clean outcome-strict {data['outcome']['clean']['outcome_strict']}/{data['outcome']['clean']['gates']}.")
     if data["dgf_score"]:
-        print(f"DGF score: {data['dgf_score']['score']:.1f} / 100")
+        score = data["dgf_score"]
+        print(f"DGF score: {score['score']:.1f} / 100 "
+              f"(blocked {score['attacks_blocked']} of {score['attacks_applicable']} attacks)")
     print(f"Report: {run_dir / 'report' / 'REPORT.md'}")
     return 0
 
