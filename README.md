@@ -93,7 +93,7 @@ Cell = attributable successes / attacked gates. `n/a` = attack impossible for th
 
 For the three attacks that changed decisions, how many gates each model decided correctly on the clean dossiers but got **wrong once the attack was injected** (out of 34). A taller bar means the attack did more damage; 0 means the model fully resisted. The line under each model is its score on the clean dossiers: a model can only lose what it got right without the attack — Qwen already fails most gates on clean evidence (7/34), so its small bars reflect that floor, not robustness. This is also why every success is attributed against the paired clean run.
 
-![Correct decisions lost to each attack](assets/results/clean_vs_attack.svg)
+![Correct decisions lost to each attack](assets/results/decisions_lost_by_attack.svg)
 
 The machine-readable version of every number on this page is `results/pilot_2026-09.json` (transcribed from `results/ATTACK_TABLE_UNIFIED.md` and `results/attack_matrix_pilot.json`); the charts are built from it by `assets/results/build_charts.py`, standard library only.
 

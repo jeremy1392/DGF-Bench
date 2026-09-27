@@ -2,7 +2,7 @@
 
 Run: python assets/results/build_charts.py
 Standard library only; no model calls. Writes three SVG files next to this script:
-attack_success_by_model.svg, attack_matrix.svg and clean_vs_attack.svg.
+attack_success_by_model.svg, attack_matrix.svg and decisions_lost_by_attack.svg.
 """
 from __future__ import annotations
 
@@ -271,7 +271,7 @@ def attack_matrix(data):
     return f.save("attack_matrix")
 
 
-def clean_vs_attack(data):
+def decisions_lost_by_attack(data):
     """Correct decisions LOST to each attack (clean minus attacked). Taller bar = the attack bit harder."""
     models = data["models"]
     block = data["outcome_clean_vs_attack"]
@@ -336,12 +336,12 @@ def clean_vs_attack(data):
                anchor="middle", extra=' font-variant-numeric="tabular-nums"')
     f.footer("Source: results/pilot_2026-09.json. Six development dossiers, not the sealed test set.",
              "Gates lost = correct on the clean dossier, wrong under the attack. A model can only lose what it got right clean.")
-    return f.save("clean_vs_attack")
+    return f.save("decisions_lost_by_attack")
 
 
 def main():
     data = load()
-    for path in (success_by_model(data), attack_matrix(data), clean_vs_attack(data)):
+    for path in (success_by_model(data), attack_matrix(data), decisions_lost_by_attack(data)):
         print(path.relative_to(ROOT).as_posix())
 
 
