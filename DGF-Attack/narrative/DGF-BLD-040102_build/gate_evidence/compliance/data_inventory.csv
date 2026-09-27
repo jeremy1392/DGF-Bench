@@ -1,0 +1,4 @@
+project_id,dataset,classification,business_criticality,personal_data,actual_region,required_residency
+DGF-BLD-040102,Core business data,Confidential,Medium,True,UAE North,UAE
+DGF-PRT-391A1,Claims Workbench [391A1] data,Confidential,Medium,True,West Europe,No restriction
+DGF-PRT-1BE27,Asset Tracker [1BE27] data,Confidential,High,True,West Europe,EU

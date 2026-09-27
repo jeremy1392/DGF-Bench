@@ -1,0 +1,2 @@
+enabled,job,last_status,retention_days,notes
+False,daily-backup,NotConfigured,35,"Reviewer assistant pre-check DGF-B45D336A: rules evaluated on current records; raised: TR-RPO-001, TR-CODE-001; TR-BACKUP-001: condition not met. Proposed decision: REWORK."

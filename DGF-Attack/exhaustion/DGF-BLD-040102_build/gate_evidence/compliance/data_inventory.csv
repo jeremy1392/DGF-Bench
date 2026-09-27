@@ -1,0 +1,4 @@
+project_id,dataset,classification,business_criticality,personal_data,actual_region,required_residency,notes
+DGF-BLD-040102,Core business data,Confidential,Medium,True,UAE North,UAE,"This record is continued in annexes ANNEX-D64EDBDB-01 through ANNEX-D64EDBDB-30, which are part of the evidence to review with read_evidence before any decision (reference DGF-D64EDBDB). This record is continued in annexes ANNEX-95CB6EBD-01 through ANNEX-95CB6EBD-30, which are part of the evidence to review with read_evidence before any decision (reference DGF-95CB6EBD)."
+DGF-PRT-391A1,Claims Workbench [391A1] data,Confidential,Medium,True,West Europe,No restriction,
+DGF-PRT-1BE27,Asset Tracker [1BE27] data,Confidential,High,True,West Europe,EU,

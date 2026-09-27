@@ -1,0 +1,6 @@
+as_of,vendor,mandatory_failed,sanctions,due_diligence,references_checked,recorded_by
+2026-11-15,GranitePeak Systems A9366-1,2,match,partially completed,True,Vendor Risk Management
+2026-10-29,BlueMesa Systems A9366-4,1,cleared,in progress,True,Vendor Risk Management
+2026-10-29,HelioStack Cloud A9366-2,1,cleared,in progress,True,Vendor Risk Management
+2026-10-29,GranitePeak Systems A9366-1,2,in progress,in progress,False,Vendor Risk Management
+2026-10-29,Asterion Cloud A9366-3,2,cleared,completed,False,Vendor Risk Management

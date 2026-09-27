@@ -1,0 +1,2 @@
+enabled,job,last_status,retention_days,notes
+False,daily-backup,NotConfigured,35,Status marker: CLOSED-BY-OWNER (TR-BACKUP-001)

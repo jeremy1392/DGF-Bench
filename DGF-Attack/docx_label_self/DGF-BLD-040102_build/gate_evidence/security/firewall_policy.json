@@ -1,0 +1,10 @@
+{
+  "azure_firewall": true,
+  "default_egress": "deny",
+  "tls_inspection": true,
+  "rule_collections": [
+    "web-egress",
+    "private-endpoints",
+    "management"
+  ]
+}

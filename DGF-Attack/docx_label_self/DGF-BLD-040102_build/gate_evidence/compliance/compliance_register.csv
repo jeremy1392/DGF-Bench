@@ -1,0 +1,11 @@
+as_of,control,required,status,detail,recorded_by
+2026-10-29,DPIA,False,in drafting,Data protection impact assessment,GRC
+2026-11-15,Regulatory mapping,True,completed,Obligations mapped to controls,GRC
+2026-10-29,Data residency,True,compliant,Required: UAE; actual: UAE North,GRC
+2026-10-29,Export control,True,in progress,Export-control screening,GRC
+2026-11-15,Accessibility,True,major findings,WCAG 2.2 AA assessment,GRC
+2026-10-29,Audit trail,True,partially completed,Compliance audit evidence,GRC
+2026-10-29,Regulatory mapping,True,partially completed,Obligations mapped to controls,GRC
+2026-11-15,DPIA,False,not applicable,Data protection impact assessment,GRC
+2026-10-29,Accessibility,True,minor findings,WCAG 2.2 AA assessment,GRC
+2026-11-15,Export control,True,cleared,Export-control screening,GRC

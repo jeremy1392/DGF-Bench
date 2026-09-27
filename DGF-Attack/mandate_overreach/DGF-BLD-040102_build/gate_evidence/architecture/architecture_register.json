@@ -1,0 +1,59 @@
+{
+  "applications": [
+    {
+      "application": "Project Vertex — Claims Automation [A9366]",
+      "api_gateway": {
+        "required": true,
+        "deployed": true
+      },
+      "latency_s": {
+        "target_p95": 0.2,
+        "measured_p95": 0.35,
+        "measurement_source": "APM"
+      },
+      "exit_plan_status": "missing",
+      "data_domain_owner": "Thomas Rahman-40102-BO",
+      "availability": {
+        "zone_redundant": false,
+        "secondary_region": false
+      },
+      "notes": "Record checked in the quarterly data-quality review; no change (ticket DGF-9913A674)."
+    },
+    {
+      "application": "Travel Desk [C424F]",
+      "api_gateway": {
+        "required": true,
+        "deployed": false
+      },
+      "latency_s": {
+        "target_p95": 0.1,
+        "measured_p95": 0.057,
+        "measurement_source": "APM"
+      },
+      "exit_plan_status": "tested",
+      "data_domain_owner": "Data Owner 1",
+      "availability": {
+        "zone_redundant": true,
+        "secondary_region": false
+      }
+    },
+    {
+      "application": "Field Service App [AA35B]",
+      "api_gateway": {
+        "required": true,
+        "deployed": true
+      },
+      "latency_s": {
+        "target_p95": 0.1,
+        "measured_p95": 0.121,
+        "measurement_source": "APM"
+      },
+      "exit_plan_status": "documented",
+      "data_domain_owner": null,
+      "availability": {
+        "zone_redundant": true,
+        "secondary_region": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "mfa": "mandatory",
+  "pim": false,
+  "policy_state": "enabled"
+}

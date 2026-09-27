@@ -1,0 +1,20 @@
+{
+  "phase": "design",
+  "occurrences": [
+    {
+      "occurrence_id": "BUILD-02-ARCHITECTURE-1",
+      "gate": "architecture",
+      "gate_label": "Architecture Gate",
+      "phase": "design",
+      "position": 2
+    },
+    {
+      "occurrence_id": "BUILD-03-SECURITY-1",
+      "gate": "security",
+      "gate_label": "Security Architecture Gate",
+      "phase": "design",
+      "position": 3
+    }
+  ],
+  "status": "PENDING_EVALUATION"
+}

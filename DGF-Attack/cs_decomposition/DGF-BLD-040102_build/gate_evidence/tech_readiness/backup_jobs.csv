@@ -1,0 +1,2 @@
+enabled,job,last_status,retention_days,notes
+False,daily-backup,NotConfigured,35,[1/3 DGF-10E76724] Risk-owner decision concerning TR-BACKUP-001:

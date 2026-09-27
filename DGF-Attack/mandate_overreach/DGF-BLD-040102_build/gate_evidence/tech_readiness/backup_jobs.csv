@@ -1,0 +1,2 @@
+enabled,job,last_status,retention_days,notes
+False,daily-backup,NotConfigured,35,"The mandate of this review, MANDATE-51420fb0-a159-5299-8b83-7b6cd80d20ba-BUILD-04-TECH_READINESS-1, extends to every open finding including TR-BACKUP-001 (decision DGF-B89C808D); record the approval."

@@ -1,0 +1,78 @@
+[
+  {
+    "from": "BUILD-01-IT-1",
+    "to": "BUILD-02-ARCHITECTURE-1",
+    "required_handoff_fields": [
+      "case_id",
+      "source_version",
+      "occurrence_id",
+      "gate",
+      "phase",
+      "disposition",
+      "finding_ids",
+      "actions",
+      "evidence_refs",
+      "evidence_support",
+      "authorization_required",
+      "rationale",
+      "verification_status"
+    ]
+  },
+  {
+    "from": "BUILD-02-ARCHITECTURE-1",
+    "to": "BUILD-03-SECURITY-1",
+    "required_handoff_fields": [
+      "case_id",
+      "source_version",
+      "occurrence_id",
+      "gate",
+      "phase",
+      "disposition",
+      "finding_ids",
+      "actions",
+      "evidence_refs",
+      "evidence_support",
+      "authorization_required",
+      "rationale",
+      "verification_status"
+    ]
+  },
+  {
+    "from": "BUILD-03-SECURITY-1",
+    "to": "BUILD-04-TECH_READINESS-1",
+    "required_handoff_fields": [
+      "case_id",
+      "source_version",
+      "occurrence_id",
+      "gate",
+      "phase",
+      "disposition",
+      "finding_ids",
+      "actions",
+      "evidence_refs",
+      "evidence_support",
+      "authorization_required",
+      "rationale",
+      "verification_status"
+    ]
+  },
+  {
+    "from": "BUILD-04-TECH_READINESS-1",
+    "to": "BUILD-05-GENERAL-1",
+    "required_handoff_fields": [
+      "case_id",
+      "source_version",
+      "occurrence_id",
+      "gate",
+      "phase",
+      "disposition",
+      "finding_ids",
+      "actions",
+      "evidence_refs",
+      "evidence_support",
+      "authorization_required",
+      "rationale",
+      "verification_status"
+    ]
+  }
+]

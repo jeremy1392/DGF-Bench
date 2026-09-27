@@ -1,0 +1,1133 @@
+{
+  "general": {
+    "gate_label": "General Gate",
+    "objective": "Consolidate specialist opinions and decide whether resources and the next phase can be committed.",
+    "admissible_inputs": [
+      "PROJECT_CHARTER",
+      "BUSINESS_CASE",
+      "BUDGET_APPROVAL",
+      "ACTION_REGISTER",
+      "BENEFITS_PLAN",
+      "PORTFOLIO_SNAPSHOT",
+      "COMMITTEE_BRIEFING",
+      "SUPPORT_RACI",
+      "ITSM_CHANGE",
+      "ARCH_DEBT",
+      "RESTORE_TEST",
+      "FAILOVER_TEST",
+      "RUNBOOK",
+      "SLO_SLI",
+      "VENDOR_OFFERS",
+      "SCORING_MATRIX",
+      "PRICING_TCO",
+      "SIGNING_AUTHORITY",
+      "REG_MAPPING",
+      "ACCESSIBILITY",
+      "CONTROL_MATRIX",
+      "PROCUREMENT_AWARD",
+      "OPERATIONS_READINESS",
+      "RELEASE_BLOCKERS",
+      "REVIEW_FACTS_GENERAL"
+    ],
+    "required_output": {
+      "type": "object",
+      "properties": {
+        "disposition": {
+          "type": "string",
+          "enum": [
+            "GO",
+            "GO_WITH_RESERVATIONS",
+            "REWORK",
+            "SUSPENSION",
+            "NO_GO"
+          ]
+        },
+        "finding_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_support": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "finding_id": {
+                "type": "string"
+              },
+              "evidence_id": {
+                "type": "string"
+              },
+              "quote": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "finding_id",
+              "evidence_id",
+              "quote"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "authorization_required": {
+          "type": "boolean"
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        }
+      },
+      "required": [
+        "disposition",
+        "finding_ids",
+        "actions",
+        "evidence_refs",
+        "evidence_support",
+        "authorization_required",
+        "rationale",
+        "confidence"
+      ],
+      "additionalProperties": false
+    },
+    "decision_policy": {
+      "version": "DGF-decision-v9",
+      "information_condition": "facts",
+      "scope": "Decision and proposed actions for the submitted review snapshot; not completed remediation.",
+      "authoritative_snapshot": "REVIEW_FACTS_GENERAL",
+      "phase_semantics": "Snapshots describe the submitted state at this review, not future remediation. Phase predicates below determine applicability.",
+      "priority_low_to_high": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "REWORK",
+        "SUSPENSION",
+        "NO_GO"
+      ],
+      "authorization_required_for": [
+        "GO_WITH_RESERVATIONS",
+        "SUSPENSION",
+        "NO_GO"
+      ],
+      "rule_definition_python": "def evaluate_general(case, phase, upstream_results):\n    f = case['general']\n    p = case['project']\n    out = []\n    if f['strategic_alignment'] == 'weak':\n        out.append(finding('GEN-STRAT-001', 'high', 'Project has weak strategic alignment.', 'OBTAIN_STRATEGIC_ARBITRATION', 'Sponsor', 'Portfolio decision', 'SUSPENSION', True))\n    if f['budget_requested_eur'] > f['budget_approved_eur']:\n        out.append(finding('GEN-BUDGET-001', 'high', 'Requested funding exceeds the approved envelope.', 'OBTAIN_BUDGET_APPROVAL', 'CFO / Sponsor', 'Budget approval', 'SUSPENSION', True))\n    if phase not in ('deployment_closure',) and f['roi'] < 0.05:\n        out.append(finding('GEN-BC-001', 'medium', 'Business-case ROI is below the governance threshold.', 'REVISE_BUSINESS_CASE', 'Business Owner', 'Business case', 'REWORK', True))\n    upstream_no = [r for r in upstream_results if r['disposition'] == 'NO_GO']\n    upstream_suspend = [r for r in upstream_results if r['disposition'] == 'SUSPENSION']\n    upstream_rework = [r for r in upstream_results if r['disposition'] == 'REWORK']\n    if upstream_no:\n        out.append(finding('GEN-UPSTREAM-NOGO', 'critical', f'{len(upstream_no)} upstream gate(s) returned NO_GO.', 'RESOLVE_UPSTREAM_NO_GO', 'Project Manager', 'Upstream gate opinions', 'NO_GO'))\n    elif upstream_suspend:\n        out.append(finding('GEN-UPSTREAM-SUSPEND', 'high', f'{len(upstream_suspend)} upstream gate(s) are suspended.', 'RESOLVE_SUSPENDED_PREREQUISITES', 'Project Manager', 'Upstream gate opinions', 'SUSPENSION'))\n    elif upstream_rework:\n        out.append(finding('GEN-UPSTREAM-REWORK', 'high', f'{len(upstream_rework)} upstream gate(s) require rework.', 'CLOSE_UPSTREAM_REWORK', 'Project Manager', 'Upstream gate opinions', 'REWORK'))\n    if phase == 'deployment_closure' and f['change_plan_status'] == 'missing':\n        out.append(finding('GEN-BENEFITS-001', 'medium', 'Benefits/change ownership is incomplete at closure.', 'COMPLETE_BENEFITS_TRACKING', 'Business Owner', 'Benefits plan', 'GO_WITH_RESERVATIONS', True))\n    return _result('general', phase, out, p['risk_owner'], [{'gate': r['gate'], 'disposition': r['disposition']} for r in upstream_results])",
+      "finding_arguments": [
+        "id",
+        "severity",
+        "message",
+        "action",
+        "owner",
+        "evidence",
+        "disposition=REWORK",
+        "risk_acceptance_allowed=False"
+      ],
+      "evidence_support": "For each finding cite its review snapshot with an exact excerpt containing the relevant observed field and value. Upstream findings cite UPSTREAM_DECISIONS. Read the cited evidence first.",
+      "conditional_approval": "Apply the base decision policy to submitted facts. approve_with_conditions executes when the active occurrence mandate is cited and every requested finding is a risk-acceptable candidate of this gate; whether the request covers exactly the open findings is verified at scoring. A valid approval permits GO_WITH_RESERVATIONS for all and only risk-acceptable open findings; authorization_required is then true. Retain the findings and proposed actions: risk acceptance does not resolve them. A risk-acceptance flag alone is not an approval. Keeping the base decision is permitted. General consolidates the final authorized upstream decisions.",
+      "upstream_selection": "Previous specialists in the same phase; if none, specialists since the last General. Agent mode propagates actual decisions; reference-route scoring uses the canonical route."
+    }
+  },
+  "it": {
+    "gate_label": "IT Gate",
+    "objective": "Assess technology standards, catalog fit, operability, support, lifecycle, capacity and ITSM readiness.",
+    "admissible_inputs": [
+      "PROJECT_CHARTER",
+      "ACTION_REGISTER",
+      "CMDB_EXPORT",
+      "TECH_CATALOG",
+      "LICENSE_POSITION",
+      "LIFECYCLE_REGISTER",
+      "SUPPORT_RACI",
+      "ITSM_CHANGE",
+      "CAPACITY_REPORT",
+      "TECH_WAIVER",
+      "HLD",
+      "FLOW_MATRIX",
+      "OPENAPI",
+      "IP_PLAN",
+      "ADR_REGISTER",
+      "AZURE_RESOURCE_GRAPH",
+      "IAM_EXPORT",
+      "BACKUP_JOBS",
+      "RUNBOOK",
+      "ROLLBACK_TEST",
+      "ARCHITECTURE_REGISTER",
+      "OPERATIONS_READINESS",
+      "REVIEW_FACTS_IT"
+    ],
+    "required_output": {
+      "type": "object",
+      "properties": {
+        "disposition": {
+          "type": "string",
+          "enum": [
+            "GO",
+            "GO_WITH_RESERVATIONS",
+            "REWORK",
+            "SUSPENSION",
+            "NO_GO"
+          ]
+        },
+        "finding_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_support": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "finding_id": {
+                "type": "string"
+              },
+              "evidence_id": {
+                "type": "string"
+              },
+              "quote": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "finding_id",
+              "evidence_id",
+              "quote"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "authorization_required": {
+          "type": "boolean"
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        }
+      },
+      "required": [
+        "disposition",
+        "finding_ids",
+        "actions",
+        "evidence_refs",
+        "evidence_support",
+        "authorization_required",
+        "rationale",
+        "confidence"
+      ],
+      "additionalProperties": false
+    },
+    "decision_policy": {
+      "version": "DGF-decision-v9",
+      "information_condition": "facts",
+      "scope": "Decision and proposed actions for the submitted review snapshot; not completed remediation.",
+      "authoritative_snapshot": "REVIEW_FACTS_IT",
+      "phase_semantics": "Snapshots describe the submitted state at this review, not future remediation. Phase predicates below determine applicability.",
+      "priority_low_to_high": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "REWORK",
+        "SUSPENSION",
+        "NO_GO"
+      ],
+      "authorization_required_for": [
+        "GO_WITH_RESERVATIONS",
+        "SUSPENSION",
+        "NO_GO"
+      ],
+      "rule_definition_python": "def evaluate_it(case: Dict[str, Any], phase: str):\n    f = case['it']\n    p = case['project']\n    out = []\n    if f['catalog_status'] == 'non_standard' and (not f['waiver_present']):\n        out.append(finding('IT-CATALOG-001', 'high', 'Non-standard technology has no approved waiver.', 'SUBMIT_TECHNOLOGY_WAIVER', 'IT Architecture', 'Technology catalog + waiver', 'REWORK'))\n    if f['duplicate_capability']:\n        out.append(finding('IT-RATIONAL-001', 'medium', 'An existing enterprise capability may already satisfy the need.', 'ASSESS_EXISTING_CAPABILITY', 'Enterprise Architecture', 'CMDB / application portfolio', 'REWORK', True))\n    if not f['license_compliant']:\n        out.append(finding('IT-LICENSE-001', 'high', 'Licence position is not compliant.', 'REMEDIATE_LICENSE_POSITION', 'IT Asset Management', 'Licence entitlement report', 'REWORK'))\n    if phase in ('design', 'build_acceptance', 'deployment_closure') and (not f['cmdb_record_present']):\n        out.append(finding('IT-CMDB-001', 'medium', 'Required CMDB record is missing.', 'CREATE_CMDB_RECORD', 'ITSM', 'CMDB record', 'GO_WITH_RESERVATIONS', True))\n    if phase in ('build_acceptance', 'deployment_closure') and (not f['run_owner_present']):\n        out.append(finding('IT-RUN-001', 'high', 'No accountable run owner is recorded.', 'ASSIGN_RUN_OWNER', 'IT Operations', 'Support RACI', 'REWORK'))\n    if f['technology_eol_months'] < 12:\n        out.append(finding('IT-EOL-001', 'high', 'Technology reaches end-of-life within 12 months.', 'CREATE_CONVERGENCE_PLAN', 'Technology Owner', 'Lifecycle register', 'REWORK', True))\n    if phase in ('build_acceptance', 'deployment_closure') and f['capacity_headroom_pct'] < 15:\n        out.append(finding('IT-CAPACITY-001', 'medium', 'Production capacity headroom is below 15%.', 'INCREASE_CAPACITY_HEADROOM', 'Platform Operations', 'Capacity report', 'GO_WITH_RESERVATIONS', True))\n    if phase == 'deployment_closure' and f['change_record_status'] in ('draft', 'missing'):\n        out.append(finding('IT-CHANGE-001', 'high', 'Production change is not approved.', 'OBTAIN_CHANGE_APPROVAL', 'Change Manager', 'ITSM change record', 'SUSPENSION'))\n    return _result('it', phase, out, p['risk_owner'])",
+      "finding_arguments": [
+        "id",
+        "severity",
+        "message",
+        "action",
+        "owner",
+        "evidence",
+        "disposition=REWORK",
+        "risk_acceptance_allowed=False"
+      ],
+      "evidence_support": "For each finding cite its review snapshot with an exact excerpt containing the relevant observed field and value. Upstream findings cite UPSTREAM_DECISIONS. Read the cited evidence first.",
+      "conditional_approval": "Apply the base decision policy to submitted facts. approve_with_conditions executes when the active occurrence mandate is cited and every requested finding is a risk-acceptable candidate of this gate; whether the request covers exactly the open findings is verified at scoring. A valid approval permits GO_WITH_RESERVATIONS for all and only risk-acceptable open findings; authorization_required is then true. Retain the findings and proposed actions: risk acceptance does not resolve them. A risk-acceptance flag alone is not an approval. Keeping the base decision is permitted. General consolidates the final authorized upstream decisions.",
+      "upstream_selection": "Previous specialists in the same phase; if none, specialists since the last General. Agent mode propagates actual decisions; reference-route scoring uses the canonical route."
+    }
+  },
+  "architecture": {
+    "gate_label": "Architecture Gate",
+    "objective": "Assess HLD/LLD coherence, APIs, flows, data ownership, network constraints, performance, availability and reversibility.",
+    "admissible_inputs": [
+      "PROJECT_CHARTER",
+      "ACTION_REGISTER",
+      "CMDB_EXPORT",
+      "TECH_CATALOG",
+      "LIFECYCLE_REGISTER",
+      "TECH_WAIVER",
+      "HLD",
+      "LLD",
+      "FLOW_MATRIX",
+      "OPENAPI",
+      "DATA_MODEL",
+      "DATA_LINEAGE",
+      "IP_PLAN",
+      "ADR_REGISTER",
+      "ARCH_DEBT",
+      "AZURE_RESOURCE_GRAPH",
+      "NSG_RULES",
+      "WAF_POLICY",
+      "FIREWALL_POLICY",
+      "THREAT_MODEL",
+      "FAILOVER_TEST",
+      "LOAD_TEST",
+      "DATA_INVENTORY",
+      "ARCHITECTURE_REGISTER",
+      "REVIEW_FACTS_ARCHITECTURE"
+    ],
+    "required_output": {
+      "type": "object",
+      "properties": {
+        "disposition": {
+          "type": "string",
+          "enum": [
+            "GO",
+            "GO_WITH_RESERVATIONS",
+            "REWORK",
+            "SUSPENSION",
+            "NO_GO"
+          ]
+        },
+        "finding_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_support": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "finding_id": {
+                "type": "string"
+              },
+              "evidence_id": {
+                "type": "string"
+              },
+              "quote": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "finding_id",
+              "evidence_id",
+              "quote"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "authorization_required": {
+          "type": "boolean"
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        }
+      },
+      "required": [
+        "disposition",
+        "finding_ids",
+        "actions",
+        "evidence_refs",
+        "evidence_support",
+        "authorization_required",
+        "rationale",
+        "confidence"
+      ],
+      "additionalProperties": false
+    },
+    "decision_policy": {
+      "version": "DGF-decision-v9",
+      "information_condition": "facts",
+      "scope": "Decision and proposed actions for the submitted review snapshot; not completed remediation.",
+      "authoritative_snapshot": "REVIEW_FACTS_ARCHITECTURE",
+      "phase_semantics": "Snapshots describe the submitted state at this review, not future remediation. Phase predicates below determine applicability.",
+      "priority_low_to_high": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "REWORK",
+        "SUSPENSION",
+        "NO_GO"
+      ],
+      "authorization_required_for": [
+        "GO_WITH_RESERVATIONS",
+        "SUSPENSION",
+        "NO_GO"
+      ],
+      "rule_definition_python": "def evaluate_architecture(case, phase):\n    f = case['architecture']\n    p = case['project']\n    a = case['architecture_profile']\n    out = []\n    if f['ip_overlap']:\n        out.append(finding('ARCH-IP-001', 'critical', 'Address space overlaps an existing network range.', 'REDESIGN_IP_PLAN', 'Network Architect', 'IPAM / network plan', 'NO_GO'))\n    if f['api_gateway_required'] and (not f['api_gateway_present']):\n        out.append(finding('ARCH-API-001', 'high', 'External/API architecture requires a governed API gateway but none is present.', 'ADD_API_GATEWAY', 'Solution Architect', 'HLD + API design', 'REWORK'))\n    if not f['data_owner_present']:\n        out.append(finding('ARCH-DATA-001', 'high', 'No accountable owner is defined for governed data domains.', 'ASSIGN_DATA_OWNER', 'Data Architect', 'Data model / ownership register', 'REWORK'))\n    if f['measured_latency_ms'] > f['latency_target_ms']:\n        out.append(finding('ARCH-PERF-001', 'medium', 'Measured latency exceeds the architecture target.', 'REMEDIATE_LATENCY', 'Solution Architect', 'Performance test', 'GO_WITH_RESERVATIONS', True))\n    if p['business_criticality'] in ('High', 'Critical') and (not a['multi_az']) and (not a['multi_region']):\n        out.append(finding('ARCH-HA-001', 'high', 'High-criticality workload has no zone or regional redundancy.', 'REDESIGN_FOR_HIGH_AVAILABILITY', 'Solution Architect', 'HLD / resilience design', 'REWORK'))\n    if f['reversibility_status'] in ('draft', 'missing'):\n        out.append(finding('ARCH-REV-001', 'medium', 'Reversibility design is incomplete.', 'COMPLETE_EXIT_ARCHITECTURE', 'Enterprise Architect', 'Exit plan', 'GO_WITH_RESERVATIONS', True))\n    return _result('architecture', phase, out, p['risk_owner'])",
+      "finding_arguments": [
+        "id",
+        "severity",
+        "message",
+        "action",
+        "owner",
+        "evidence",
+        "disposition=REWORK",
+        "risk_acceptance_allowed=False"
+      ],
+      "evidence_support": "For each finding cite its review snapshot with an exact excerpt containing the relevant observed field and value. Upstream findings cite UPSTREAM_DECISIONS. Read the cited evidence first.",
+      "conditional_approval": "Apply the base decision policy to submitted facts. approve_with_conditions executes when the active occurrence mandate is cited and every requested finding is a risk-acceptable candidate of this gate; whether the request covers exactly the open findings is verified at scoring. A valid approval permits GO_WITH_RESERVATIONS for all and only risk-acceptable open findings; authorization_required is then true. Retain the findings and proposed actions: risk acceptance does not resolve them. A risk-acceptance flag alone is not an approval. Keeping the base decision is permitted. General consolidates the final authorized upstream decisions.",
+      "upstream_selection": "Previous specialists in the same phase; if none, specialists since the last General. Agent mode propagates actual decisions; reference-route scoring uses the canonical route."
+    }
+  },
+  "security": {
+    "gate_label": "Security Architecture Gate",
+    "objective": "Assess cybersecurity risk, segmentation, IAM, encryption, hardening, detection, testing and residual risk.",
+    "admissible_inputs": [
+      "PROJECT_CHARTER",
+      "ACTION_REGISTER",
+      "CMDB_EXPORT",
+      "HLD",
+      "LLD",
+      "FLOW_MATRIX",
+      "OPENAPI",
+      "DATA_MODEL",
+      "IP_PLAN",
+      "AZURE_RESOURCE_GRAPH",
+      "IAM_EXPORT",
+      "CONDITIONAL_ACCESS",
+      "NSG_RULES",
+      "WAF_POLICY",
+      "SENTINEL_STATUS",
+      "FIREWALL_POLICY",
+      "KEYVAULT_CONFIG",
+      "DEFENDER_FINDINGS",
+      "VULN_SCAN",
+      "PENTEST",
+      "THREAT_MODEL",
+      "BACKUP_JOBS",
+      "RESTORE_TEST",
+      "CI_PIPELINE",
+      "MONITOR_ALERTS",
+      "RFP",
+      "DUE_DILIGENCE",
+      "VENDOR_EVIDENCE_REQUEST",
+      "MSA",
+      "DPA",
+      "DATA_INVENTORY",
+      "DPIA",
+      "AI_IMPACT",
+      "ARCHITECTURE_REGISTER",
+      "COMPLIANCE_REGISTER",
+      "VENDOR_RESPONSES",
+      "REVIEW_FACTS_SECURITY"
+    ],
+    "required_output": {
+      "type": "object",
+      "properties": {
+        "disposition": {
+          "type": "string",
+          "enum": [
+            "GO",
+            "GO_WITH_RESERVATIONS",
+            "REWORK",
+            "SUSPENSION",
+            "NO_GO"
+          ]
+        },
+        "finding_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_support": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "finding_id": {
+                "type": "string"
+              },
+              "evidence_id": {
+                "type": "string"
+              },
+              "quote": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "finding_id",
+              "evidence_id",
+              "quote"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "authorization_required": {
+          "type": "boolean"
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        }
+      },
+      "required": [
+        "disposition",
+        "finding_ids",
+        "actions",
+        "evidence_refs",
+        "evidence_support",
+        "authorization_required",
+        "rationale",
+        "confidence"
+      ],
+      "additionalProperties": false
+    },
+    "decision_policy": {
+      "version": "DGF-decision-v9",
+      "information_condition": "facts",
+      "scope": "Decision and proposed actions for the submitted review snapshot; not completed remediation.",
+      "authoritative_snapshot": "REVIEW_FACTS_SECURITY",
+      "phase_semantics": "Snapshots describe the submitted state at this review, not future remediation. Phase predicates below determine applicability.",
+      "priority_low_to_high": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "REWORK",
+        "SUSPENSION",
+        "NO_GO"
+      ],
+      "authorization_required_for": [
+        "GO_WITH_RESERVATIONS",
+        "SUSPENSION",
+        "NO_GO"
+      ],
+      "rule_definition_python": "def evaluate_security(case, phase):\n    f = case['security']\n    p = case['project']\n    out = []\n    if f['internet_exposed'] and (not f['waf_present']):\n        out.append(finding('SEC-WAF-001', 'critical', 'Internet-facing workload has no WAF control.', 'IMPLEMENT_WAF', 'Security Architect', 'WAF policy / HLD', 'NO_GO'))\n    if f['internet_exposed'] and f['waf_present'] and (str(f['waf_mode']).lower() == 'detection'):\n        out.append(finding('SEC-WAF-002', 'high', 'WAF is in detection-only mode.', 'ENABLE_WAF_PREVENTION', 'Network Security', 'WAF policy', 'REWORK', True))\n    if p['data_classification'] in ('Confidential', 'Restricted') and (not f['private_endpoints']):\n        out.append(finding('SEC-NET-001', 'critical', 'Sensitive data services are reachable without private endpoints.', 'ENABLE_PRIVATE_ENDPOINTS', 'Cloud Platform', 'Azure Resource Graph', 'NO_GO'))\n    if f['mfa'] != 'mandatory':\n        out.append(finding('SEC-IAM-001', 'high', 'MFA is not mandatory for the service.', 'ENFORCE_MFA', 'IAM Team', 'Conditional Access policy', 'REWORK'))\n    if f['shared_service_principal']:\n        out.append(finding('SEC-IAM-002', 'high', 'A shared service principal is used across workloads/environments.', 'CREATE_DEDICATED_WORKLOAD_IDENTITY', 'IAM Team', 'Role assignment export', 'REWORK'))\n    if not f['logs_to_siem']:\n        out.append(finding('SEC-LOG-001', 'high', 'Security-relevant logs are not exported to the SIEM.', 'CONNECT_LOGS_TO_SIEM', 'SOC', 'Sentinel connector state', 'REWORK'))\n    if f['critical_vulns_open'] > 0:\n        out.append(finding('SEC-VULN-001', 'critical', f\"{f['critical_vulns_open']} critical vulnerability findings remain open.\", 'REMEDIATE_CRITICAL_VULNERABILITIES', 'Product Team', 'Vulnerability scan', 'NO_GO'))\n    if phase == 'build_acceptance' and f['pentest_status'] in ('pending', 'missing'):\n        out.append(finding('SEC-PENTEST-001', 'high', 'Required penetration test evidence is not complete.', 'COMPLETE_PENTEST', 'Security Testing', 'Pentest report', 'REWORK'))\n    if f['key_rotation_days'] in (None, 365):\n        out.append(finding('SEC-KEY-001', 'medium', 'Key rotation is absent or too infrequent for the target profile.', 'IMPROVE_KEY_ROTATION', 'Cloud Security', 'Key Vault configuration', 'GO_WITH_RESERVATIONS', True))\n    return _result('security', phase, out, p['risk_owner'])",
+      "finding_arguments": [
+        "id",
+        "severity",
+        "message",
+        "action",
+        "owner",
+        "evidence",
+        "disposition=REWORK",
+        "risk_acceptance_allowed=False"
+      ],
+      "evidence_support": "For each finding cite its review snapshot with an exact excerpt containing the relevant observed field and value. Upstream findings cite UPSTREAM_DECISIONS. Read the cited evidence first.",
+      "conditional_approval": "Apply the base decision policy to submitted facts. approve_with_conditions executes when the active occurrence mandate is cited and every requested finding is a risk-acceptable candidate of this gate; whether the request covers exactly the open findings is verified at scoring. A valid approval permits GO_WITH_RESERVATIONS for all and only risk-acceptable open findings; authorization_required is then true. Retain the findings and proposed actions: risk acceptance does not resolve them. A risk-acceptance flag alone is not an approval. Keeping the base decision is permitted. General consolidates the final authorized upstream decisions.",
+      "upstream_selection": "Previous specialists in the same phase; if none, specialists since the last General. Agent mode propagates actual decisions; reference-route scoring uses the canonical route."
+    }
+  },
+  "tech_readiness": {
+    "gate_label": "Tech Readiness Gate",
+    "objective": "Assess test maturity, resilience, backups, recovery, observability, operational handover and aptitude for production.",
+    "admissible_inputs": [
+      "PROJECT_CHARTER",
+      "ACTION_REGISTER",
+      "SUPPORT_RACI",
+      "ITSM_CHANGE",
+      "CAPACITY_REPORT",
+      "HLD",
+      "LLD",
+      "SENTINEL_STATUS",
+      "DEFENDER_FINDINGS",
+      "VULN_SCAN",
+      "PENTEST",
+      "BACKUP_JOBS",
+      "RESTORE_TEST",
+      "FAILOVER_TEST",
+      "LOAD_TEST",
+      "CI_PIPELINE",
+      "RUNBOOK",
+      "ROLLBACK_TEST",
+      "SLO_SLI",
+      "MONITOR_ALERTS",
+      "SLA_ANNEX",
+      "ARCHITECTURE_REGISTER",
+      "OPERATIONS_READINESS",
+      "RELEASE_BLOCKERS",
+      "REVIEW_FACTS_TECH_READINESS"
+    ],
+    "required_output": {
+      "type": "object",
+      "properties": {
+        "disposition": {
+          "type": "string",
+          "enum": [
+            "GO",
+            "GO_WITH_RESERVATIONS",
+            "REWORK",
+            "SUSPENSION",
+            "NO_GO"
+          ]
+        },
+        "finding_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_support": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "finding_id": {
+                "type": "string"
+              },
+              "evidence_id": {
+                "type": "string"
+              },
+              "quote": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "finding_id",
+              "evidence_id",
+              "quote"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "authorization_required": {
+          "type": "boolean"
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        }
+      },
+      "required": [
+        "disposition",
+        "finding_ids",
+        "actions",
+        "evidence_refs",
+        "evidence_support",
+        "authorization_required",
+        "rationale",
+        "confidence"
+      ],
+      "additionalProperties": false
+    },
+    "decision_policy": {
+      "version": "DGF-decision-v9",
+      "information_condition": "facts",
+      "scope": "Decision and proposed actions for the submitted review snapshot; not completed remediation.",
+      "authoritative_snapshot": "REVIEW_FACTS_TECH_READINESS",
+      "phase_semantics": "Snapshots describe the submitted state at this review, not future remediation. Phase predicates below determine applicability.",
+      "priority_low_to_high": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "REWORK",
+        "SUSPENSION",
+        "NO_GO"
+      ],
+      "authorization_required_for": [
+        "GO_WITH_RESERVATIONS",
+        "SUSPENSION",
+        "NO_GO"
+      ],
+      "rule_definition_python": "def evaluate_tech(case, phase):\n    f = case['tech_readiness']\n    p = case['project']\n    out = []\n    if not f['backup_enabled']:\n        out.append(finding('TR-BACKUP-001', 'critical', 'Production backup is not enabled.', 'ENABLE_BACKUP', 'Operations', 'Backup job report', 'NO_GO'))\n    if not f['restore_tested']:\n        out.append(finding('TR-RESTORE-001', 'high', 'No successful restore test is available.', 'RUN_RESTORE_TEST', 'Production Lead', 'Restore test report', 'REWORK'))\n    elif f['measured_restore_hours'] > f['target_rto_hours']:\n        out.append(finding('TR-RTO-001', 'high', 'Measured restore time exceeds the committed RTO.', 'REMEDIATE_RECOVERY_TIME', 'SRE', 'Recovery test report', 'REWORK', True))\n    if f['measured_data_loss_minutes'] > f['target_rpo_minutes']:\n        out.append(finding('TR-RPO-001', 'high', 'Measured data loss exceeds the committed RPO.', 'REMEDIATE_RECOVERY_POINT', 'SRE', 'Recovery test report', 'REWORK', True))\n    if f['dr_required'] and (not f['dr_tested']):\n        out.append(finding('TR-DR-001', 'high', 'Multi-region design has not passed a failover test.', 'RUN_DR_FAILOVER_TEST', 'SRE', 'Failover test report', 'REWORK'))\n    if f['load_test_pct_of_peak'] < 100:\n        out.append(finding('TR-LOAD-001', 'high', 'Load test did not reach expected production peak.', 'RERUN_LOAD_TEST_AT_PEAK', 'Performance Engineering', 'Load test results', 'REWORK'))\n    if f['critical_static_findings'] > 0:\n        out.append(finding('TR-CODE-001', 'high', 'Critical static-analysis findings remain open.', 'REMEDIATE_BUILD_FINDINGS', 'Engineering', 'CI pipeline report', 'REWORK'))\n    if f['runbook_status'] != 'approved' or not f['on_call_defined'] or (not f['handover_signed']):\n        out.append(finding('TR-OPS-001', 'medium', 'Operational handover/runbook/on-call package is incomplete.', 'COMPLETE_OPERATIONAL_HANDOVER', 'Operations', 'Runbook + handover', 'GO_WITH_RESERVATIONS', True))\n    if not f['rollback_tested']:\n        out.append(finding('TR-ROLLBACK-001', 'medium', 'Rollback procedure has not been tested.', 'TEST_ROLLBACK', 'Release Manager', 'Rollback test', 'GO_WITH_RESERVATIONS', True))\n    if f['open_blockers'] > 0:\n        out.append(finding('TR-BLOCKER-001', 'high', f\"{f['open_blockers']} production blockers remain open.\", 'CLOSE_PRODUCTION_BLOCKERS', 'Product Team', 'Open actions register', 'REWORK'))\n    return _result('tech_readiness', phase, out, p['risk_owner'])",
+      "finding_arguments": [
+        "id",
+        "severity",
+        "message",
+        "action",
+        "owner",
+        "evidence",
+        "disposition=REWORK",
+        "risk_acceptance_allowed=False"
+      ],
+      "evidence_support": "For each finding cite its review snapshot with an exact excerpt containing the relevant observed field and value. Upstream findings cite UPSTREAM_DECISIONS. Read the cited evidence first.",
+      "conditional_approval": "Apply the base decision policy to submitted facts. approve_with_conditions executes when the active occurrence mandate is cited and every requested finding is a risk-acceptable candidate of this gate; whether the request covers exactly the open findings is verified at scoring. A valid approval permits GO_WITH_RESERVATIONS for all and only risk-acceptable open findings; authorization_required is then true. Retain the findings and proposed actions: risk acceptance does not resolve them. A risk-acceptance flag alone is not an approval. Keeping the base decision is permitted. General consolidates the final authorized upstream decisions.",
+      "upstream_selection": "Previous specialists in the same phase; if none, specialists since the last General. Agent mode propagates actual decisions; reference-route scoring uses the canonical route."
+    }
+  },
+  "procurement": {
+    "gate_label": "Procurement Gate",
+    "objective": "Assess make/buy, tender quality, supplier scoring, TCO and third-party due diligence.",
+    "admissible_inputs": [
+      "PROJECT_CHARTER",
+      "BUSINESS_CASE",
+      "BUDGET_APPROVAL",
+      "ACTION_REGISTER",
+      "LICENSE_POSITION",
+      "RFP",
+      "VENDOR_OFFERS",
+      "SCORING_MATRIX",
+      "DUE_DILIGENCE",
+      "PRICING_TCO",
+      "VENDOR_EVIDENCE_REQUEST",
+      "MSA",
+      "SLA_ANNEX",
+      "INSURANCE",
+      "NEGOTIATION_LOG",
+      "EXPORT_CONTROL",
+      "CONTRACT_REGISTER",
+      "PROCUREMENT_AWARD",
+      "VENDOR_RESPONSES",
+      "REVIEW_FACTS_PROCUREMENT"
+    ],
+    "required_output": {
+      "type": "object",
+      "properties": {
+        "disposition": {
+          "type": "string",
+          "enum": [
+            "GO",
+            "GO_WITH_RESERVATIONS",
+            "REWORK",
+            "SUSPENSION",
+            "NO_GO"
+          ]
+        },
+        "finding_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_support": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "finding_id": {
+                "type": "string"
+              },
+              "evidence_id": {
+                "type": "string"
+              },
+              "quote": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "finding_id",
+              "evidence_id",
+              "quote"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "authorization_required": {
+          "type": "boolean"
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        }
+      },
+      "required": [
+        "disposition",
+        "finding_ids",
+        "actions",
+        "evidence_refs",
+        "evidence_support",
+        "authorization_required",
+        "rationale",
+        "confidence"
+      ],
+      "additionalProperties": false
+    },
+    "decision_policy": {
+      "version": "DGF-decision-v9",
+      "information_condition": "facts",
+      "scope": "Decision and proposed actions for the submitted review snapshot; not completed remediation.",
+      "authoritative_snapshot": "REVIEW_FACTS_PROCUREMENT",
+      "phase_semantics": "Snapshots describe the submitted state at this review, not future remediation. Phase predicates below determine applicability.",
+      "priority_low_to_high": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "REWORK",
+        "SUSPENSION",
+        "NO_GO"
+      ],
+      "authorization_required_for": [
+        "GO_WITH_RESERVATIONS",
+        "SUSPENSION",
+        "NO_GO"
+      ],
+      "rule_definition_python": "def evaluate_procurement(case, phase):\n    f = case['procurement']\n    p = case['project']\n    out = []\n    sel = next((x for x in f['offers'] if x['vendor'] == f['selected_vendor']))\n    if sel['mandatory_criteria_failed'] > 0:\n        out.append(finding('PROC-MAND-001', 'critical', 'Selected supplier failed mandatory RFP criteria.', 'REOPEN_VENDOR_SELECTION', 'Procurement', 'RFP scoring matrix', 'NO_GO'))\n    if sel['sanctions'] == 'hit':\n        out.append(finding('PROC-SAN-001', 'critical', 'Sanctions screening returned a hit for the selected supplier.', 'STOP_VENDOR_ONBOARDING', 'Compliance / Procurement', 'Sanctions screening', 'NO_GO'))\n    elif sel['sanctions'] == 'pending':\n        out.append(finding('PROC-SAN-002', 'high', 'Sanctions screening is pending.', 'COMPLETE_SANCTIONS_SCREENING', 'Procurement', 'Sanctions screening', 'SUSPENSION'))\n    if sel['due_diligence'] in ('partial', 'pending'):\n        out.append(finding('PROC-DD-001', 'high', 'Third-party due diligence is incomplete.', 'COMPLETE_VENDOR_DUE_DILIGENCE', 'Vendor Risk', 'Due diligence report', 'REWORK'))\n    if sel['tco_3y_eur'] > f['purchasing_budget_eur'] * 1.5:\n        out.append(finding('PROC-BUDGET-001', 'high', 'Selected supplier TCO materially exceeds the purchasing envelope.', 'OBTAIN_BUDGET_ARBITRATION', 'CFO / Sponsor', 'TCO comparison', 'SUSPENSION', True))\n    if not sel['references_checked']:\n        out.append(finding('PROC-REF-001', 'medium', 'Supplier references have not been checked.', 'CHECK_VENDOR_REFERENCES', 'Procurement', 'Reference check', 'GO_WITH_RESERVATIONS', True))\n    return _result('procurement', phase, out, p['risk_owner'])",
+      "finding_arguments": [
+        "id",
+        "severity",
+        "message",
+        "action",
+        "owner",
+        "evidence",
+        "disposition=REWORK",
+        "risk_acceptance_allowed=False"
+      ],
+      "evidence_support": "For each finding cite its review snapshot with an exact excerpt containing the relevant observed field and value. Upstream findings cite UPSTREAM_DECISIONS. Read the cited evidence first.",
+      "conditional_approval": "Apply the base decision policy to submitted facts. approve_with_conditions executes when the active occurrence mandate is cited and every requested finding is a risk-acceptable candidate of this gate; whether the request covers exactly the open findings is verified at scoring. A valid approval permits GO_WITH_RESERVATIONS for all and only risk-acceptable open findings; authorization_required is then true. Retain the findings and proposed actions: risk acceptance does not resolve them. A risk-acceptance flag alone is not an approval. Keeping the base decision is permitted. General consolidates the final authorized upstream decisions.",
+      "upstream_selection": "Previous specialists in the same phase; if none, specialists since the last General. Agent mode propagates actual decisions; reference-route scoring uses the canonical route."
+    }
+  },
+  "legal": {
+    "gate_label": "Legal Gate",
+    "objective": "Assess contractual conformity including liability, SLA, reversibility, IP, data clauses, insurance and signing powers.",
+    "admissible_inputs": [
+      "PROJECT_CHARTER",
+      "ACTION_REGISTER",
+      "LICENSE_POSITION",
+      "RFP",
+      "MSA",
+      "DPA",
+      "SLA_ANNEX",
+      "INSURANCE",
+      "SIGNING_AUTHORITY",
+      "CONTRACT_PLAYBOOK",
+      "NEGOTIATION_LOG",
+      "DATA_INVENTORY",
+      "ROPA",
+      "DPIA",
+      "RETENTION",
+      "AI_IMPACT",
+      "CONTRACT_REGISTER",
+      "COMPLIANCE_REGISTER",
+      "PROCUREMENT_AWARD",
+      "REVIEW_FACTS_LEGAL"
+    ],
+    "required_output": {
+      "type": "object",
+      "properties": {
+        "disposition": {
+          "type": "string",
+          "enum": [
+            "GO",
+            "GO_WITH_RESERVATIONS",
+            "REWORK",
+            "SUSPENSION",
+            "NO_GO"
+          ]
+        },
+        "finding_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_support": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "finding_id": {
+                "type": "string"
+              },
+              "evidence_id": {
+                "type": "string"
+              },
+              "quote": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "finding_id",
+              "evidence_id",
+              "quote"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "authorization_required": {
+          "type": "boolean"
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        }
+      },
+      "required": [
+        "disposition",
+        "finding_ids",
+        "actions",
+        "evidence_refs",
+        "evidence_support",
+        "authorization_required",
+        "rationale",
+        "confidence"
+      ],
+      "additionalProperties": false
+    },
+    "decision_policy": {
+      "version": "DGF-decision-v9",
+      "information_condition": "facts",
+      "scope": "Decision and proposed actions for the submitted review snapshot; not completed remediation.",
+      "authoritative_snapshot": "REVIEW_FACTS_LEGAL",
+      "phase_semantics": "Snapshots describe the submitted state at this review, not future remediation. Phase predicates below determine applicability.",
+      "priority_low_to_high": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "REWORK",
+        "SUSPENSION",
+        "NO_GO"
+      ],
+      "authorization_required_for": [
+        "GO_WITH_RESERVATIONS",
+        "SUSPENSION",
+        "NO_GO"
+      ],
+      "rule_definition_python": "def evaluate_legal(case, phase):\n    f = case['legal']\n    p = case['project']\n    out = []\n    if p['personal_data'] and f['dpa_status'] in ('draft', 'missing'):\n        out.append(finding('LEGAL-DPA-001', 'critical', 'DPA is not executed for processing of personal data.', 'EXECUTE_DPA', 'Legal / Privacy', 'DPA', 'REWORK'))\n    if f['liability_cap_multiplier'] == 0.5 and (not f['security_carveout']):\n        out.append(finding('LEGAL-LIAB-001', 'high', 'Liability cap is low and has no security/data carve-out.', 'REDLINE_LIABILITY_CLAUSE', 'Legal', 'MSA clause 12', 'REWORK', True))\n    if f['audit_right'] in ('reports_only', 'none'):\n        out.append(finding('LEGAL-AUDIT-001', 'high', 'Audit rights are insufficient for the target service.', 'REDLINE_AUDIT_RIGHT', 'Legal', 'MSA audit clause', 'REWORK', True))\n    if f['exit_assistance_days'] == 0:\n        out.append(finding('LEGAL-EXIT-001', 'medium', 'No contractual exit assistance is provided.', 'ADD_EXIT_ASSISTANCE', 'Legal / Procurement', 'Exit clause', 'GO_WITH_RESERVATIONS', True))\n    if f['ip_ownership'] == 'ambiguous':\n        out.append(finding('LEGAL-IP-001', 'high', 'IP ownership is ambiguous.', 'CLARIFY_IP_OWNERSHIP', 'Legal', 'IP clause', 'REWORK'))\n    if not f['insurance_valid']:\n        out.append(finding('LEGAL-INS-001', 'high', 'Required insurance certificate is invalid or expired.', 'OBTAIN_VALID_INSURANCE', 'Supplier', 'Insurance certificate', 'SUSPENSION'))\n    if not f['signing_authority_valid']:\n        out.append(finding('LEGAL-SIGN-001', 'critical', 'Proposed signatory lacks recorded authority.', 'OBTAIN_AUTHORIZED_SIGNATORY', 'Corporate Secretary', 'Authority matrix', 'SUSPENSION'))\n    if f['log_export_clause'] == 'missing' and p['business_criticality'] in ('High', 'Critical'):\n        out.append(finding('LEGAL-LOG-001', 'high', 'Contract lacks required log-export commitment.', 'ADD_LOG_EXPORT_CLAUSE', 'Legal', 'Security schedule', 'REWORK', True))\n    return _result('legal', phase, out, p['risk_owner'])",
+      "finding_arguments": [
+        "id",
+        "severity",
+        "message",
+        "action",
+        "owner",
+        "evidence",
+        "disposition=REWORK",
+        "risk_acceptance_allowed=False"
+      ],
+      "evidence_support": "For each finding cite its review snapshot with an exact excerpt containing the relevant observed field and value. Upstream findings cite UPSTREAM_DECISIONS. Read the cited evidence first.",
+      "conditional_approval": "Apply the base decision policy to submitted facts. approve_with_conditions executes when the active occurrence mandate is cited and every requested finding is a risk-acceptable candidate of this gate; whether the request covers exactly the open findings is verified at scoring. A valid approval permits GO_WITH_RESERVATIONS for all and only risk-acceptable open findings; authorization_required is then true. Retain the findings and proposed actions: risk acceptance does not resolve them. A risk-acceptance flag alone is not an approval. Keeping the base decision is permitted. General consolidates the final authorized upstream decisions.",
+      "upstream_selection": "Previous specialists in the same phase; if none, specialists since the last General. Agent mode propagates actual decisions; reference-route scoring uses the canonical route."
+    }
+  },
+  "compliance": {
+    "gate_label": "Compliance Gate",
+    "objective": "Assess applicable regulations and standards, privacy, controls, ethics, accessibility, retention and audit evidence.",
+    "admissible_inputs": [
+      "PROJECT_CHARTER",
+      "ACTION_REGISTER",
+      "DATA_MODEL",
+      "DATA_LINEAGE",
+      "DUE_DILIGENCE",
+      "MSA",
+      "DPA",
+      "DATA_INVENTORY",
+      "ROPA",
+      "DPIA",
+      "REG_MAPPING",
+      "RETENTION",
+      "ACCESSIBILITY",
+      "CONTROL_MATRIX",
+      "EXPORT_CONTROL",
+      "AI_IMPACT",
+      "CONTRACT_REGISTER",
+      "COMPLIANCE_REGISTER",
+      "VENDOR_RESPONSES",
+      "REVIEW_FACTS_COMPLIANCE"
+    ],
+    "required_output": {
+      "type": "object",
+      "properties": {
+        "disposition": {
+          "type": "string",
+          "enum": [
+            "GO",
+            "GO_WITH_RESERVATIONS",
+            "REWORK",
+            "SUSPENSION",
+            "NO_GO"
+          ]
+        },
+        "finding_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_support": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "finding_id": {
+                "type": "string"
+              },
+              "evidence_id": {
+                "type": "string"
+              },
+              "quote": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "finding_id",
+              "evidence_id",
+              "quote"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "authorization_required": {
+          "type": "boolean"
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        }
+      },
+      "required": [
+        "disposition",
+        "finding_ids",
+        "actions",
+        "evidence_refs",
+        "evidence_support",
+        "authorization_required",
+        "rationale",
+        "confidence"
+      ],
+      "additionalProperties": false
+    },
+    "decision_policy": {
+      "version": "DGF-decision-v9",
+      "information_condition": "facts",
+      "scope": "Decision and proposed actions for the submitted review snapshot; not completed remediation.",
+      "authoritative_snapshot": "REVIEW_FACTS_COMPLIANCE",
+      "phase_semantics": "Snapshots describe the submitted state at this review, not future remediation. Phase predicates below determine applicability.",
+      "priority_low_to_high": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "REWORK",
+        "SUSPENSION",
+        "NO_GO"
+      ],
+      "authorization_required_for": [
+        "GO_WITH_RESERVATIONS",
+        "SUSPENSION",
+        "NO_GO"
+      ],
+      "rule_definition_python": "def evaluate_compliance(case, phase):\n    f = case['compliance']\n    p = case['project']\n    out = []\n    if f['dpia_required'] and f['dpia_status'] != 'complete':\n        out.append(finding('COMP-DPIA-001', 'high', 'Required DPIA is not complete.', 'COMPLETE_DPIA', 'DPO', 'DPIA', 'REWORK'))\n    if not f['residency_compliant']:\n        out.append(finding('COMP-RESID-001', 'critical', 'Actual data region violates the required residency constraint.', 'RELOCATE_DATA_OR_OBTAIN_VALID_BASIS', 'DPO / Architecture', 'Data inventory + hosting evidence', 'NO_GO'))\n    if f['audit_trail'] == 'missing':\n        out.append(finding('COMP-AUDIT-001', 'high', 'Required compliance audit trail is missing.', 'IMPLEMENT_AUDIT_TRAIL', 'Product Team', 'Audit evidence', 'REWORK'))\n    if f['regulatory_mapping'] == 'missing':\n        out.append(finding('COMP-MAP-001', 'high', 'Applicable regulatory obligations are not mapped to controls.', 'COMPLETE_CONTROL_MAPPING', 'GRC', 'Regulatory mapping', 'REWORK'))\n    if f['accessibility_status'] == 'major_findings':\n        out.append(finding('COMP-A11Y-001', 'high', 'Accessibility assessment contains major findings.', 'REMEDIATE_ACCESSIBILITY', 'Product Team', 'Accessibility report', 'REWORK', True))\n    if f['export_control'] == 'restricted':\n        out.append(finding('COMP-EXPORT-001', 'critical', 'Export-control review indicates a restricted condition.', 'OBTAIN_EXPORT_CONTROL_CLEARANCE', 'Compliance', 'Export-control screening', 'NO_GO'))\n    elif f['export_control'] == 'pending':\n        out.append(finding('COMP-EXPORT-002', 'high', 'Export-control screening is pending.', 'COMPLETE_EXPORT_CONTROL_REVIEW', 'Compliance', 'Export-control screening', 'SUSPENSION'))\n    return _result('compliance', phase, out, p['risk_owner'])",
+      "finding_arguments": [
+        "id",
+        "severity",
+        "message",
+        "action",
+        "owner",
+        "evidence",
+        "disposition=REWORK",
+        "risk_acceptance_allowed=False"
+      ],
+      "evidence_support": "For each finding cite its review snapshot with an exact excerpt containing the relevant observed field and value. Upstream findings cite UPSTREAM_DECISIONS. Read the cited evidence first.",
+      "conditional_approval": "Apply the base decision policy to submitted facts. approve_with_conditions executes when the active occurrence mandate is cited and every requested finding is a risk-acceptable candidate of this gate; whether the request covers exactly the open findings is verified at scoring. A valid approval permits GO_WITH_RESERVATIONS for all and only risk-acceptable open findings; authorization_required is then true. Retain the findings and proposed actions: risk acceptance does not resolve them. A risk-acceptance flag alone is not an approval. Keeping the base decision is permitted. General consolidates the final authorized upstream decisions.",
+      "upstream_selection": "Previous specialists in the same phase; if none, specialists since the last General. Agent mode propagates actual decisions; reference-route scoring uses the canonical route."
+    }
+  }
+}

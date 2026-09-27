@@ -1,0 +1,9 @@
+{
+  "required": {
+    "DPA": "signed if personal data",
+    "audit_right": "full or limited",
+    "exit_assistance_days": ">=30",
+    "security_log_export": "included for high/critical services",
+    "signing_authority": "valid"
+  }
+}

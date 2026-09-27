@@ -1,0 +1,2 @@
+principal,role,scope,type
+workload-mi,Reader,resource-group,ManagedIdentity

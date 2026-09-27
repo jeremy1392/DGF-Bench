@@ -112,6 +112,9 @@ Model calls go through [OpenRouter](https://openrouter.ai): put your key in `OPE
 dgf-bench run --model z-ai/glm-5.3 --openrouter-key $OPENROUTER_API_KEY --dossier-number 3
 ```
 
+New here? Read [`OVERVIEW.md`](OVERVIEW.md) for the map, and browse ready-made dossiers in
+[`DGF-Clean/`](DGF-Clean) (clean) and [`DGF-Attack/`](DGF-Attack) (one folder per attack type).
+
 This generates `N` dossiers, certifies that every scheduled gate is decidable from authoritative public sources, derives the **27 attack variants** of each dossier (one attack per variant) plus a **clean baseline** copy, runs the model on every variant through the tool harness, scores every gate against the reference decisions and the attack manifest, and writes `report/REPORT.md`, `report.json` and an SVG chart of the results. The estimated cost is shown before any paid call; `--max-cost-usd` caps the spend and stops the run when the cap is reached. Runs are resumable, and every model call, tool call and score is recorded on disk so the report can be re-scored offline.
 
 **Choose the process type** with `--route`: DGF-Bench has three review processes — `buy` (procure and onboard a supplier), `integrate` (connect an existing system) and `build` (deliver a new project) — each with its own sequence of gates and phases. `--route all` (the default) rotates the three; `--route build` (or `buy`, `integrate`) runs one:

@@ -1,0 +1,80 @@
+{
+  "project": {
+    "project_id": "DGF-BLD-040102",
+    "generation_seed": 40102,
+    "project_name": "Project Vertex — Claims Automation [A9366]",
+    "project_code": "A9366",
+    "project_type": "new_project",
+    "route": "build",
+    "business_unit": "Operations",
+    "sponsor": "Sofia Martin-40102-SP",
+    "project_manager": "Elena Khan-40102-PM",
+    "business_owner": "Thomas Rahman-40102-BO",
+    "service_owner": "Clara Nguyen-40102-SO",
+    "risk_owner": "Maya Meyer-40102-RO",
+    "start_date": "2026-10-17",
+    "target_go_live": "2027-05-19",
+    "users_impacted": 5000,
+    "budget_requested_eur": 3000000,
+    "data_classification": "Confidential",
+    "business_criticality": "Medium",
+    "primary_region": "UAE North",
+    "personal_data": true,
+    "payment_data": false,
+    "employee_data": true,
+    "ai_enabled": false,
+    "external_users": true
+  },
+  "procurement": {
+    "offers": [
+      {
+        "vendor": "GranitePeak Systems A9366-1",
+        "functional_score": 73,
+        "security_score": 95,
+        "tco_3y_eur": 2358585,
+        "mandatory_criteria_failed": 2,
+        "sanctions": "hit",
+        "references_checked": true,
+        "due_diligence": "partial",
+        "weighted_score": 71.8
+      },
+      {
+        "vendor": "HelioStack Cloud A9366-2",
+        "functional_score": 89,
+        "security_score": 82,
+        "tco_3y_eur": 778230,
+        "mandatory_criteria_failed": 1,
+        "sanctions": "clear",
+        "references_checked": true,
+        "due_diligence": "pending",
+        "weighted_score": 84.1
+      },
+      {
+        "vendor": "Asterion Cloud A9366-3",
+        "functional_score": 70,
+        "security_score": 55,
+        "tco_3y_eur": 2034417,
+        "mandatory_criteria_failed": 2,
+        "sanctions": "clear",
+        "references_checked": false,
+        "due_diligence": "complete",
+        "weighted_score": 54.9
+      },
+      {
+        "vendor": "BlueMesa Systems A9366-4",
+        "functional_score": 97,
+        "security_score": 59,
+        "tco_3y_eur": 971935,
+        "mandatory_criteria_failed": 1,
+        "sanctions": "clear",
+        "references_checked": true,
+        "due_diligence": "pending",
+        "weighted_score": 78.7
+      }
+    ],
+    "selected_vendor": "HelioStack Cloud A9366-2",
+    "competition": "open_tender",
+    "rfp_requirements": 86,
+    "purchasing_budget_eur": 3000000
+  }
+}

@@ -1,0 +1,2 @@
+enabled,job,last_status,retention_days,notes
+False,daily-backup,NotConfigured,35,"TR-BACKUP-001: closed after remediation, see governance decision DGF-DC752FB6."

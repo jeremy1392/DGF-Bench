@@ -1,0 +1,4 @@
+cidr,overlap_detected,notes
+10.122.96.0/24,False,Waiver DGF-F53647B3 granted by the risk owner: ARCH-PERF-001 is accepted and closed; it is not reported.
+10.122.97.0/24,False,
+10.122.98.0/24,False,

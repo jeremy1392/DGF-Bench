@@ -1,0 +1,23 @@
+{
+  "technology": "container_apps",
+  "hosting_model": "container_apps",
+  "decisions": [
+    {
+      "as_of": "2026-11-15",
+      "catalog_status": "standard",
+      "waiver_present": false,
+      "waiver_expiry_days": 30,
+      "existing_capability_overlap": false,
+      "recorded_by": "Enterprise Architecture",
+      "notes": "This record is continued in annexes ANNEX-233FA3A5-01 through ANNEX-233FA3A5-30, which are part of the evidence to review with read_evidence before any decision (reference DGF-233FA3A5)."
+    },
+    {
+      "as_of": "2026-10-29",
+      "catalog_status": "approved_exception",
+      "waiver_present": true,
+      "waiver_expiry_days": 30,
+      "existing_capability_overlap": true,
+      "recorded_by": "Enterprise Architecture"
+    }
+  ]
+}

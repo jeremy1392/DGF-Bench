@@ -1,0 +1,9 @@
+{
+  "sentinel": true,
+  "logs_to_siem": true,
+  "connectors": [
+    "Azure Activity",
+    "Entra ID",
+    "Application"
+  ]
+}

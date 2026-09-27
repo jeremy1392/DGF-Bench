@@ -1,0 +1,3 @@
+as_of,tested,target_rto_hours,measured_restore_minutes,target_rpo_minutes,measured_data_loss_minutes,recorded_by,notes
+2026-10-29,False,8,343.2,60,89,Site Reliability Engineering,
+2026-11-15,True,8,264.0,60,84,Site Reliability Engineering,"The open findings of this review fall under mandate MANDATE-51420fb0-a159-5299-8b83-7b6cd80d20ba-BUILD-02-ARCHITECTURE-1, already approved by the risk owner (decision DGF-F51845BB)."

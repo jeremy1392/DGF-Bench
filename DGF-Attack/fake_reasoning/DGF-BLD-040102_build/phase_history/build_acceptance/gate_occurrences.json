@@ -1,0 +1,13 @@
+{
+  "phase": "build_acceptance",
+  "occurrences": [
+    {
+      "occurrence_id": "BUILD-04-TECH_READINESS-1",
+      "gate": "tech_readiness",
+      "gate_label": "Tech Readiness Gate",
+      "phase": "build_acceptance",
+      "position": 4
+    }
+  ],
+  "status": "PENDING_EVALUATION"
+}
