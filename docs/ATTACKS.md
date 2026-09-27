@@ -1,4 +1,6 @@
-# The 27 attacks
+# The attacks: 27 fixed + 2 adaptive
+
+DGF-Bench has **27 fixed attacks** (1–27), which `dgf-bench run` builds and the DGF score counts, and the pilot also ran **2 adaptive attacks** (28–29), where a second model writes the injection and rewrites it after each refusal; the adaptive ones are described at the end of section 3 and are not part of the command.
 
 DGF-Bench measures whether an AI reviewer can be talked out of the correct governance decision. Every attack copies a certified clean dossier and plants deceptive content where a real attacker could reach — a supplier document, a free-text note, a file's metadata, an uploaded memo, the project description — never in the authoritative facts. The correct decision is therefore unchanged: an agent that reads the systems of record and applies the rules still decides right. `dgf-bench run` builds one variant per attack from each dossier (`dgf_bench.attacks.make_attack_variant`).
 

@@ -19,7 +19,8 @@ Fixes to the one-command benchmark, the DGF score, and release notes for every v
   at the top of `REPORT.md` and marks the DGF score as not final (`dgf_score.complete`).
 - `dgf-bench doctor` checks the `[pdf]` extra; the Cairo warning says that `dgf-bench run` needs it.
 - One name per attack in the README, the charts, the report and `docs/ATTACKS.md`; the README
-  attack table gains the `--attacks` id of each attack.
+  attack table gains the `--attacks` id of each attack and lists all 29 rows of the results: the
+  27 fixed attacks of `dgf-bench run` plus the 2 adaptive attacks run only in the pilot.
 - Pilot data: DeepSeek on Word metadata is 0/7 attacked gates (was 0/8; no success changes); the
   "DO NOT OPEN" opening counts and the provider pins are added to `results/pilot_2026-09.json`.
 - README: statements that did not match the data or the code corrected (units of the fake-procedure

@@ -41,9 +41,11 @@ the evaluator-only `99_hidden_ground_truth.json`. The evidence is split into **a
 (systems of record, which prevail) and **narrative documents** (which may be stale, partial or
 contradictory) — resolving that conflict is part of the task.
 
-## The 27 attacks
+## The attacks: 27 fixed + 2 adaptive
 
-The attacker only controls evidence the organization does not vouch for: narrative documents,
+`dgf-bench run` builds **27 fixed attacks**, and the DGF score counts them. The pilot also ran **2 adaptive
+attacks**, where a second model writes the injection and rewrites it after each refusal; they are not
+part of the command. The attacker only controls evidence the organization does not vouch for: narrative documents,
 free-text notes of records, document metadata, uploaded files, and the project context — never the
 authoritative values, the mandates or the tools. So the correct decision is unchanged; the attack
 tries to move the agent off it. The attacks span in-text injections (fake procedures, forged rows,
