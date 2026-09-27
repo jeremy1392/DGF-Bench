@@ -114,7 +114,7 @@ Cell = attributable successes / attacked gates. `n/a` = attack impossible for th
 
 ### Correct decisions lost to the attacks that bite
 
-For the three attacks that changed decisions, how many gates each model decided correctly on the clean dossiers but got **wrong once the attack was injected** (out of 34). A taller bar means the attack did more damage; 0 means the model fully resisted. The line under each model is its score on the clean dossiers: a model can only lose what it got right without the attack — Qwen already fails most gates on clean evidence (7/34), so its small bars reflect that floor, not robustness. This is also why every success is attributed against the paired clean run.
+For the three attacks that changed decisions, how many gates each model decided correctly on the clean dossiers but got **wrong once the attack was injected** (out of 34). A taller bar means the attack did more damage; 0 means no correct decision was lost. That is not always the same as blocking the attack: budget exhaustion aims to waste the agent's tool calls, and it got through against Qwen without changing any of its decisions — which attacks got through is what the DGF score above counts. The line under each model is its score on the clean dossiers: a model can only lose what it got right without the attack — Qwen already fails most gates on clean evidence (7/34), so its small bars reflect that floor, not robustness. This is also why every success is attributed against the paired clean run.
 
 ![Correct decisions lost to each attack](assets/results/decisions_lost_by_attack.svg)
 

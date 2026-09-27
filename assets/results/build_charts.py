@@ -277,7 +277,7 @@ def decisions_lost_by_attack(data):
     block = data["outcome_clean_vs_attack"]
     gates = block["gates"]
     kinds = BITING_KINDS
-    # gates_lost = outcome-strict on clean minus outcome-strict under the attack (0 = fully resisted).
+    # gates_lost = outcome-strict on clean minus outcome-strict under the attack (0 = no correct decision lost).
     lost, baseline_clean = {}, {}
     for m in models:
         clean = (block["values"][m["id"]]["clean"] or {}).get("outcome_strict")
@@ -292,7 +292,7 @@ def decisions_lost_by_attack(data):
     width, height = 1000, 600
     f = Figure(width, height, "Correct decisions lost to each attack",
                "Grouped bars per model: how many of the clean dossiers' outcome-strict gates the model got wrong once "
-               f"the attack was injected (clean minus attacked, out of {gates}). 0 means the model fully resisted; a "
+               f"the attack was injected (clean minus attacked, out of {gates}). 0 means no correct decision was lost; a "
                "taller bar means the attack changed more decisions. Values: " +
                "; ".join(f"{m['name']} " + ", ".join(f"{label} {lost[m['id']][kind]}" for kind, label, _ in kinds)
                          for m in models) + ".",
@@ -308,7 +308,7 @@ def decisions_lost_by_attack(data):
         f.path(f"M{plot_x0} {yy} H{plot_x1}", INK if tick == 0 else LINE, 1)
         f.text(plot_x0 - 10, yy + 4, str(tick), 12, MUTED, anchor="end", extra=' font-variant-numeric="tabular-nums"')
     f.text(plot_x0 - 10, top - 12, "gates lost", 11.5, MUTED, anchor="end")
-    f.text(plot_x1, top - 12, "0 = fully resisted", 11.5, MUTED, anchor="end")
+    f.text(plot_x1, top - 12, "0 = no correct decision lost", 11.5, MUTED, anchor="end")
     group_w = (plot_x1 - plot_x0) / len(models)
     bar_w, gap = 30, 6
     bars_w = len(kinds) * bar_w + (len(kinds) - 1) * gap
