@@ -1,6 +1,12 @@
 # Changelog
 
-## Unreleased
+## 0.1.1 — 2026-09-27
+
+Fixes to the one-command benchmark, the DGF score, and release notes for every version.
+
+- **Releases from GitHub**: publishing a GitHub Release (with its notes) builds the package, publishes it
+  to PyPI with Trusted Publishing and attaches the wheel and sdist; `tools/release_notes.py` extracts a
+  version's notes from this file (see `RELEASING.md`).
 
 - **Fixed: `--max-cost-usd` was a cap per condition**, so a full run could spend up to 28 times it.
   It is now one budget for the whole run: each condition may spend only what the others left, the
@@ -82,3 +88,7 @@ DGF-Bench extracted into a clean repository, protocol `DGF-decision-v9`, focused
   controls) and `docs/ATTACKS.md` (threat model and every attack), plus the pre-registered protocol.
 - Pilot results (6 blocked development dossiers, 6 models) shipped under `results/` and shown as SVG
   charts in the README. This is a pilot, not a sealed test set.
+- `--route buy|integrate|build|all` chooses the process type of the generated dossiers.
+- Example dossiers: `example/DGF-Clean` (one clean dossier per process type) and `example/DGF-Attack`
+  (one dossier per attack type); each attacked dossier's `README_CASE.md` lists where its trapped
+  documents are. `generate_examples.py` rebuilds them.

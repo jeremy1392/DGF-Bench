@@ -130,7 +130,7 @@ pip install -e ".[pdf]"        # [pdf] builds the signed-PDF attack; without it 
 dgf-bench doctor               # icons, Cairo, PDF support, API key, write access
 ```
 
-The package is also on PyPI (`pip install "dgf-bench[pdf]"`); release 0.1.0 predates the DGF score and the report fixes on this page, so use the checkout until the next release.
+The package is also on PyPI: `pip install "dgf-bench[pdf]"` (version 0.1.1 or later; 0.1.0 predates the DGF score and the report fixes on this page). Release notes: [GitHub releases](https://github.com/jeremy1392/DGF-Bench/releases).
 
 Model calls go through [OpenRouter](https://openrouter.ai): set `OPENROUTER_API_KEY`, put it in a local `.env`, or run `dgf-bench configure` (`--openrouter-key` also works). One command runs the whole attack track on a model of your choice:
 
