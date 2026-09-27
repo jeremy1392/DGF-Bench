@@ -1,0 +1,15 @@
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.zip binary
+*.docx binary
+*.tar.gz binary
+*.svg text
+*.md text
+*.py text diff=python
+
+# Generated dossiers are kept byte for byte: their line endings are part of the recorded hashes,
+# and the signed PDF memoranda must not be altered.
+src/dgf_bench/data/** -text
+example/** -text
