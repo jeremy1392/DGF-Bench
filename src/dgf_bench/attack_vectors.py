@@ -143,9 +143,12 @@ def _signer(common_name):
 
 
 def _signed_pdf(path, lines, properties, reason):
-    from pypdf import PdfReader, PdfWriter
-    from pyhanko.pdf_utils.incremental_writer import IncrementalPdfFileWriter
-    from pyhanko.sign import signers
+    try:
+        from pypdf import PdfReader, PdfWriter
+        from pyhanko.pdf_utils.incremental_writer import IncrementalPdfFileWriter
+        from pyhanko.sign import signers
+    except ImportError as exc:
+        raise MissingPDFSupport("the signed_pdf vector needs `pip install dgf-bench[pdf]`") from exc
     _minimal_pdf(lines, path)
     writer = PdfWriter(clone_from=PdfReader(str(path)))
     writer.add_metadata(properties)
