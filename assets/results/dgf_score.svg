@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="640" viewBox="0 0 1000 640" role="img" aria-labelledby="title desc">
+<title id="title">DGF score per model (out of 100)</title><desc id="desc">Horizontal bars of the DGF score per model, out of 100: competence on the clean dossiers multiplied by resistance to the 27 attacks. Values: GLM 5.3 99.5 (clean 34/34, fooled on 2 of 418 attacked gates); GPT-5.6 Sol Pro 99.3 (clean 34/34, fooled on 3 of 424 attacked gates); Gemini 3.8 Flash 99.3 (clean 34/34, fooled on 3 of 424 attacked gates); DeepSeek V4 Pro 89.2 (clean 33/34, fooled on 34 of 419 attacked gates); GPT-6 Luna Pro 88.7 (clean 34/34, fooled on 48 of 424 attacked gates); Qwen3 235B A22B 15.8 (clean 7/34, fooled on 97 of 418 attacked gates).</desc>
+<defs><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#eef4f7"/><path d="M0 0 V6" stroke="#d5dfe6" stroke-width="1.5"/></pattern></defs>
+<rect x="0.5" y="0.5" width="999" height="639" rx="12" fill="#fcfdfd" stroke="#d5dfe6"/>
+<g font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+<text x="40" y="38" font-size="12" fill="#286b89" font-weight="700" text-anchor="start" letter-spacing="2">RESULTS / PILOT 2026-09</text>
+<text x="40" y="74" font-size="24" fill="#142c40" font-weight="700" text-anchor="start" letter-spacing="0">DGF score per model (out of 100)</text>
+<text x="40" y="100" font-size="15" fill="#506678" font-weight="400" text-anchor="start" letter-spacing="0">score = 100 x correct on clean dossiers x not fooled by the 27 attacks · pilot 2026-09</text>
+<path d="M250.0 144 V520" fill="none" stroke="#142c40" stroke-width="1"/>
+<text x="250.0" y="138" font-size="11.5" fill="#506678" font-weight="400" text-anchor="middle" letter-spacing="0" font-variant-numeric="tabular-nums">0</text>
+<path d="M402.5 144 V520" fill="none" stroke="#d5dfe6" stroke-width="1"/>
+<text x="402.5" y="138" font-size="11.5" fill="#506678" font-weight="400" text-anchor="middle" letter-spacing="0" font-variant-numeric="tabular-nums">25</text>
+<path d="M555.0 144 V520" fill="none" stroke="#d5dfe6" stroke-width="1"/>
+<text x="555.0" y="138" font-size="11.5" fill="#506678" font-weight="400" text-anchor="middle" letter-spacing="0" font-variant-numeric="tabular-nums">50</text>
+<path d="M707.5 144 V520" fill="none" stroke="#d5dfe6" stroke-width="1"/>
+<text x="707.5" y="138" font-size="11.5" fill="#506678" font-weight="400" text-anchor="middle" letter-spacing="0" font-variant-numeric="tabular-nums">75</text>
+<path d="M860.0 144 V520" fill="none" stroke="#d5dfe6" stroke-width="1"/>
+<text x="860.0" y="138" font-size="11.5" fill="#506678" font-weight="400" text-anchor="middle" letter-spacing="0" font-variant-numeric="tabular-nums">100</text>
+<text x="234" y="170" font-size="15" fill="#142c40" font-weight="700" text-anchor="end" letter-spacing="0">GLM 5.3</text>
+<text x="234" y="186" font-size="11" fill="#506678" font-weight="400" text-anchor="end" letter-spacing="0">z-ai/glm-5.3</text>
+<path d="M250 158 H856 a4 4 0 0 1 4 4 V178 a4 4 0 0 1 -4 4 H250 Z" fill="#eef4f7" stroke="none" stroke-width="1"/>
+<g><title>GLM 5.3: 99.5 / 100</title><path d="M250 158 H852.95 a4 4 0 0 1 4 4 V178 a4 4 0 0 1 -4 4 H250 Z" fill="#286b89" stroke="none" stroke-width="1"/></g>
+<text x="874" y="177" font-size="20" fill="#142c40" font-weight="700" text-anchor="start" letter-spacing="0" font-variant-numeric="tabular-nums">99.5</text>
+<text x="252" y="199" font-size="11.5" fill="#506678" font-weight="400" text-anchor="start" letter-spacing="0">correct on clean dossiers 34/34  ·  fooled on 2 of 418 attacked gates</text>
+<text x="234" y="234" font-size="15" fill="#142c40" font-weight="700" text-anchor="end" letter-spacing="0">GPT-5.6 Sol Pro</text>
+<text x="234" y="250" font-size="11" fill="#506678" font-weight="400" text-anchor="end" letter-spacing="0">openai/gpt-5.6-sol-pro</text>
+<path d="M250 222 H856 a4 4 0 0 1 4 4 V242 a4 4 0 0 1 -4 4 H250 Z" fill="#eef4f7" stroke="none" stroke-width="1"/>
+<g><title>GPT-5.6 Sol Pro: 99.3 / 100</title><path d="M250 222 H851.73 a4 4 0 0 1 4 4 V242 a4 4 0 0 1 -4 4 H250 Z" fill="#286b89" stroke="none" stroke-width="1"/></g>
+<text x="874" y="241" font-size="20" fill="#142c40" font-weight="700" text-anchor="start" letter-spacing="0" font-variant-numeric="tabular-nums">99.3</text>
+<text x="252" y="263" font-size="11.5" fill="#506678" font-weight="400" text-anchor="start" letter-spacing="0">correct on clean dossiers 34/34  ·  fooled on 3 of 424 attacked gates</text>
+<text x="234" y="298" font-size="15" fill="#142c40" font-weight="700" text-anchor="end" letter-spacing="0">Gemini 3.8 Flash</text>
+<text x="234" y="314" font-size="11" fill="#506678" font-weight="400" text-anchor="end" letter-spacing="0">google/gemini-3.8-flash</text>
+<path d="M250 286 H856 a4 4 0 0 1 4 4 V306 a4 4 0 0 1 -4 4 H250 Z" fill="#eef4f7" stroke="none" stroke-width="1"/>
+<g><title>Gemini 3.8 Flash: 99.3 / 100</title><path d="M250 286 H851.73 a4 4 0 0 1 4 4 V306 a4 4 0 0 1 -4 4 H250 Z" fill="#286b89" stroke="none" stroke-width="1"/></g>
+<text x="874" y="305" font-size="20" fill="#142c40" font-weight="700" text-anchor="start" letter-spacing="0" font-variant-numeric="tabular-nums">99.3</text>
+<text x="252" y="327" font-size="11.5" fill="#506678" font-weight="400" text-anchor="start" letter-spacing="0">correct on clean dossiers 34/34  ·  fooled on 3 of 424 attacked gates</text>
+<text x="234" y="362" font-size="15" fill="#142c40" font-weight="700" text-anchor="end" letter-spacing="0">DeepSeek V4 Pro</text>
+<text x="234" y="378" font-size="11" fill="#506678" font-weight="400" text-anchor="end" letter-spacing="0">deepseek/deepseek-v4-pro-0813</text>
+<path d="M250 350 H856 a4 4 0 0 1 4 4 V370 a4 4 0 0 1 -4 4 H250 Z" fill="#eef4f7" stroke="none" stroke-width="1"/>
+<g><title>DeepSeek V4 Pro: 89.2 / 100</title><path d="M250 350 H790.12 a4 4 0 0 1 4 4 V370 a4 4 0 0 1 -4 4 H250 Z" fill="#a36c24" stroke="none" stroke-width="1"/></g>
+<text x="874" y="369" font-size="20" fill="#142c40" font-weight="700" text-anchor="start" letter-spacing="0" font-variant-numeric="tabular-nums">89.2</text>
+<text x="252" y="391" font-size="11.5" fill="#506678" font-weight="400" text-anchor="start" letter-spacing="0">correct on clean dossiers 33/34  ·  fooled on 34 of 419 attacked gates</text>
+<text x="234" y="426" font-size="15" fill="#142c40" font-weight="700" text-anchor="end" letter-spacing="0">GPT-6 Luna Pro</text>
+<text x="234" y="442" font-size="11" fill="#506678" font-weight="400" text-anchor="end" letter-spacing="0">openai/gpt-6-luna-pro</text>
+<path d="M250 414 H856 a4 4 0 0 1 4 4 V434 a4 4 0 0 1 -4 4 H250 Z" fill="#eef4f7" stroke="none" stroke-width="1"/>
+<g><title>GPT-6 Luna Pro: 88.7 / 100</title><path d="M250 414 H787.07 a4 4 0 0 1 4 4 V434 a4 4 0 0 1 -4 4 H250 Z" fill="#a36c24" stroke="none" stroke-width="1"/></g>
+<text x="874" y="433" font-size="20" fill="#142c40" font-weight="700" text-anchor="start" letter-spacing="0" font-variant-numeric="tabular-nums">88.7</text>
+<text x="252" y="455" font-size="11.5" fill="#506678" font-weight="400" text-anchor="start" letter-spacing="0">correct on clean dossiers 34/34  ·  fooled on 48 of 424 attacked gates</text>
+<text x="234" y="490" font-size="15" fill="#142c40" font-weight="700" text-anchor="end" letter-spacing="0">Qwen3 235B A22B</text>
+<text x="234" y="506" font-size="11" fill="#506678" font-weight="400" text-anchor="end" letter-spacing="0">qwen/qwen3-235b-a22b-2507</text>
+<path d="M250 478 H856 a4 4 0 0 1 4 4 V498 a4 4 0 0 1 -4 4 H250 Z" fill="#eef4f7" stroke="none" stroke-width="1"/>
+<g><title>Qwen3 235B A22B: 15.8 / 100</title><path d="M250 478 H342.38 a4 4 0 0 1 4 4 V498 a4 4 0 0 1 -4 4 H250 Z" fill="#a3402a" stroke="none" stroke-width="1"/></g>
+<text x="874" y="497" font-size="20" fill="#142c40" font-weight="700" text-anchor="start" letter-spacing="0" font-variant-numeric="tabular-nums">15.8</text>
+<text x="252" y="519" font-size="11.5" fill="#506678" font-weight="400" text-anchor="start" letter-spacing="0">correct on clean dossiers 7/34  ·  fooled on 97 of 418 attacked gates</text>
+<path d="M40 578 H960" fill="none" stroke="#d5dfe6" stroke-width="1"/>
+<text x="40" y="600" font-size="12.5" fill="#506678" font-weight="400" text-anchor="start" letter-spacing="0">Sol Pro, Gemini and GLM are within one attack success of each other: read them as tied. Six development dossiers, no interval.</text>
+<text x="40" y="616" font-size="12.5" fill="#506678" font-weight="400" text-anchor="start" letter-spacing="0">Resistance counts attributable successes only. The two adaptive attacks of the pilot are not in the score (they broke 5 of 6 models).</text>
+</g></svg>

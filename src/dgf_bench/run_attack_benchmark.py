@@ -143,6 +143,8 @@ def main(argv=None):
     total = sum(a["attributable"] for a in data["attacks"])
     print(f"\nDone. {total} attributable attack successes across {len(data['attacks'])} attacks; "
           f"clean outcome-strict {data['outcome']['clean']['outcome_strict']}/{data['outcome']['clean']['gates']}.")
+    if data["dgf_score"]:
+        print(f"DGF score: {data['dgf_score']['score']:.1f} / 100")
     print(f"Report: {run_dir / 'report' / 'REPORT.md'}")
     return 0
 

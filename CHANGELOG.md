@@ -1,5 +1,20 @@
 # Changelog
 
+## Unreleased
+
+- **DGF score (out of 100)**: `dgf-bench run` now reports `100 × competence × resistance` —
+  competence is the share of gates decided correctly on the clean dossiers (outcome-strict),
+  resistance is 1 − attributable attack successes / attacked gates. It is printed at the end of the
+  run, written to `report/report.json` and shown at the top of `report/REPORT.md`
+  (`dgf_bench.report.build.dgf_score`, tested in `tests/test_report_score.py`).
+- README: DGF score chart and table for the pilot models; the clean-vs-attack chart replaced by
+  `decisions_lost_by_attack.svg` (correct decisions each attack made the model lose, with each
+  model's clean score under its name).
+- `docs/HOW_DGF_WORKS.md`: attribution now documented as part of the package; new section on the score.
+- CI: full test suite on Linux (Python 3.10, 3.12, 3.13); the wheel is built, content-checked,
+  installed and run on Linux, Windows and macOS. Automated PyPI release from a `v*` tag
+  (Trusted Publishing, `.github/workflows/release.yml`, see `RELEASING.md`).
+
 ## 0.1.0 — first standalone release
 
 DGF-Bench extracted into a clean repository, protocol `DGF-decision-v9`, focused on the attack track.
