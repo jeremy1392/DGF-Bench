@@ -6,8 +6,35 @@ on:
   pull_request:
 
 jobs:
+  # The full offline test suite generates dossiers, which renders the architecture diagram with
+  # the native Cairo library. It runs on Linux, where Cairo installs with apt.
   tests:
-    name: Tests (${{ matrix.os }}, Python ${{ matrix.python }})
+    name: Tests (Linux, Python ${{ matrix.python }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.10", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - run: sudo apt-get update && sudo apt-get install -y libcairo2
+      - run: python -m pip install -e ".[pdf]"
+      - name: Doctor and offline self-test
+        run: |
+          dgf-bench doctor
+          dgf-bench selftest
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Compile everything
+        run: python -m compileall -q src tests generate_examples.py
+
+  # Build the distributions once, then install the wheel from outside the checkout on every OS.
+  package:
+    name: Wheel (${{ matrix.os }}, Python ${{ matrix.python }})
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -19,38 +46,37 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
-      - name: Install Cairo (Linux)
-        if: runner.os == 'Linux'
+      - if: runner.os == 'Linux'
         run: sudo apt-get update && sudo apt-get install -y libcairo2
-      - name: Install package
-        run: python -m pip install -e ".[pdf,dev]"
-      - name: Doctor and offline self-test
+      - name: Build and check distributions
         run: |
-          dgf-bench doctor
-          dgf-bench selftest
-      - name: Unit tests
-        run: python -m unittest discover -s tests -v
-      - name: Compile everything
-        run: python -m compileall -q src tests
-
-  package:
-    name: Build wheel
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - run: python -m pip install build twine
-      - run: python -m build --outdir dist
-      - run: python -m twine check dist/*
-      - name: Wheel must not ship secrets
+          python -m pip install build twine
+          python -m build --outdir dist
+          python -m twine check dist/*
+      - name: Wheel must ship the data and no secrets
+        shell: bash
         run: |
           python - <<'EOF'
           import glob, zipfile
-          for whl in glob.glob('dist/*.whl'):
-              names = zipfile.ZipFile(whl).namelist()
-              assert not any(n.endswith('.env') for n in names), 'a .env file is inside the wheel'
-              assert any('Microsoft_Terms_of_Use' in n for n in names), 'Microsoft terms missing from the wheel'
-          print('wheel content OK')
+          names = zipfile.ZipFile(glob.glob('dist/*.whl')[0]).namelist()
+          assert not any(n.endswith('.env') for n in names), 'a .env file is inside the wheel'
+          assert not any(n.startswith('example/') for n in names), 'example dossiers are inside the wheel'
+          assert any('Microsoft_Terms_of_Use' in n for n in names), 'Microsoft terms missing from the wheel'
+          assert any('data/smoke_dataset' in n for n in names), 'bundled smoke dataset missing'
+          print('wheel content OK:', len(names), 'files')
           EOF
+      - name: Install the wheel in a clean environment and run it
+        shell: bash
+        run: |
+          python -m venv "$RUNNER_TEMP/wheelenv"
+          if [ "$RUNNER_OS" = "Windows" ]; then PY="$RUNNER_TEMP/wheelenv/Scripts/python.exe"; else PY="$RUNNER_TEMP/wheelenv/bin/python"; fi
+          WHEEL=$(ls dist/*.whl)
+          "$PY" -m pip install "${WHEEL}[pdf]"
+          cd "$RUNNER_TEMP"
+          "$PY" -m dgf_bench --version
+          "$PY" -m dgf_bench doctor
+          "$PY" -m dgf_bench selftest
+          # Generating dossiers needs the native Cairo library, installed above on Linux only.
+          if [ "$RUNNER_OS" = "Linux" ]; then
+            "$PY" -m dgf_bench run --model any/model --dossier-number 1 --route build --dry-run --output-dir smoke-run
+          fi
