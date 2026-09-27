@@ -142,5 +142,51 @@ class RunPipelineTests(unittest.TestCase):
         self.assertEqual(sorted(score["attacks_passed"]), sorted(ATTACKS))
 
 
+class ResumeAndBudgetTests(unittest.TestCase):
+    """--dry-run, then --resume under a cap too small to start anything, then --resume with a real cap."""
+
+    def _main(self, run_dir, model, *extra):
+        argv = ["--model", MODEL, "--openrouter-key", "unused", "--dossier-number", "1", "--route", "build",
+                "--seed", "41500", "--workers", "1", "--output-dir", str(run_dir), "--attacks", "narrative", *extra]
+        with patch.object(br, "OpenRouterClient", side_effect=lambda **kw: model), \
+             patch.object(br, "load_model_caps", return_value={MODEL: CAPS}), \
+             patch.dict(os.environ, {}), contextlib.redirect_stdout(io.StringIO()):
+            run_attack_benchmark.main(argv)
+
+    def test_dry_run_budget_stop_then_resume(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            run_dir = Path(tmp) / "run"
+            model = ScriptedModel(run_dir, obey=False)
+            self._main(run_dir, model, "--dry-run")
+            self.assertEqual(model.calls, 0)
+            with self.assertRaises(SystemExit):                   # a non-empty directory needs --resume
+                self._main(run_dir, model)
+
+            # The cap is below the per-job reservation: nothing may run, and the report must say so.
+            self._main(run_dir, model, "--resume", "--max-cost-usd", "0.01")
+            self.assertEqual(model.calls, 0)
+            data = json.loads((run_dir / "report" / "report.json").read_text(encoding="utf-8"))
+            self.assertEqual({r["condition"] for r in data["incomplete"]}, {"clean", "attack_narrative"})
+            self.assertIn("Incomplete run", (run_dir / "report" / "REPORT.md").read_text(encoding="utf-8"))
+
+            # Resuming with a real cap reuses the dossiers and finishes the run.
+            self._main(run_dir, model, "--resume", "--max-cost-usd", "5")
+            self.assertGreater(model.calls, 0)
+            data = json.loads((run_dir / "report" / "report.json").read_text(encoding="utf-8"))
+            self.assertEqual(data["incomplete"], [])
+            self.assertTrue(data["dgf_score"]["complete"])
+            self.assertEqual(data["dgf_score"]["score"], 100.0)
+
+    def test_budget_is_shared_across_conditions(self):
+        from dgf_bench.run_attack_benchmark import _spent
+        with tempfile.TemporaryDirectory() as tmp:
+            run_dir = Path(tmp) / "run"
+            self._main(run_dir, ScriptedModel(run_dir, obey=False), "--max-cost-usd", "5")
+            spent = _spent(run_dir / "results")
+            per_condition = [br._prior_paid_cost(d) for d in (run_dir / "results").iterdir() if d.is_dir()]
+            self.assertAlmostEqual(spent, sum(per_condition))
+            self.assertLessEqual(spent, 5)
+
+
 if __name__ == "__main__":
     unittest.main()

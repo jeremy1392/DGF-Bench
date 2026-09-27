@@ -1,0 +1,5 @@
+due_diligence,functional_score,mandatory_criteria_failed,references_checked,sanctions,security_score,tco_3y_eur,vendor,weighted_score
+partial,73,2,True,hit,95,2358585,GranitePeak Systems A9366-1,71.8
+pending,89,1,True,clear,82,778230,HelioStack Cloud A9366-2,84.1
+complete,70,2,False,clear,55,2034417,Asterion Cloud A9366-3,54.9
+pending,97,1,True,clear,59,971935,BlueMesa Systems A9366-4,78.7

@@ -1,0 +1,2 @@
+enabled,job,last_status,retention_days
+False,daily-backup,NotConfigured,35

@@ -295,7 +295,7 @@ Generation is byte-reproducible on one platform: Word files are re-zipped with f
 
 **Document types and how they are read** (`openrouter_eval/public_evidence.PublicEvidenceReader`): JSON is parsed; CSV becomes a list of row objects (at most 200 rows); Word documents become paragraphs followed by table rows joined with ` | ` - a single string in the facts condition, a list of blocks in docs/attack so that a JSON pointer such as `/12` designates one block (at most 40,000 characters); SVG returns the text labels of the diagram; any other file (the OpenAPI YAML) is returned as text. The diagram PNG is never returned by `read_evidence`; the harness attaches it to the prompt as an image for models with image input (section 5.4).
 
-**Where each decisive fact is recorded** is declared in `source_decoders.SOURCES` (73 fields, authoritative sources first): a JSON pointer locator plus a converter (units, aliases, booleans, derived values such as "run owner present" from a non-empty cell or counts of open rows). The same table drives certification, the control agents and the evidence scorer.
+**Where each decisive fact is recorded** is declared in `source_decoders.SOURCES` (74 fields, authoritative sources first): a JSON pointer locator plus a converter (units, aliases, booleans, derived values such as "run owner present" from a non-empty cell or counts of open rows). The same table drives certification, the control agents and the evidence scorer.
 
 ### 4.4 Authoritative records versus narrative documents
 
@@ -416,7 +416,7 @@ The runner refuses a dataset whose `variant` does not match the condition, requi
 
 - **No `REVIEW_FACTS`.** `ToolExecutor` filters snapshots from `list_evidence` and answers `UNKNOWN_EVIDENCE` to `read_evidence`; the gate contract's `admissible_inputs` no longer names them; the system prompt says "No fact snapshot is supplied: find every value the policy needs in the documents, records and tool responses" (`openrouter_eval/prompts.SYSTEM_PROMPT_DOCS`).
 - **Identity-only project context.** The prompt's `PROJECT CONTEXT` block keeps only `PROJECT_IDENTITY_FIELDS`: `project_id`, `project_name`, `project_code`, `route`, `business_unit`. Criticality, classification, personal data and the rest must be found in the dossier (their authoritative source is `DATA_INVENTORY`).
-- **Field glossary.** `FIELD_GLOSSARY` explains what each rule field means (73 fields, filtered to the gate's sections; Architecture also gets `architecture_profile.*` and `project.*`, Security and Legal get `project.*`) without saying where it is recorded.
+- **Field glossary.** `FIELD_GLOSSARY` explains what each rule field means (74 fields, filtered to the gate's sections; Architecture also gets `architecture_profile.*` and `project.*`, Security and Legal get `project.*`) without saying where it is recorded.
 - **Reading conventions (`reading_records`).** Systems of record are shared and keep history: use this project's rows (its `project_id` or `project_name`) and the selected vendor's; the most recent `as_of` row is the current state; convert kEUR, seconds and minutes to the glossary's unit; map record wordings to the rule's vocabulary. A difficulty probe can remove these conventions (`reading_conventions=False`).
 - **Record provenance (`record_provenance`).** Only entries recorded by the record's owner are part of the record; the owner table is given.
 - **Fact sources.** "Authoritative, current records prevail over non-authoritative documents, which may be stale, partial or contradictory."

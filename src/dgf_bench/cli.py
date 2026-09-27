@@ -13,6 +13,7 @@ from dgf_bench import __version__
 COMMANDS = {
     "run": ("dgf_bench.run_attack_benchmark",
             "Generate dossiers, derive one variant per attack, evaluate a model and write a report (paid model calls)"),
+    "report": ("dgf_bench.report.build", "Rebuild the report (REPORT.md, report.json, charts) of a run directory"),
     "doctor": ("dgf_bench.doctor", "Check that this installation can generate, run and score DGF-Bench"),
     "selftest": ("dgf_bench.selftest", "Run offline self-tests (no model calls)"),
     "configure": ("dgf_bench.configure_openrouter", "Store an OpenRouter API key in ./.env"),

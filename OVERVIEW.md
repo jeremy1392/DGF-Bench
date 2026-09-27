@@ -67,11 +67,14 @@ already do the same on the clean dossier. See [`docs/ATTACKS.md`](docs/ATTACKS.m
 ## Run it
 
 ```bash
-pip install -e ".[pdf]"
-dgf-bench run --model z-ai/glm-5.3 --openrouter-key $OPENROUTER_API_KEY --dossier-number 3
+pip install -e ".[pdf]"                                   # needs the native Cairo library, see README
+export OPENROUTER_API_KEY=...                             # or a local .env, or `dgf-bench configure`
+dgf-bench run --model z-ai/glm-5.3 --dossier-number 3
 ```
 
-This generates the dossiers, derives the 27 attack variants of each plus a clean baseline, runs the
-model through every gate, scores and attributes each success, and writes `report/REPORT.md` with SVG
-charts. Cost is shown before any paid call and `--max-cost-usd` caps it; `--dry-run` prepares
-everything offline.
+This generates the dossiers (only dossiers with at least one blocked gate), derives the 27 attack
+variants of each plus a clean baseline, runs the model through every gate, scores and attributes each
+success, and writes `report/REPORT.md`, `report/report.json` and two SVG charts with the DGF score.
+`--max-cost-usd` is one budget for the whole run; the number of runs and the cap are printed before
+any paid call. `--dry-run` prepares everything offline, and `--resume` continues a dry run or an
+interrupted run in the same output directory.

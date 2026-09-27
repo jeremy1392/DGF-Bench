@@ -1,0 +1,4 @@
+project_id,technology,eol_months,capacity_headroom_pct
+DGF-BLD-040102,container_apps,8,15
+DGF-PRT-E6D15,functions,50,31
+DGF-PRT-27167,vm_ha,4,37

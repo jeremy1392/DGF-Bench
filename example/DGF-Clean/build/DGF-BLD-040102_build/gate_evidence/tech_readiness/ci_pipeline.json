@@ -1,0 +1,5 @@
+{
+  "unit_test_coverage_pct": 70,
+  "critical_static_findings": 2,
+  "build_reproducible": true
+}

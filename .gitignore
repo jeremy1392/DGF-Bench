@@ -10,8 +10,8 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .mypy_cache/
-build/
-dist/
+/build/
+/dist/
 *.egg-info/
 
 # Benchmark outputs (datasets, model runs and reports are regenerated, not versioned)

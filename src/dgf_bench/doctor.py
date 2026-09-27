@@ -38,7 +38,14 @@ def checks():
     else:
         platform = 'linux' if sys.platform.startswith('linux') else sys.platform
         yield ('Cairo rendering', 'WARN', 'unavailable: running and scoring existing datasets works, generating new dossiers '
-               'does not. To enable it, ' + CAIRO_HELP.get(platform, 'install the Cairo graphics library'))
+               '(which `dgf-bench run` does) does not. To enable it, ' + CAIRO_HELP.get(platform, 'install the Cairo graphics library'))
+    try:
+        import pypdf  # noqa: F401
+        import pyhanko  # noqa: F401
+        yield 'PDF support', 'OK', 'the signed-PDF attack can be built (all 27 attacks)'
+    except ImportError:
+        yield ('PDF support', 'WARN', 'pypdf/pyHanko missing: `dgf-bench run` skips the signed-PDF attack (26 attacks). '
+               'Install with `pip install "dgf-bench[pdf]"`')
     env_file = Path.cwd() / '.env'
     in_file = env_file.is_file() and any(line.strip().startswith('OPENROUTER_API_KEY=') and 'REPLACE_ME' not in line
                                          for line in env_file.read_text(encoding='utf-8').splitlines())

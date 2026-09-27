@@ -1,6 +1,6 @@
 # DGF-Bench V2 protocol (pre-registration)
 
-Status: **draft, committed before any V2 model call.** Parameters marked *fixed after the pilot* are set once from the development pilot (step 7) and committed before the main collection; nothing else changes after collection starts. Deviations are recorded in `docs/V2_DEVIATIONS.md` with their date and reason.
+Status: **draft, committed before any V2 model call.** Parameters marked *fixed after the pilot* are set once from the development pilot (step 7) and committed before the main collection; nothing else changes after collection starts. Deviations are recorded in `docs/PROTOCOL_DEVIATIONS.md` with their date and reason.
 
 Protocol `DGF-decision-v9`, package `dgf-bench` 9.0.0 (development versions `9.0.0.devN` during preparation). The v1 study (protocol v8, arXiv:2609.29345) stays frozen and is not re-scored.
 

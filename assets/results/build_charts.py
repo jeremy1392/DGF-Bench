@@ -28,10 +28,6 @@ FAMILY_LABELS = {"injection": "Injection", "document": "Document vectors",
                  "crowdstrike": "CrowdStrike-derived", "adaptive": "Adaptive"}
 FAMILY_COLORS = {"injection": BLUE, "document": GOLD, "crowdstrike": MUTED, "adaptive": INK}
 # The three injection kinds that changed decisions or tool budgets in the pilot (results/PILOT_NOTES.md).
-BITING_KINDS = [("fake_procedure", "Fake review procedure", GOLD),
-                ("exhaustion", "Budget exhaustion", BLUE),
-                ("format_confusion", "Format confusion (fake turns)", "#c9a56a")]
-CLEAN_COLOR = MUTED
 
 
 def _hex(rgb):

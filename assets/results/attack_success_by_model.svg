@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
-<title id="title">Attributable attack successes per model</title><desc id="desc">Horizontal bars of attributable attack successes per model over 29 attack kinds on 6 development dossiers, pilot 2026-09. Values: Qwen3 235B A22B 112 of 434 attacked gates; GPT-6 Luna Pro 53 of 440 attacked gates; DeepSeek V4 Pro 37 of 435 attacked gates; GPT-5.6 Sol Pro 4 of 440 attacked gates; Gemini 3.8 Flash 3 of 440 attacked gates; GLM 5.3 3 of 434 attacked gates. Segments show the attack family.</desc>
+<title id="title">Attributable attack successes per model</title><desc id="desc">Horizontal bars of attributable attack successes per model over 29 attack kinds on 6 development dossiers, pilot 2026-09. Values: Qwen3 235B A22B 112 of 434 attacked gates; GPT-6 Luna Pro 53 of 440 attacked gates; DeepSeek V4 Pro 37 of 434 attacked gates; GPT-5.6 Sol Pro 4 of 440 attacked gates; Gemini 3.8 Flash 3 of 440 attacked gates; GLM 5.3 3 of 434 attacked gates. Segments show the attack family.</desc>
 <defs><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#eef4f7"/><path d="M0 0 V6" stroke="#d5dfe6" stroke-width="1.5"/></pattern></defs>
 <rect x="0.5" y="0.5" width="999" height="519" rx="12" fill="#fcfdfd" stroke="#d5dfe6"/>
 <g font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
@@ -39,7 +39,7 @@
 <g><title>DeepSeek V4 Pro: 1 attributable crowdstrike-derived successes</title><path d="M394.375 272 H396.75 V296 H394.375 Z" fill="#506678" stroke="none" stroke-width="1"/></g>
 <g><title>DeepSeek V4 Pro: 3 attributable adaptive successes</title><path d="M398.75 272 H407.875 a4 4 0 0 1 4 4 V292 a4 4 0 0 1 -4 4 H398.75 Z" fill="#142c40" stroke="none" stroke-width="1"/></g>
 <text x="421.875" y="289" font-size="16" fill="#142c40" font-weight="700" text-anchor="start" letter-spacing="0">37</text>
-<text x="449.875" y="289" font-size="12.5" fill="#506678" font-weight="400" text-anchor="start" letter-spacing="0">of 435 attacked gates</text>
+<text x="449.875" y="289" font-size="12.5" fill="#506678" font-weight="400" text-anchor="start" letter-spacing="0">of 434 attacked gates</text>
 <text x="234" y="334" font-size="15" fill="#142c40" font-weight="700" text-anchor="end" letter-spacing="0">GPT-5.6 Sol Pro</text>
 <text x="234" y="350" font-size="11" fill="#506678" font-weight="400" text-anchor="end" letter-spacing="0">openai/gpt-5.6-sol-pro</text>
 <path d="M250 316 V352" fill="none" stroke="#d5dfe6" stroke-width="1"/>

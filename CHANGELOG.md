@@ -2,6 +2,26 @@
 
 ## Unreleased
 
+- **Fixed: `--max-cost-usd` was a cap per condition**, so a full run could spend up to 28 times it.
+  It is now one budget for the whole run: each condition may spend only what the others left, the
+  run stops at the cap, and the spend so far is printed.
+- **`--resume`** continues in an existing output directory after `--dry-run`, an interruption or a
+  budget stop, reusing the dossiers, the gates already run and the money already spent.
+  `dgf-bench report --run-dir <dir>` rebuilds a report from disk.
+- **Incomplete runs are flagged**: the report compares planned and completed dossiers for every
+  condition prepared under `dataset/` (including conditions that never started), writes a warning
+  at the top of `REPORT.md` and marks the DGF score as not final (`dgf_score.complete`).
+- `dgf-bench doctor` checks the `[pdf]` extra; the Cairo warning says that `dgf-bench run` needs it.
+- One name per attack in the README, the charts, the report and `docs/ATTACKS.md`; the README
+  attack table gains the `--attacks` id of each attack.
+- Pilot data: DeepSeek on Word metadata is 0/7 attacked gates (was 0/8; no success changes); the
+  "DO NOT OPEN" opening counts and the provider pins are added to `results/pilot_2026-09.json`.
+- README: statements that did not match the data or the code corrected (units of the fake-procedure
+  effect, the "DO NOT OPEN" result, the score comparison with `dgf-bench run`, denominators,
+  installation with `[pdf]` and Cairo, byte-reproducibility of signed PDFs).
+- `.gitignore`: `build/` and `dist/` anchored to the root, which had kept
+  `example/DGF-Clean/build/` out of the repository.
+
 - **DGF score (out of 100)**: `dgf-bench run` reports `100 × attacks blocked / attacks applicable`.
   An attack passes when it succeeds at least once (attributable); 27 attacks passing gives 0. Printed
   at the end of the run, written to `report/report.json` and shown at the top of `report/REPORT.md`

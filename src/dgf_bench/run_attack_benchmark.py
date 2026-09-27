@@ -6,9 +6,11 @@ success against the paired clean run, and write a report.
 
     dgf-bench run --model z-ai/glm-5.3 --openrouter-key $KEY --dossier-number 3 [--max-cost-usd 5]
 
-Nothing is charged until the clean generation and certification succeed and the cost line is shown;
-``--dry-run`` stops there. ``--max-cost-usd`` caps the whole run across the clean baseline and all
-attack variants.
+Nothing is charged until the clean generation and certification succeed and the number of runs and the
+budget cap are printed; ``--dry-run`` stops there. ``--max-cost-usd`` is one budget shared by the clean
+baseline and every attack variant: each condition may spend only what the others left, and the run stops
+when the cap is reached. ``--resume`` continues in an existing output directory (after ``--dry-run`` or an
+interruption), reusing its dossiers, the gates already run and the money already spent.
 """
 from __future__ import annotations
 
@@ -93,7 +95,8 @@ def main(argv=None):
     ap.add_argument("--provider", default=None, help="Pin the model to one OpenRouter provider, no fallbacks")
     ap.add_argument("--seed", type=int, default=40000)
     ap.add_argument("--difficulty", type=int, choices=range(1, 6), default=4)
-    ap.add_argument("--max-cost-usd", type=float, default=10.0, help="Total budget across all runs (default: 10)")
+    ap.add_argument("--max-cost-usd", type=float, default=10.0,
+                    help="Total budget in USD for the whole run: the clean baseline and every attack share it (default: 10)")
     ap.add_argument("--max-turns", type=int, default=30)
     ap.add_argument("--max-tool-calls", type=int, default=60)
     ap.add_argument("--max-output-tokens", type=int, default=16384)
@@ -101,6 +104,9 @@ def main(argv=None):
     ap.add_argument("--output-dir", type=Path, default=None)
     ap.add_argument("--generation-workers", type=int, default=1)
     ap.add_argument("--dry-run", action="store_true", help="Generate and certify locally; make no model calls")
+    ap.add_argument("--resume", action="store_true",
+                    help="Continue in an existing output directory (after --dry-run or an interruption): reuse its "
+                         "dossiers, keep the gates already run and their cost, and rebuild the report")
     ns = ap.parse_args(argv)
 
     if ns.dossiers < 1:
@@ -121,16 +127,20 @@ def main(argv=None):
         os.environ["OPENROUTER_API_KEY"] = key
 
     run_dir = (ns.output_dir or (Path.cwd() / "runs" / f"{ns.model.replace('/', '_')}_{ns.dossiers}d")).resolve()
-    if run_dir.exists() and any(run_dir.iterdir()):
-        _die(f"output directory is not empty: {run_dir}")
+    if run_dir.exists() and any(run_dir.iterdir()) and not ns.resume:
+        _die(f"output directory is not empty: {run_dir}\n"
+             "  add --resume to continue in it (after --dry-run or an interruption), or choose another --output-dir")
     run_dir.mkdir(parents=True, exist_ok=True)
     dataset_dir = run_dir / "dataset"
     results_dir = run_dir / "results"
 
     routes = ROUTES if ns.route == "all" else [ns.route]
-    print(f"[1/5] Generating {ns.dossiers} clean dossiers on route(s) {', '.join(routes)} "
-          f"(seed {ns.seed}, difficulty {ns.difficulty})...", flush=True)
-    _generate_clean(dataset_dir / "clean", ns.dossiers, ns.seed, ns.difficulty, routes, ns.generation_workers)
+    if (dataset_dir / "clean" / "dataset_manifest.json").is_file():
+        print(f"[1/5] Reusing the {ns.dossiers} clean dossiers already in {dataset_dir / 'clean'}", flush=True)
+    else:
+        print(f"[1/5] Generating {ns.dossiers} clean dossiers on route(s) {', '.join(routes)} "
+              f"(seed {ns.seed}, difficulty {ns.difficulty})...", flush=True)
+        _generate_clean(dataset_dir / "clean", ns.dossiers, ns.seed, ns.difficulty, routes, ns.generation_workers)
 
     print("[2/5] Certifying that every gate is decidable...", flush=True)
     cert = certify_dataset(dataset_dir / "clean")
@@ -142,6 +152,11 @@ def main(argv=None):
     built = []
     for placement in attacks:
         out = dataset_dir / f"attack_{placement}"
+        if (out / "dataset_manifest.json").is_file():                  # built by an earlier --dry-run or run
+            built.append(placement)
+            continue
+        if out.exists():                                               # half-built by an interrupted run
+            shutil.rmtree(out)
         try:
             make_attack_dataset(dataset_dir / "clean", out, templates="test", rate=1.0, placement=placement)
             built.append(placement)
@@ -150,18 +165,28 @@ def main(argv=None):
     print(f"       {len(built)} variants built.", flush=True)
 
     jobs = ns.dossiers * (len(built) + 1)
+    spent = _spent(results_dir)
     print(f"\n[4/5] Model calls. 1 clean baseline + {len(built)} attacks over {ns.dossiers} dossiers "
-          f"= {jobs} model x dossier runs. Budget cap ${ns.max_cost_usd:.2f}.", flush=True)
+          f"= {jobs} model x dossier runs, sharing one budget cap of ${ns.max_cost_usd:.2f}"
+          + (f" (${spent:.2f} already spent)." if spent else "."), flush=True)
     if ns.dry_run:
-        print("DRY RUN: no model calls made. Datasets and certification are ready under", dataset_dir, flush=True)
+        print(f"DRY RUN: no model calls made. Datasets and certification are ready under {dataset_dir}.\n"
+              "  Run the same command with --resume (and without --dry-run) to evaluate the model on them.", flush=True)
         return 0
 
     providers = {ns.model: ns.provider} if ns.provider else None
-    _run_condition(dataset_dir / "clean", results_dir / "clean", ns, "docs", providers, ns.max_cost_usd)
-    per_attack_budget = ns.max_cost_usd
-    for placement in built:
-        _run_condition(dataset_dir / f"attack_{placement}", results_dir / f"attack_{placement}", ns, "attack",
-                       providers, per_attack_budget)
+    conditions = [("clean", dataset_dir / "clean", "docs")] + \
+                 [(f"attack_{p}", dataset_dir / f"attack_{p}", "attack") for p in built]
+    for name, dataset, condition in conditions:
+        # One budget for the whole run: this condition may spend what the other conditions left.
+        from dgf_bench.openrouter_eval.benchmark_runner import _prior_paid_cost
+        others = _spent(results_dir) - _prior_paid_cost(results_dir / name)
+        allowance = ns.max_cost_usd - others
+        if allowance <= 0:
+            print(f"    budget cap reached (${ns.max_cost_usd:.2f}); {name} and the remaining conditions were not run. "
+                  "Raise --max-cost-usd and add --resume to continue.", flush=True)
+            break
+        _run_condition(dataset, results_dir / name, ns, condition, providers, allowance)
 
     print("\n[5/5] Building the report...", flush=True)
     data = build_report(run_dir)
@@ -172,8 +197,19 @@ def main(argv=None):
         score = data["dgf_score"]
         print(f"DGF score: {score['score']:.1f} / 100 "
               f"(blocked {score['attacks_blocked']} of {score['attacks_applicable']} attacks)")
+    if data["incomplete"]:
+        print("WARNING: the run is incomplete (budget cap or errors): "
+              + ", ".join(f"{c['condition']} {c['completed']}/{c['planned']} dossiers" for c in data["incomplete"])
+              + ". The score is not final; add --resume (and raise --max-cost-usd if needed) to finish it.")
+    print(f"Spent: ${_spent(results_dir):.2f} of ${ns.max_cost_usd:.2f}.")
     print(f"Report: {run_dir / 'report' / 'REPORT.md'}")
     return 0
+
+
+def _spent(results_dir):
+    """USD already paid across every condition of this run (from the runner's usage ledgers)."""
+    from dgf_bench.openrouter_eval.benchmark_runner import _prior_paid_cost
+    return sum(_prior_paid_cost(d) for d in Path(results_dir).iterdir() if d.is_dir()) if Path(results_dir).is_dir() else 0.0
 
 
 def _run_condition(dataset, out_dir, ns, condition, providers, budget):
