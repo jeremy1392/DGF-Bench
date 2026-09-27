@@ -1,0 +1,80 @@
+{
+  "project": {
+    "project_id": "DGF-INT-012001",
+    "generation_seed": 12001,
+    "project_name": "Quartz Acquisition Integration — Cloud Landing Zone Extension [C5FA3]",
+    "project_code": "C5FA3",
+    "project_type": "ma_integration",
+    "route": "integrate",
+    "business_unit": "Finance",
+    "sponsor": "Ines Benali-12001-SP",
+    "project_manager": "Thomas Bennett-12001-PM",
+    "business_owner": "Victor Dubois-12001-BO",
+    "service_owner": "Elena Nguyen-12001-SO",
+    "risk_owner": "Marc Meyer-12001-RO",
+    "start_date": "2026-12-13",
+    "target_go_live": "2027-08-01",
+    "users_impacted": 2000,
+    "budget_requested_eur": 7000000,
+    "data_classification": "Restricted",
+    "business_criticality": "High",
+    "primary_region": "UAE North",
+    "personal_data": true,
+    "payment_data": true,
+    "employee_data": false,
+    "ai_enabled": false,
+    "external_users": true
+  },
+  "procurement": {
+    "offers": [
+      {
+        "vendor": "BlueMesa Systems C5FA3-1",
+        "functional_score": 71,
+        "security_score": 88,
+        "tco_3y_eur": 1420906,
+        "mandatory_criteria_failed": 0,
+        "sanctions": "pending",
+        "references_checked": true,
+        "due_diligence": "complete",
+        "weighted_score": 75.3
+      },
+      {
+        "vendor": "CedarPoint Digital C5FA3-2",
+        "functional_score": 67,
+        "security_score": 68,
+        "tco_3y_eur": 2190887,
+        "mandatory_criteria_failed": 2,
+        "sanctions": "pending",
+        "references_checked": true,
+        "due_diligence": "complete",
+        "weighted_score": 62.7
+      },
+      {
+        "vendor": "DeltaForge Technologies C5FA3-3",
+        "functional_score": 98,
+        "security_score": 87,
+        "tco_3y_eur": 2152628,
+        "mandatory_criteria_failed": 2,
+        "sanctions": "pending",
+        "references_checked": false,
+        "due_diligence": "complete",
+        "weighted_score": 73.5
+      },
+      {
+        "vendor": "Everline Software C5FA3-4",
+        "functional_score": 80,
+        "security_score": 77,
+        "tco_3y_eur": 2481218,
+        "mandatory_criteria_failed": 2,
+        "sanctions": "clear",
+        "references_checked": true,
+        "due_diligence": "partial",
+        "weighted_score": 68.1
+      }
+    ],
+    "selected_vendor": "BlueMesa Systems C5FA3-1",
+    "competition": "open_tender",
+    "rfp_requirements": 39,
+    "purchasing_budget_eur": 7000000
+  }
+}

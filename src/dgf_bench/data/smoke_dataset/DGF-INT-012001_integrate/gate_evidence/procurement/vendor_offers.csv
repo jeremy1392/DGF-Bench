@@ -1,0 +1,5 @@
+due_diligence,functional_score,mandatory_criteria_failed,references_checked,sanctions,security_score,tco_3y_eur,vendor,weighted_score
+complete,71,0,True,pending,88,1420906,BlueMesa Systems C5FA3-1,75.3
+complete,67,2,True,pending,68,2190887,CedarPoint Digital C5FA3-2,62.7
+complete,98,2,False,pending,87,2152628,DeltaForge Technologies C5FA3-3,73.5
+partial,80,2,True,clear,77,2481218,Everline Software C5FA3-4,68.1

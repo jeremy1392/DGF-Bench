@@ -1,0 +1,2 @@
+principal,role,scope,type
+svc-shared,Reader,resource-group,ServicePrincipal

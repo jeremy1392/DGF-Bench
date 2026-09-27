@@ -1,0 +1,97 @@
+[
+  {
+    "from": "BUY-01-PROCUREMENT-1",
+    "to": "BUY-02-LEGAL-1",
+    "required_handoff_fields": [
+      "case_id",
+      "source_version",
+      "occurrence_id",
+      "gate",
+      "phase",
+      "disposition",
+      "finding_ids",
+      "actions",
+      "evidence_refs",
+      "evidence_support",
+      "authorization_required",
+      "rationale",
+      "verification_status"
+    ]
+  },
+  {
+    "from": "BUY-02-LEGAL-1",
+    "to": "BUY-03-COMPLIANCE-1",
+    "required_handoff_fields": [
+      "case_id",
+      "source_version",
+      "occurrence_id",
+      "gate",
+      "phase",
+      "disposition",
+      "finding_ids",
+      "actions",
+      "evidence_refs",
+      "evidence_support",
+      "authorization_required",
+      "rationale",
+      "verification_status"
+    ]
+  },
+  {
+    "from": "BUY-03-COMPLIANCE-1",
+    "to": "BUY-04-SECURITY-1",
+    "required_handoff_fields": [
+      "case_id",
+      "source_version",
+      "occurrence_id",
+      "gate",
+      "phase",
+      "disposition",
+      "finding_ids",
+      "actions",
+      "evidence_refs",
+      "evidence_support",
+      "authorization_required",
+      "rationale",
+      "verification_status"
+    ]
+  },
+  {
+    "from": "BUY-04-SECURITY-1",
+    "to": "BUY-05-IT-1",
+    "required_handoff_fields": [
+      "case_id",
+      "source_version",
+      "occurrence_id",
+      "gate",
+      "phase",
+      "disposition",
+      "finding_ids",
+      "actions",
+      "evidence_refs",
+      "evidence_support",
+      "authorization_required",
+      "rationale",
+      "verification_status"
+    ]
+  },
+  {
+    "from": "BUY-05-IT-1",
+    "to": "BUY-06-GENERAL-1",
+    "required_handoff_fields": [
+      "case_id",
+      "source_version",
+      "occurrence_id",
+      "gate",
+      "phase",
+      "disposition",
+      "finding_ids",
+      "actions",
+      "evidence_refs",
+      "evidence_support",
+      "authorization_required",
+      "rationale",
+      "verification_status"
+    ]
+  }
+]

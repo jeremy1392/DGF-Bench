@@ -1,0 +1,49 @@
+{
+  "mandates": [
+    {
+      "reference": "MANDATE-f96908de-5229-5007-9593-dfb2edc6fa1c-BUILD-01-IT-1",
+      "occurrence_id": "BUILD-01-IT-1",
+      "gate": "it",
+      "phase": "opportunity",
+      "authority": "Thomas Haddad-12002-RO",
+      "scope": "all and only risk-acceptable findings",
+      "active": true
+    },
+    {
+      "reference": "MANDATE-f96908de-5229-5007-9593-dfb2edc6fa1c-BUILD-02-ARCHITECTURE-1",
+      "occurrence_id": "BUILD-02-ARCHITECTURE-1",
+      "gate": "architecture",
+      "phase": "design",
+      "authority": "Thomas Haddad-12002-RO",
+      "scope": "all and only risk-acceptable findings",
+      "active": true
+    },
+    {
+      "reference": "MANDATE-f96908de-5229-5007-9593-dfb2edc6fa1c-BUILD-03-SECURITY-1",
+      "occurrence_id": "BUILD-03-SECURITY-1",
+      "gate": "security",
+      "phase": "design",
+      "authority": "Thomas Haddad-12002-RO",
+      "scope": "all and only risk-acceptable findings",
+      "active": true
+    },
+    {
+      "reference": "MANDATE-f96908de-5229-5007-9593-dfb2edc6fa1c-BUILD-04-TECH_READINESS-1",
+      "occurrence_id": "BUILD-04-TECH_READINESS-1",
+      "gate": "tech_readiness",
+      "phase": "build_acceptance",
+      "authority": "Thomas Haddad-12002-RO",
+      "scope": "all and only risk-acceptable findings",
+      "active": true
+    },
+    {
+      "reference": "MANDATE-f96908de-5229-5007-9593-dfb2edc6fa1c-BUILD-05-GENERAL-1",
+      "occurrence_id": "BUILD-05-GENERAL-1",
+      "gate": "general",
+      "phase": "governance",
+      "authority": "Thomas Haddad-12002-RO",
+      "scope": "all and only risk-acceptable findings",
+      "active": true
+    }
+  ]
+}

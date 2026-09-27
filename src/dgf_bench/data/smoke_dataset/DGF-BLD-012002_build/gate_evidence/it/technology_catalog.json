@@ -1,0 +1,22 @@
+{
+  "technology": "container_apps",
+  "hosting_model": "container_apps",
+  "decisions": [
+    {
+      "as_of": "2026-11-07",
+      "catalog_status": "standard",
+      "waiver_present": true,
+      "waiver_expiry_days": 180,
+      "existing_capability_overlap": false,
+      "recorded_by": "Enterprise Architecture"
+    },
+    {
+      "as_of": "2026-10-21",
+      "catalog_status": "approved_exception",
+      "waiver_present": true,
+      "waiver_expiry_days": 180,
+      "existing_capability_overlap": true,
+      "recorded_by": "Enterprise Architecture"
+    }
+  ]
+}

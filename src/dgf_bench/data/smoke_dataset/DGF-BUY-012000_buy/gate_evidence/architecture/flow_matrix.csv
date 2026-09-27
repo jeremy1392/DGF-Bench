@@ -1,0 +1,4 @@
+classification,destination,protocol,purpose,source
+Confidential,Azure Front Door,HTTPS/443,User traffic,Internet Users
+Confidential,Azure API Management,HTTPS/443,API policy enforcement,Azure Front Door
+Confidential,Azure SQL Managed Instance,TLS/Private Link,Application data,Azure Container Apps Environment

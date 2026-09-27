@@ -1,0 +1,47 @@
+{
+  "project": {
+    "project_id": "DGF-INT-012001",
+    "generation_seed": 12001,
+    "project_name": "Quartz Acquisition Integration — Cloud Landing Zone Extension [C5FA3]",
+    "project_code": "C5FA3",
+    "project_type": "ma_integration",
+    "route": "integrate",
+    "business_unit": "Finance",
+    "sponsor": "Ines Benali-12001-SP",
+    "project_manager": "Thomas Bennett-12001-PM",
+    "business_owner": "Victor Dubois-12001-BO",
+    "service_owner": "Elena Nguyen-12001-SO",
+    "risk_owner": "Marc Meyer-12001-RO",
+    "start_date": "2026-12-13",
+    "target_go_live": "2027-08-01",
+    "users_impacted": 2000,
+    "budget_requested_eur": 7000000,
+    "data_classification": "Restricted",
+    "business_criticality": "High",
+    "primary_region": "UAE North",
+    "personal_data": true,
+    "payment_data": true,
+    "employee_data": false,
+    "ai_enabled": false,
+    "external_users": true
+  },
+  "compliance": {
+    "applicable_regulations": [
+      "DORA",
+      "PCI-DSS"
+    ],
+    "dpia_required": true,
+    "dpia_status": "complete",
+    "required_residency": "EU",
+    "residency_compliant": false,
+    "retention_years": 1,
+    "legal_hold_supported": true,
+    "deletion_enforced": true,
+    "audit_trail": "complete",
+    "accessibility_status": "pass",
+    "ethics_review": "passed",
+    "regulatory_mapping": "partial",
+    "third_party_monitoring": "continuous",
+    "export_control": "pending"
+  }
+}

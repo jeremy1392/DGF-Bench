@@ -1,0 +1,72 @@
+{
+  "resources": [
+    {
+      "name": "Azure Container Apps Environment",
+      "publicNetworkAccess": true,
+      "region": "East US",
+      "multiAz": false
+    },
+    {
+      "name": "Frontend Container",
+      "publicNetworkAccess": true,
+      "region": "East US",
+      "multiAz": false
+    },
+    {
+      "name": "API Container",
+      "publicNetworkAccess": true,
+      "region": "East US",
+      "multiAz": false
+    },
+    {
+      "name": "Worker Container",
+      "publicNetworkAccess": true,
+      "region": "East US",
+      "multiAz": false
+    },
+    {
+      "name": "Azure SQL Managed Instance",
+      "publicNetworkAccess": false,
+      "region": "East US",
+      "multiAz": false
+    },
+    {
+      "name": "Azure Storage Account",
+      "publicNetworkAccess": false,
+      "region": "East US",
+      "multiAz": false
+    },
+    {
+      "name": "Azure Key Vault",
+      "publicNetworkAccess": false,
+      "region": "East US",
+      "multiAz": false
+    },
+    {
+      "name": "Azure API Management",
+      "publicNetworkAccess": true,
+      "region": "East US",
+      "multiAz": false
+    },
+    {
+      "name": "Azure Service Bus",
+      "publicNetworkAccess": true,
+      "region": "East US",
+      "multiAz": false
+    },
+    {
+      "name": "Azure Event Hubs",
+      "publicNetworkAccess": true,
+      "region": "East US",
+      "multiAz": false
+    },
+    {
+      "name": "Azure Front Door",
+      "publicNetworkAccess": true,
+      "region": "East US",
+      "multiAz": false
+    }
+  ],
+  "private_endpoints": true,
+  "firewall": true
+}

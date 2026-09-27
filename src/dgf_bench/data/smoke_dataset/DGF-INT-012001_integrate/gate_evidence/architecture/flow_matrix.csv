@@ -1,0 +1,3 @@
+classification,destination,protocol,purpose,source
+Restricted,Azure Front Door,HTTPS/443,User traffic,Internet Users
+Restricted,Azure SQL Managed Instance,TLS/Private Link,Application data,Azure App Service

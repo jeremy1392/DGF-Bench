@@ -1,0 +1,58 @@
+{
+  "applications": [
+    {
+      "application": "Pricing Engine [5FAAF]",
+      "api_gateway": {
+        "required": true,
+        "deployed": true
+      },
+      "latency_s": {
+        "target_p95": 0.1,
+        "measured_p95": 0.061,
+        "measurement_source": "APM"
+      },
+      "exit_plan_status": "draft",
+      "data_domain_owner": "Data Owner 1",
+      "availability": {
+        "zone_redundant": true,
+        "secondary_region": true
+      }
+    },
+    {
+      "application": "Pricing Engine [BBC37]",
+      "api_gateway": {
+        "required": true,
+        "deployed": false
+      },
+      "latency_s": {
+        "target_p95": 0.05,
+        "measured_p95": 0.034,
+        "measurement_source": "APM"
+      },
+      "exit_plan_status": "draft",
+      "data_domain_owner": "Data Owner 2",
+      "availability": {
+        "zone_redundant": true,
+        "secondary_region": false
+      }
+    },
+    {
+      "application": "Quartz Acquisition Integration — Cloud Landing Zone Extension [C5FA3]",
+      "api_gateway": {
+        "required": true,
+        "deployed": false
+      },
+      "latency_s": {
+        "target_p95": 0.05,
+        "measured_p95": 0.18,
+        "measurement_source": "APM"
+      },
+      "exit_plan_status": "missing",
+      "data_domain_owner": "Victor Dubois-12001-BO",
+      "availability": {
+        "zone_redundant": false,
+        "secondary_region": false
+      }
+    }
+  ]
+}

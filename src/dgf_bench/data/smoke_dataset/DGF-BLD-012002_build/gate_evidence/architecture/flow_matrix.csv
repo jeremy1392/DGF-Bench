@@ -1,0 +1,4 @@
+classification,destination,protocol,purpose,source
+Confidential,Azure CDN,HTTPS/443,User traffic,Internet Users
+Confidential,Azure API Management,HTTPS/443,API policy enforcement,Application Gateway WAF
+Confidential,Azure SQL Managed Instance,TLS/Public endpoint,Application data,Azure Container Apps Environment

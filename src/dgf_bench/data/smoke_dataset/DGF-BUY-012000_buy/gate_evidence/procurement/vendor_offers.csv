@@ -1,0 +1,5 @@
+due_diligence,functional_score,mandatory_criteria_failed,references_checked,sanctions,security_score,tco_3y_eur,vendor,weighted_score
+complete,89,2,True,pending,63,2542669,Asterion Cloud F2EE0-1,66.6
+partial,90,2,True,pending,65,1632600,BlueMesa Systems F2EE0-2,73.6
+partial,63,2,True,clear,85,2582881,CedarPoint Digital F2EE0-3,63.8
+complete,77,1,True,clear,92,1061030,DeltaForge Technologies F2EE0-4,81.0

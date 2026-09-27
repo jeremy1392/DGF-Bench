@@ -1,0 +1,71 @@
+{
+  "case_id": "efaa4978-a4d7-5bd4-9e1a-1b74a407ad92",
+  "gate_results": [
+    {
+      "occurrence_id": "BUY-01-PROCUREMENT-1",
+      "disposition": "GO|GO_WITH_RESERVATIONS|REWORK|SUSPENSION|NO_GO",
+      "finding_ids": [],
+      "actions": [],
+      "evidence_refs": [],
+      "authorization_required": false,
+      "evidence_support": [],
+      "rationale": "",
+      "confidence": 0.0
+    },
+    {
+      "occurrence_id": "BUY-02-LEGAL-1",
+      "disposition": "GO|GO_WITH_RESERVATIONS|REWORK|SUSPENSION|NO_GO",
+      "finding_ids": [],
+      "actions": [],
+      "evidence_refs": [],
+      "authorization_required": false,
+      "evidence_support": [],
+      "rationale": "",
+      "confidence": 0.0
+    },
+    {
+      "occurrence_id": "BUY-03-COMPLIANCE-1",
+      "disposition": "GO|GO_WITH_RESERVATIONS|REWORK|SUSPENSION|NO_GO",
+      "finding_ids": [],
+      "actions": [],
+      "evidence_refs": [],
+      "authorization_required": false,
+      "evidence_support": [],
+      "rationale": "",
+      "confidence": 0.0
+    },
+    {
+      "occurrence_id": "BUY-04-SECURITY-1",
+      "disposition": "GO|GO_WITH_RESERVATIONS|REWORK|SUSPENSION|NO_GO",
+      "finding_ids": [],
+      "actions": [],
+      "evidence_refs": [],
+      "authorization_required": false,
+      "evidence_support": [],
+      "rationale": "",
+      "confidence": 0.0
+    },
+    {
+      "occurrence_id": "BUY-05-IT-1",
+      "disposition": "GO|GO_WITH_RESERVATIONS|REWORK|SUSPENSION|NO_GO",
+      "finding_ids": [],
+      "actions": [],
+      "evidence_refs": [],
+      "authorization_required": false,
+      "evidence_support": [],
+      "rationale": "",
+      "confidence": 0.0
+    },
+    {
+      "occurrence_id": "BUY-06-GENERAL-1",
+      "disposition": "GO|GO_WITH_RESERVATIONS|REWORK|SUSPENSION|NO_GO",
+      "finding_ids": [],
+      "actions": [],
+      "evidence_refs": [],
+      "authorization_required": false,
+      "evidence_support": [],
+      "rationale": "",
+      "confidence": 0.0
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "resources": [
+    {
+      "name": "Azure App Service",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": false
+    },
+    {
+      "name": "AKS App Pool",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": false
+    },
+    {
+      "name": "Azure Functions",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": false
+    },
+    {
+      "name": "Batch VM",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": false
+    },
+    {
+      "name": "Azure SQL Managed Instance",
+      "publicNetworkAccess": false,
+      "region": "UAE North",
+      "multiAz": false
+    },
+    {
+      "name": "Azure Storage Account",
+      "publicNetworkAccess": false,
+      "region": "UAE North",
+      "multiAz": false
+    },
+    {
+      "name": "Azure Key Vault",
+      "publicNetworkAccess": false,
+      "region": "UAE North",
+      "multiAz": false
+    },
+    {
+      "name": "Azure Service Bus",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": false
+    },
+    {
+      "name": "Azure Event Hubs",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": false
+    },
+    {
+      "name": "Azure Front Door",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": false
+    }
+  ],
+  "private_endpoints": true,
+  "firewall": false
+}

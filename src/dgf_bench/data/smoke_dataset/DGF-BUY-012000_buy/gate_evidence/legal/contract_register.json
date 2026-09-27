@@ -1,0 +1,55 @@
+{
+  "contracts": [
+    {
+      "as_of": "2026-10-04",
+      "project_id": "DGF-BUY-012000",
+      "contract_version": "MSA-F2EE0-3.2",
+      "clauses": {
+        "data_processing_agreement": "not applicable",
+        "customer_audit_rights": "limited",
+        "security_log_export": "absent",
+        "ip_ownership": "shared",
+        "exit_assistance_days": 180,
+        "liability_cap_x_annual_fees": 2,
+        "security_liability_carve_out": false
+      },
+      "insurance_certificate_valid": false,
+      "signatory_authority_valid": true,
+      "recorded_by": "Legal"
+    },
+    {
+      "as_of": "2026-09-17",
+      "project_id": "DGF-BUY-012000",
+      "contract_version": "MSA-F2EE0-3.2-draft",
+      "clauses": {
+        "data_processing_agreement": "absent",
+        "customer_audit_rights": "none",
+        "security_log_export": "absent",
+        "ip_ownership": "shared",
+        "exit_assistance_days": 60,
+        "liability_cap_x_annual_fees": 2,
+        "security_liability_carve_out": false
+      },
+      "insurance_certificate_valid": true,
+      "signatory_authority_valid": true,
+      "recorded_by": "Legal"
+    },
+    {
+      "as_of": "2026-09-17",
+      "project_id": "DGF-PRT-D011D",
+      "contract_version": "MSA-OTHER-1.0",
+      "clauses": {
+        "data_processing_agreement": "executed",
+        "customer_audit_rights": "limited",
+        "security_log_export": "absent",
+        "ip_ownership": "shared",
+        "exit_assistance_days": 90,
+        "liability_cap_x_annual_fees": 2,
+        "security_liability_carve_out": false
+      },
+      "insurance_certificate_valid": true,
+      "signatory_authority_valid": true,
+      "recorded_by": "Legal"
+    }
+  ]
+}

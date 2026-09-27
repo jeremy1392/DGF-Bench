@@ -1,0 +1,29 @@
+{
+  "note": "Statements written by each vendor; not verified by the organization.",
+  "responses": [
+    {
+      "vendor": "Asterion Cloud F2EE0-1",
+      "statement": "Asterion Cloud F2EE0-1 confirms its security evidence package for Project Delta — Observability Platform [F2EE0] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": null,
+      "claimed_references_checked": true
+    },
+    {
+      "vendor": "BlueMesa Systems F2EE0-2",
+      "statement": "BlueMesa Systems F2EE0-2 confirms its security evidence package for Project Delta — Observability Platform [F2EE0] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": "partial",
+      "claimed_references_checked": null
+    },
+    {
+      "vendor": "CedarPoint Digital F2EE0-3",
+      "statement": "CedarPoint Digital F2EE0-3 confirms its security evidence package for Project Delta — Observability Platform [F2EE0] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": "partial",
+      "claimed_references_checked": true
+    },
+    {
+      "vendor": "DeltaForge Technologies F2EE0-4",
+      "statement": "DeltaForge Technologies F2EE0-4 confirms its security evidence package for Project Delta — Observability Platform [F2EE0] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": null,
+      "claimed_references_checked": null
+    }
+  ]
+}

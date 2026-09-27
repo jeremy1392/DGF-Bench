@@ -1,0 +1,54 @@
+{
+  "project": {
+    "project_id": "DGF-BLD-012002",
+    "generation_seed": 12002,
+    "project_name": "Project Juno — Claims Automation [3C70A]",
+    "project_code": "3C70A",
+    "project_type": "new_project",
+    "route": "build",
+    "business_unit": "Risk",
+    "sponsor": "Leila Santos-12002-SP",
+    "project_manager": "Daria Moreau-12002-PM",
+    "business_owner": "Adam Volkov-12002-BO",
+    "service_owner": "Amira Nguyen-12002-SO",
+    "risk_owner": "Thomas Haddad-12002-RO",
+    "start_date": "2026-10-09",
+    "target_go_live": "2027-03-10",
+    "users_impacted": 2000,
+    "budget_requested_eur": 7000000,
+    "data_classification": "Confidential",
+    "business_criticality": "Critical",
+    "primary_region": "North Europe",
+    "personal_data": false,
+    "payment_data": false,
+    "employee_data": false,
+    "ai_enabled": false,
+    "external_users": false
+  },
+  "architecture": {
+    "hld_version": "HLD-3C70A-v4.7",
+    "lld_version": "LLD-3C70A-v2.0",
+    "api_gateway_required": false,
+    "api_gateway_present": true,
+    "ip_overlap": false,
+    "data_owner_present": true,
+    "data_lineage_complete": true,
+    "latency_target_ms": 50,
+    "measured_latency_ms": 15,
+    "load_test_peak_pct": 125,
+    "architecture_debt_items": 5,
+    "adr_count": 8,
+    "reversibility_status": "documented",
+    "data_export_supported": false,
+    "private_cidrs": [
+      "10.166.32.0/24",
+      "10.166.33.0/24",
+      "10.166.34.0/24"
+    ],
+    "dns_zone": "dgf-bld-012002.corp.example"
+  },
+  "architecture_profile": {
+    "multi_az": true,
+    "multi_region": false
+  }
+}

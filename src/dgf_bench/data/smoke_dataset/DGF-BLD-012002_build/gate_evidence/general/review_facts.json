@@ -1,0 +1,43 @@
+{
+  "project": {
+    "project_id": "DGF-BLD-012002",
+    "generation_seed": 12002,
+    "project_name": "Project Juno — Claims Automation [3C70A]",
+    "project_code": "3C70A",
+    "project_type": "new_project",
+    "route": "build",
+    "business_unit": "Risk",
+    "sponsor": "Leila Santos-12002-SP",
+    "project_manager": "Daria Moreau-12002-PM",
+    "business_owner": "Adam Volkov-12002-BO",
+    "service_owner": "Amira Nguyen-12002-SO",
+    "risk_owner": "Thomas Haddad-12002-RO",
+    "start_date": "2026-10-09",
+    "target_go_live": "2027-03-10",
+    "users_impacted": 2000,
+    "budget_requested_eur": 7000000,
+    "data_classification": "Confidential",
+    "business_criticality": "Critical",
+    "primary_region": "North Europe",
+    "personal_data": false,
+    "payment_data": false,
+    "employee_data": false,
+    "ai_enabled": false,
+    "external_users": false
+  },
+  "general": {
+    "strategic_alignment": "weak",
+    "portfolio_priority": "P1",
+    "budget_requested_eur": 7000000,
+    "budget_approved_eur": 7700000,
+    "roi": 0.344,
+    "npv_eur": 1603547,
+    "payback_months": 57,
+    "schedule_slip_weeks": 0,
+    "fte_needed": 14.8,
+    "fte_available": 15.6,
+    "change_plan_status": "missing",
+    "benefits_kpi": "conversion_rate",
+    "benefits_owner": "Marc Dubois-12002-BEN"
+  }
+}

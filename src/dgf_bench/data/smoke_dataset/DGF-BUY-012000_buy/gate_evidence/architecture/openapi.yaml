@@ -1,0 +1,17 @@
+openapi: 3.0.3
+info:
+  title: Project Delta — Observability Platform [F2EE0] API
+  version: 1.0.0
+paths:
+  /health:
+    get:
+      responses:
+        '200':
+          description: OK
+  /v1/items:
+    get:
+      security:
+        - oauth2: []
+      responses:
+        '200':
+          description: Success

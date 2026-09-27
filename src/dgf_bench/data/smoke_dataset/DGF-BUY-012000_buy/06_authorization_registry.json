@@ -1,0 +1,58 @@
+{
+  "mandates": [
+    {
+      "reference": "MANDATE-efaa4978-a4d7-5bd4-9e1a-1b74a407ad92-BUY-01-PROCUREMENT-1",
+      "occurrence_id": "BUY-01-PROCUREMENT-1",
+      "gate": "procurement",
+      "phase": "design",
+      "authority": "Noor Meyer-12000-RO",
+      "scope": "all and only risk-acceptable findings",
+      "active": true
+    },
+    {
+      "reference": "MANDATE-efaa4978-a4d7-5bd4-9e1a-1b74a407ad92-BUY-02-LEGAL-1",
+      "occurrence_id": "BUY-02-LEGAL-1",
+      "gate": "legal",
+      "phase": "design",
+      "authority": "Noor Meyer-12000-RO",
+      "scope": "all and only risk-acceptable findings",
+      "active": true
+    },
+    {
+      "reference": "MANDATE-efaa4978-a4d7-5bd4-9e1a-1b74a407ad92-BUY-03-COMPLIANCE-1",
+      "occurrence_id": "BUY-03-COMPLIANCE-1",
+      "gate": "compliance",
+      "phase": "design",
+      "authority": "Noor Meyer-12000-RO",
+      "scope": "all and only risk-acceptable findings",
+      "active": true
+    },
+    {
+      "reference": "MANDATE-efaa4978-a4d7-5bd4-9e1a-1b74a407ad92-BUY-04-SECURITY-1",
+      "occurrence_id": "BUY-04-SECURITY-1",
+      "gate": "security",
+      "phase": "design",
+      "authority": "Noor Meyer-12000-RO",
+      "scope": "all and only risk-acceptable findings",
+      "active": true
+    },
+    {
+      "reference": "MANDATE-efaa4978-a4d7-5bd4-9e1a-1b74a407ad92-BUY-05-IT-1",
+      "occurrence_id": "BUY-05-IT-1",
+      "gate": "it",
+      "phase": "build_acceptance",
+      "authority": "Noor Meyer-12000-RO",
+      "scope": "all and only risk-acceptable findings",
+      "active": true
+    },
+    {
+      "reference": "MANDATE-efaa4978-a4d7-5bd4-9e1a-1b74a407ad92-BUY-06-GENERAL-1",
+      "occurrence_id": "BUY-06-GENERAL-1",
+      "gate": "general",
+      "phase": "governance",
+      "authority": "Noor Meyer-12000-RO",
+      "scope": "all and only risk-acceptable findings",
+      "active": true
+    }
+  ]
+}

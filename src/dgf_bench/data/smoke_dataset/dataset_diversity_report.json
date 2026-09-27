@@ -1,0 +1,2093 @@
+{
+  "schema": "DGF-Diversity-v1",
+  "case_count": 3,
+  "routes": {
+    "buy": 1,
+    "integrate": 1,
+    "build": 1
+  },
+  "unique_project_ids": 3,
+  "unique_architecture_signatures": 3,
+  "unique_whole_case_decision_fact_signatures": 3,
+  "unique_whole_case_finding_signatures": 3,
+  "gates": {
+    "architecture": {
+      "occurrences": 2,
+      "independent_cases": 2,
+      "decision_counts": {
+        "GO": 1,
+        "REWORK": 1
+      },
+      "decision_entropy_bits": 1.0,
+      "decision_entropy_normalized": 0.5,
+      "phase_adjusted_decision_entropy_normalized": 0.5,
+      "dominant_decision_share": 0.5,
+      "majority_class_baseline": 0.5,
+      "potential_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "NO_GO",
+        "REWORK"
+      ],
+      "unobserved_dispositions": [
+        "GO_WITH_RESERVATIONS",
+        "NO_GO"
+      ],
+      "unique_relevant_fact_signatures": 2,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 2,
+      "finding_pattern_entropy_bits": 1.0,
+      "finding_occurrence_counts": {
+        "ARCH-API-001": 1,
+        "ARCH-HA-001": 1,
+        "ARCH-PERF-001": 1,
+        "ARCH-REV-001": 1
+      },
+      "uncovered_phase_applicable_rules": [
+        "ARCH-DATA-001",
+        "ARCH-IP-001"
+      ],
+      "phase_inapplicable_rules": [],
+      "relevant_field_variation": {
+        "a.multi_az": {
+          "unique_values": 2,
+          "entropy_bits": 1.0
+        },
+        "a.multi_region": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.api_gateway_present": {
+          "unique_values": 2,
+          "entropy_bits": 1.0
+        },
+        "f.api_gateway_required": {
+          "unique_values": 2,
+          "entropy_bits": 1.0
+        },
+        "f.data_owner_present": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.ip_overlap": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.latency_target_ms": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.measured_latency_ms": {
+          "unique_values": 2,
+          "entropy_bits": 1.0
+        },
+        "f.reversibility_status": {
+          "unique_values": 2,
+          "entropy_bits": 1.0
+        },
+        "p.business_criticality": {
+          "unique_values": 2,
+          "entropy_bits": 1.0
+        }
+      },
+      "warnings": [
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "compliance": {
+      "occurrences": 2,
+      "independent_cases": 2,
+      "decision_counts": {
+        "NO_GO": 2
+      },
+      "decision_entropy_bits": -0.0,
+      "decision_entropy_normalized": -0.0,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 1.0,
+      "majority_class_baseline": 1.0,
+      "potential_dispositions": [
+        "GO",
+        "NO_GO",
+        "REWORK",
+        "SUSPENSION"
+      ],
+      "unobserved_dispositions": [
+        "GO",
+        "REWORK",
+        "SUSPENSION"
+      ],
+      "unique_relevant_fact_signatures": 2,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 2,
+      "finding_pattern_entropy_bits": 1.0,
+      "finding_occurrence_counts": {
+        "COMP-EXPORT-002": 1,
+        "COMP-RESID-001": 2
+      },
+      "uncovered_phase_applicable_rules": [
+        "COMP-A11Y-001",
+        "COMP-AUDIT-001",
+        "COMP-DPIA-001",
+        "COMP-EXPORT-001",
+        "COMP-MAP-001"
+      ],
+      "phase_inapplicable_rules": [],
+      "relevant_field_variation": {
+        "f.accessibility_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.audit_trail": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.dpia_required": {
+          "unique_values": 2,
+          "entropy_bits": 1.0
+        },
+        "f.dpia_status": {
+          "unique_values": 2,
+          "entropy_bits": 1.0
+        },
+        "f.export_control": {
+          "unique_values": 2,
+          "entropy_bits": 1.0
+        },
+        "f.regulatory_mapping": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.residency_compliant": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        }
+      },
+      "warnings": [
+        "dominant_decision_above_80_percent",
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "general": {
+      "occurrences": 3,
+      "independent_cases": 3,
+      "decision_counts": {
+        "NO_GO": 3
+      },
+      "decision_entropy_bits": -0.0,
+      "decision_entropy_normalized": -0.0,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 1.0,
+      "majority_class_baseline": 1.0,
+      "potential_dispositions": [
+        "GO",
+        "NO_GO",
+        "REWORK",
+        "SUSPENSION"
+      ],
+      "unobserved_dispositions": [
+        "GO",
+        "REWORK",
+        "SUSPENSION"
+      ],
+      "unique_relevant_fact_signatures": 3,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 3,
+      "finding_pattern_entropy_bits": 1.585,
+      "finding_occurrence_counts": {
+        "GEN-BUDGET-001": 1,
+        "GEN-STRAT-001": 1,
+        "GEN-UPSTREAM-NOGO": 3
+      },
+      "uncovered_phase_applicable_rules": [
+        "GEN-BC-001",
+        "GEN-UPSTREAM-REWORK",
+        "GEN-UPSTREAM-SUSPEND"
+      ],
+      "phase_inapplicable_rules": [
+        "GEN-BENEFITS-001"
+      ],
+      "relevant_field_variation": {
+        "f.budget_approved_eur": {
+          "unique_values": 3,
+          "entropy_bits": 1.585
+        },
+        "f.budget_requested_eur": {
+          "unique_values": 2,
+          "entropy_bits": 0.9183
+        },
+        "f.change_plan_status": {
+          "unique_values": 2,
+          "entropy_bits": 0.9183
+        },
+        "f.roi": {
+          "unique_values": 3,
+          "entropy_bits": 1.585
+        },
+        "f.strategic_alignment": {
+          "unique_values": 2,
+          "entropy_bits": 0.9183
+        },
+        "upstream_dispositions": {
+          "unique_values": 3,
+          "entropy_bits": 1.585
+        }
+      },
+      "warnings": [
+        "dominant_decision_above_80_percent",
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "it": {
+      "occurrences": 3,
+      "independent_cases": 3,
+      "decision_counts": {
+        "GO": 1,
+        "REWORK": 2
+      },
+      "decision_entropy_bits": 0.9183,
+      "decision_entropy_normalized": 0.5794,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 0.6667,
+      "majority_class_baseline": 0.6667,
+      "potential_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "REWORK"
+      ],
+      "unobserved_dispositions": [
+        "GO_WITH_RESERVATIONS"
+      ],
+      "unique_relevant_fact_signatures": 3,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 3,
+      "finding_pattern_entropy_bits": 1.585,
+      "finding_occurrence_counts": {
+        "IT-CATALOG-001": 1,
+        "IT-EOL-001": 2
+      },
+      "uncovered_phase_applicable_rules": [
+        "IT-CAPACITY-001",
+        "IT-CMDB-001",
+        "IT-LICENSE-001",
+        "IT-RATIONAL-001",
+        "IT-RUN-001"
+      ],
+      "phase_inapplicable_rules": [
+        "IT-CHANGE-001"
+      ],
+      "relevant_field_variation": {
+        "f.capacity_headroom_pct": {
+          "unique_values": 3,
+          "entropy_bits": 1.585
+        },
+        "f.catalog_status": {
+          "unique_values": 2,
+          "entropy_bits": 0.9183
+        },
+        "f.change_record_status": {
+          "unique_values": 3,
+          "entropy_bits": 1.585
+        },
+        "f.cmdb_record_present": {
+          "unique_values": 2,
+          "entropy_bits": 0.9183
+        },
+        "f.duplicate_capability": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.license_compliant": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.run_owner_present": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.technology_eol_months": {
+          "unique_values": 3,
+          "entropy_bits": 1.585
+        },
+        "f.waiver_present": {
+          "unique_values": 2,
+          "entropy_bits": 0.9183
+        }
+      },
+      "warnings": [
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "legal": {
+      "occurrences": 2,
+      "independent_cases": 2,
+      "decision_counts": {
+        "REWORK": 1,
+        "SUSPENSION": 1
+      },
+      "decision_entropy_bits": 1.0,
+      "decision_entropy_normalized": 0.5,
+      "phase_adjusted_decision_entropy_normalized": 0.5,
+      "dominant_decision_share": 0.5,
+      "majority_class_baseline": 0.5,
+      "potential_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "REWORK",
+        "SUSPENSION"
+      ],
+      "unobserved_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS"
+      ],
+      "unique_relevant_fact_signatures": 2,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 2,
+      "finding_pattern_entropy_bits": 1.0,
+      "finding_occurrence_counts": {
+        "LEGAL-INS-001": 1,
+        "LEGAL-IP-001": 1
+      },
+      "uncovered_phase_applicable_rules": [
+        "LEGAL-AUDIT-001",
+        "LEGAL-DPA-001",
+        "LEGAL-EXIT-001",
+        "LEGAL-LIAB-001",
+        "LEGAL-LOG-001",
+        "LEGAL-SIGN-001"
+      ],
+      "phase_inapplicable_rules": [],
+      "relevant_field_variation": {
+        "f.audit_right": {
+          "unique_values": 2,
+          "entropy_bits": 1.0
+        },
+        "f.dpa_status": {
+          "unique_values": 2,
+          "entropy_bits": 1.0
+        },
+        "f.exit_assistance_days": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.insurance_valid": {
+          "unique_values": 2,
+          "entropy_bits": 1.0
+        },
+        "f.ip_ownership": {
+          "unique_values": 2,
+          "entropy_bits": 1.0
+        },
+        "f.liability_cap_multiplier": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.log_export_clause": {
+          "unique_values": 2,
+          "entropy_bits": 1.0
+        },
+        "f.security_carveout": {
+          "unique_values": 2,
+          "entropy_bits": 1.0
+        },
+        "f.signing_authority_valid": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "p.business_criticality": {
+          "unique_values": 2,
+          "entropy_bits": 1.0
+        },
+        "p.personal_data": {
+          "unique_values": 2,
+          "entropy_bits": 1.0
+        }
+      },
+      "warnings": [
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "procurement": {
+      "occurrences": 1,
+      "independent_cases": 1,
+      "decision_counts": {
+        "NO_GO": 1
+      },
+      "decision_entropy_bits": -0.0,
+      "decision_entropy_normalized": -0.0,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 1.0,
+      "majority_class_baseline": 1.0,
+      "potential_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "NO_GO",
+        "REWORK",
+        "SUSPENSION"
+      ],
+      "unobserved_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "REWORK",
+        "SUSPENSION"
+      ],
+      "unique_relevant_fact_signatures": 1,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 1,
+      "finding_pattern_entropy_bits": -0.0,
+      "finding_occurrence_counts": {
+        "PROC-MAND-001": 1
+      },
+      "uncovered_phase_applicable_rules": [
+        "PROC-BUDGET-001",
+        "PROC-DD-001",
+        "PROC-REF-001",
+        "PROC-SAN-001",
+        "PROC-SAN-002"
+      ],
+      "phase_inapplicable_rules": [],
+      "relevant_field_variation": {
+        "f.purchasing_budget_eur": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "sel.due_diligence": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "sel.mandatory_criteria_failed": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "sel.references_checked": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "sel.sanctions": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "sel.tco_3y_eur": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        }
+      },
+      "warnings": [
+        "dominant_decision_above_80_percent",
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "security": {
+      "occurrences": 3,
+      "independent_cases": 3,
+      "decision_counts": {
+        "NO_GO": 3
+      },
+      "decision_entropy_bits": -0.0,
+      "decision_entropy_normalized": -0.0,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 1.0,
+      "majority_class_baseline": 1.0,
+      "potential_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "NO_GO",
+        "REWORK"
+      ],
+      "unobserved_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "REWORK"
+      ],
+      "unique_relevant_fact_signatures": 3,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 3,
+      "finding_pattern_entropy_bits": 1.585,
+      "finding_occurrence_counts": {
+        "SEC-IAM-001": 1,
+        "SEC-KEY-001": 1,
+        "SEC-LOG-001": 1,
+        "SEC-NET-001": 1,
+        "SEC-VULN-001": 1,
+        "SEC-WAF-001": 2
+      },
+      "uncovered_phase_applicable_rules": [
+        "SEC-IAM-002",
+        "SEC-WAF-002"
+      ],
+      "phase_inapplicable_rules": [
+        "SEC-PENTEST-001"
+      ],
+      "relevant_field_variation": {
+        "f.critical_vulns_open": {
+          "unique_values": 2,
+          "entropy_bits": 0.9183
+        },
+        "f.internet_exposed": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.key_rotation_days": {
+          "unique_values": 3,
+          "entropy_bits": 1.585
+        },
+        "f.logs_to_siem": {
+          "unique_values": 2,
+          "entropy_bits": 0.9183
+        },
+        "f.mfa": {
+          "unique_values": 2,
+          "entropy_bits": 0.9183
+        },
+        "f.pentest_status": {
+          "unique_values": 2,
+          "entropy_bits": 0.9183
+        },
+        "f.private_endpoints": {
+          "unique_values": 2,
+          "entropy_bits": 0.9183
+        },
+        "f.shared_service_principal": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.waf_mode": {
+          "unique_values": 2,
+          "entropy_bits": 0.9183
+        },
+        "f.waf_present": {
+          "unique_values": 2,
+          "entropy_bits": 0.9183
+        },
+        "p.data_classification": {
+          "unique_values": 2,
+          "entropy_bits": 0.9183
+        }
+      },
+      "warnings": [
+        "dominant_decision_above_80_percent",
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "tech_readiness": {
+      "occurrences": 1,
+      "independent_cases": 1,
+      "decision_counts": {
+        "REWORK": 1
+      },
+      "decision_entropy_bits": -0.0,
+      "decision_entropy_normalized": -0.0,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 1.0,
+      "majority_class_baseline": 1.0,
+      "potential_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "NO_GO",
+        "REWORK"
+      ],
+      "unobserved_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "NO_GO"
+      ],
+      "unique_relevant_fact_signatures": 1,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 1,
+      "finding_pattern_entropy_bits": -0.0,
+      "finding_occurrence_counts": {
+        "TR-LOAD-001": 1,
+        "TR-OPS-001": 1,
+        "TR-RESTORE-001": 1
+      },
+      "uncovered_phase_applicable_rules": [
+        "TR-BACKUP-001",
+        "TR-BLOCKER-001",
+        "TR-CODE-001",
+        "TR-DR-001",
+        "TR-ROLLBACK-001",
+        "TR-RPO-001",
+        "TR-RTO-001"
+      ],
+      "phase_inapplicable_rules": [],
+      "relevant_field_variation": {
+        "f.backup_enabled": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.critical_static_findings": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.dr_required": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.dr_tested": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.handover_signed": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.load_test_pct_of_peak": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.measured_data_loss_minutes": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.measured_restore_hours": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.on_call_defined": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.open_blockers": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.restore_tested": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.rollback_tested": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.runbook_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.target_rpo_minutes": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.target_rto_hours": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        }
+      },
+      "warnings": [
+        "dominant_decision_above_80_percent",
+        "fewer_than_30_independent_cases"
+      ]
+    }
+  },
+  "by_route_gate": {
+    "build/architecture": {
+      "occurrences": 1,
+      "independent_cases": 1,
+      "decision_counts": {
+        "GO": 1
+      },
+      "decision_entropy_bits": -0.0,
+      "decision_entropy_normalized": -0.0,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 1.0,
+      "majority_class_baseline": 1.0,
+      "potential_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "NO_GO",
+        "REWORK"
+      ],
+      "unobserved_dispositions": [
+        "GO_WITH_RESERVATIONS",
+        "NO_GO",
+        "REWORK"
+      ],
+      "unique_relevant_fact_signatures": 1,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 1,
+      "finding_pattern_entropy_bits": -0.0,
+      "finding_occurrence_counts": {},
+      "uncovered_phase_applicable_rules": [
+        "ARCH-API-001",
+        "ARCH-DATA-001",
+        "ARCH-HA-001",
+        "ARCH-IP-001",
+        "ARCH-PERF-001",
+        "ARCH-REV-001"
+      ],
+      "phase_inapplicable_rules": [],
+      "relevant_field_variation": {
+        "a.multi_az": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "a.multi_region": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.api_gateway_present": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.api_gateway_required": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.data_owner_present": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.ip_overlap": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.latency_target_ms": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.measured_latency_ms": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.reversibility_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "p.business_criticality": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        }
+      },
+      "warnings": [
+        "dominant_decision_above_80_percent",
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "build/general": {
+      "occurrences": 1,
+      "independent_cases": 1,
+      "decision_counts": {
+        "NO_GO": 1
+      },
+      "decision_entropy_bits": -0.0,
+      "decision_entropy_normalized": -0.0,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 1.0,
+      "majority_class_baseline": 1.0,
+      "potential_dispositions": [
+        "GO",
+        "NO_GO",
+        "REWORK",
+        "SUSPENSION"
+      ],
+      "unobserved_dispositions": [
+        "GO",
+        "REWORK",
+        "SUSPENSION"
+      ],
+      "unique_relevant_fact_signatures": 1,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 1,
+      "finding_pattern_entropy_bits": -0.0,
+      "finding_occurrence_counts": {
+        "GEN-STRAT-001": 1,
+        "GEN-UPSTREAM-NOGO": 1
+      },
+      "uncovered_phase_applicable_rules": [
+        "GEN-BC-001",
+        "GEN-BUDGET-001",
+        "GEN-UPSTREAM-REWORK",
+        "GEN-UPSTREAM-SUSPEND"
+      ],
+      "phase_inapplicable_rules": [
+        "GEN-BENEFITS-001"
+      ],
+      "relevant_field_variation": {
+        "f.budget_approved_eur": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.budget_requested_eur": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.change_plan_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.roi": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.strategic_alignment": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "upstream_dispositions": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        }
+      },
+      "warnings": [
+        "dominant_decision_above_80_percent",
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "build/it": {
+      "occurrences": 1,
+      "independent_cases": 1,
+      "decision_counts": {
+        "REWORK": 1
+      },
+      "decision_entropy_bits": -0.0,
+      "decision_entropy_normalized": -0.0,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 1.0,
+      "majority_class_baseline": 1.0,
+      "potential_dispositions": [
+        "GO",
+        "REWORK"
+      ],
+      "unobserved_dispositions": [
+        "GO"
+      ],
+      "unique_relevant_fact_signatures": 1,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 1,
+      "finding_pattern_entropy_bits": -0.0,
+      "finding_occurrence_counts": {
+        "IT-EOL-001": 1
+      },
+      "uncovered_phase_applicable_rules": [
+        "IT-CATALOG-001",
+        "IT-LICENSE-001",
+        "IT-RATIONAL-001"
+      ],
+      "phase_inapplicable_rules": [
+        "IT-CAPACITY-001",
+        "IT-CHANGE-001",
+        "IT-CMDB-001",
+        "IT-RUN-001"
+      ],
+      "relevant_field_variation": {
+        "f.capacity_headroom_pct": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.catalog_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.change_record_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.cmdb_record_present": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.duplicate_capability": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.license_compliant": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.run_owner_present": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.technology_eol_months": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.waiver_present": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        }
+      },
+      "warnings": [
+        "dominant_decision_above_80_percent",
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "build/security": {
+      "occurrences": 1,
+      "independent_cases": 1,
+      "decision_counts": {
+        "NO_GO": 1
+      },
+      "decision_entropy_bits": -0.0,
+      "decision_entropy_normalized": -0.0,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 1.0,
+      "majority_class_baseline": 1.0,
+      "potential_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "NO_GO",
+        "REWORK"
+      ],
+      "unobserved_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "REWORK"
+      ],
+      "unique_relevant_fact_signatures": 1,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 1,
+      "finding_pattern_entropy_bits": -0.0,
+      "finding_occurrence_counts": {
+        "SEC-NET-001": 1,
+        "SEC-VULN-001": 1
+      },
+      "uncovered_phase_applicable_rules": [
+        "SEC-IAM-001",
+        "SEC-IAM-002",
+        "SEC-KEY-001",
+        "SEC-LOG-001",
+        "SEC-WAF-001",
+        "SEC-WAF-002"
+      ],
+      "phase_inapplicable_rules": [
+        "SEC-PENTEST-001"
+      ],
+      "relevant_field_variation": {
+        "f.critical_vulns_open": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.internet_exposed": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.key_rotation_days": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.logs_to_siem": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.mfa": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.pentest_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.private_endpoints": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.shared_service_principal": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.waf_mode": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.waf_present": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "p.data_classification": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        }
+      },
+      "warnings": [
+        "dominant_decision_above_80_percent",
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "build/tech_readiness": {
+      "occurrences": 1,
+      "independent_cases": 1,
+      "decision_counts": {
+        "REWORK": 1
+      },
+      "decision_entropy_bits": -0.0,
+      "decision_entropy_normalized": -0.0,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 1.0,
+      "majority_class_baseline": 1.0,
+      "potential_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "NO_GO",
+        "REWORK"
+      ],
+      "unobserved_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "NO_GO"
+      ],
+      "unique_relevant_fact_signatures": 1,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 1,
+      "finding_pattern_entropy_bits": -0.0,
+      "finding_occurrence_counts": {
+        "TR-LOAD-001": 1,
+        "TR-OPS-001": 1,
+        "TR-RESTORE-001": 1
+      },
+      "uncovered_phase_applicable_rules": [
+        "TR-BACKUP-001",
+        "TR-BLOCKER-001",
+        "TR-CODE-001",
+        "TR-DR-001",
+        "TR-ROLLBACK-001",
+        "TR-RPO-001",
+        "TR-RTO-001"
+      ],
+      "phase_inapplicable_rules": [],
+      "relevant_field_variation": {
+        "f.backup_enabled": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.critical_static_findings": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.dr_required": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.dr_tested": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.handover_signed": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.load_test_pct_of_peak": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.measured_data_loss_minutes": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.measured_restore_hours": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.on_call_defined": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.open_blockers": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.restore_tested": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.rollback_tested": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.runbook_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.target_rpo_minutes": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.target_rto_hours": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        }
+      },
+      "warnings": [
+        "dominant_decision_above_80_percent",
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "buy/compliance": {
+      "occurrences": 1,
+      "independent_cases": 1,
+      "decision_counts": {
+        "NO_GO": 1
+      },
+      "decision_entropy_bits": -0.0,
+      "decision_entropy_normalized": -0.0,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 1.0,
+      "majority_class_baseline": 1.0,
+      "potential_dispositions": [
+        "GO",
+        "NO_GO",
+        "REWORK",
+        "SUSPENSION"
+      ],
+      "unobserved_dispositions": [
+        "GO",
+        "REWORK",
+        "SUSPENSION"
+      ],
+      "unique_relevant_fact_signatures": 1,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 1,
+      "finding_pattern_entropy_bits": -0.0,
+      "finding_occurrence_counts": {
+        "COMP-RESID-001": 1
+      },
+      "uncovered_phase_applicable_rules": [
+        "COMP-A11Y-001",
+        "COMP-AUDIT-001",
+        "COMP-DPIA-001",
+        "COMP-EXPORT-001",
+        "COMP-EXPORT-002",
+        "COMP-MAP-001"
+      ],
+      "phase_inapplicable_rules": [],
+      "relevant_field_variation": {
+        "f.accessibility_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.audit_trail": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.dpia_required": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.dpia_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.export_control": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.regulatory_mapping": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.residency_compliant": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        }
+      },
+      "warnings": [
+        "dominant_decision_above_80_percent",
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "buy/general": {
+      "occurrences": 1,
+      "independent_cases": 1,
+      "decision_counts": {
+        "NO_GO": 1
+      },
+      "decision_entropy_bits": -0.0,
+      "decision_entropy_normalized": -0.0,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 1.0,
+      "majority_class_baseline": 1.0,
+      "potential_dispositions": [
+        "GO",
+        "NO_GO",
+        "REWORK",
+        "SUSPENSION"
+      ],
+      "unobserved_dispositions": [
+        "GO",
+        "REWORK",
+        "SUSPENSION"
+      ],
+      "unique_relevant_fact_signatures": 1,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 1,
+      "finding_pattern_entropy_bits": -0.0,
+      "finding_occurrence_counts": {
+        "GEN-UPSTREAM-NOGO": 1
+      },
+      "uncovered_phase_applicable_rules": [
+        "GEN-BC-001",
+        "GEN-BUDGET-001",
+        "GEN-STRAT-001",
+        "GEN-UPSTREAM-REWORK",
+        "GEN-UPSTREAM-SUSPEND"
+      ],
+      "phase_inapplicable_rules": [
+        "GEN-BENEFITS-001"
+      ],
+      "relevant_field_variation": {
+        "f.budget_approved_eur": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.budget_requested_eur": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.change_plan_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.roi": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.strategic_alignment": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "upstream_dispositions": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        }
+      },
+      "warnings": [
+        "dominant_decision_above_80_percent",
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "buy/it": {
+      "occurrences": 1,
+      "independent_cases": 1,
+      "decision_counts": {
+        "REWORK": 1
+      },
+      "decision_entropy_bits": -0.0,
+      "decision_entropy_normalized": -0.0,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 1.0,
+      "majority_class_baseline": 1.0,
+      "potential_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "REWORK"
+      ],
+      "unobserved_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS"
+      ],
+      "unique_relevant_fact_signatures": 1,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 1,
+      "finding_pattern_entropy_bits": -0.0,
+      "finding_occurrence_counts": {
+        "IT-CATALOG-001": 1,
+        "IT-EOL-001": 1
+      },
+      "uncovered_phase_applicable_rules": [
+        "IT-CAPACITY-001",
+        "IT-CMDB-001",
+        "IT-LICENSE-001",
+        "IT-RATIONAL-001",
+        "IT-RUN-001"
+      ],
+      "phase_inapplicable_rules": [
+        "IT-CHANGE-001"
+      ],
+      "relevant_field_variation": {
+        "f.capacity_headroom_pct": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.catalog_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.change_record_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.cmdb_record_present": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.duplicate_capability": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.license_compliant": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.run_owner_present": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.technology_eol_months": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.waiver_present": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        }
+      },
+      "warnings": [
+        "dominant_decision_above_80_percent",
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "buy/legal": {
+      "occurrences": 1,
+      "independent_cases": 1,
+      "decision_counts": {
+        "SUSPENSION": 1
+      },
+      "decision_entropy_bits": -0.0,
+      "decision_entropy_normalized": -0.0,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 1.0,
+      "majority_class_baseline": 1.0,
+      "potential_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "REWORK",
+        "SUSPENSION"
+      ],
+      "unobserved_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "REWORK"
+      ],
+      "unique_relevant_fact_signatures": 1,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 1,
+      "finding_pattern_entropy_bits": -0.0,
+      "finding_occurrence_counts": {
+        "LEGAL-INS-001": 1
+      },
+      "uncovered_phase_applicable_rules": [
+        "LEGAL-AUDIT-001",
+        "LEGAL-DPA-001",
+        "LEGAL-EXIT-001",
+        "LEGAL-IP-001",
+        "LEGAL-LIAB-001",
+        "LEGAL-LOG-001",
+        "LEGAL-SIGN-001"
+      ],
+      "phase_inapplicable_rules": [],
+      "relevant_field_variation": {
+        "f.audit_right": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.dpa_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.exit_assistance_days": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.insurance_valid": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.ip_ownership": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.liability_cap_multiplier": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.log_export_clause": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.security_carveout": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.signing_authority_valid": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "p.business_criticality": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "p.personal_data": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        }
+      },
+      "warnings": [
+        "dominant_decision_above_80_percent",
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "buy/procurement": {
+      "occurrences": 1,
+      "independent_cases": 1,
+      "decision_counts": {
+        "NO_GO": 1
+      },
+      "decision_entropy_bits": -0.0,
+      "decision_entropy_normalized": -0.0,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 1.0,
+      "majority_class_baseline": 1.0,
+      "potential_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "NO_GO",
+        "REWORK",
+        "SUSPENSION"
+      ],
+      "unobserved_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "REWORK",
+        "SUSPENSION"
+      ],
+      "unique_relevant_fact_signatures": 1,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 1,
+      "finding_pattern_entropy_bits": -0.0,
+      "finding_occurrence_counts": {
+        "PROC-MAND-001": 1
+      },
+      "uncovered_phase_applicable_rules": [
+        "PROC-BUDGET-001",
+        "PROC-DD-001",
+        "PROC-REF-001",
+        "PROC-SAN-001",
+        "PROC-SAN-002"
+      ],
+      "phase_inapplicable_rules": [],
+      "relevant_field_variation": {
+        "f.purchasing_budget_eur": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "sel.due_diligence": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "sel.mandatory_criteria_failed": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "sel.references_checked": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "sel.sanctions": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "sel.tco_3y_eur": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        }
+      },
+      "warnings": [
+        "dominant_decision_above_80_percent",
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "buy/security": {
+      "occurrences": 1,
+      "independent_cases": 1,
+      "decision_counts": {
+        "NO_GO": 1
+      },
+      "decision_entropy_bits": -0.0,
+      "decision_entropy_normalized": -0.0,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 1.0,
+      "majority_class_baseline": 1.0,
+      "potential_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "NO_GO",
+        "REWORK"
+      ],
+      "unobserved_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "REWORK"
+      ],
+      "unique_relevant_fact_signatures": 1,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 1,
+      "finding_pattern_entropy_bits": -0.0,
+      "finding_occurrence_counts": {
+        "SEC-KEY-001": 1,
+        "SEC-LOG-001": 1,
+        "SEC-WAF-001": 1
+      },
+      "uncovered_phase_applicable_rules": [
+        "SEC-IAM-001",
+        "SEC-IAM-002",
+        "SEC-NET-001",
+        "SEC-VULN-001",
+        "SEC-WAF-002"
+      ],
+      "phase_inapplicable_rules": [
+        "SEC-PENTEST-001"
+      ],
+      "relevant_field_variation": {
+        "f.critical_vulns_open": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.internet_exposed": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.key_rotation_days": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.logs_to_siem": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.mfa": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.pentest_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.private_endpoints": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.shared_service_principal": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.waf_mode": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.waf_present": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "p.data_classification": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        }
+      },
+      "warnings": [
+        "dominant_decision_above_80_percent",
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "integrate/architecture": {
+      "occurrences": 1,
+      "independent_cases": 1,
+      "decision_counts": {
+        "REWORK": 1
+      },
+      "decision_entropy_bits": -0.0,
+      "decision_entropy_normalized": -0.0,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 1.0,
+      "majority_class_baseline": 1.0,
+      "potential_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "NO_GO",
+        "REWORK"
+      ],
+      "unobserved_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "NO_GO"
+      ],
+      "unique_relevant_fact_signatures": 1,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 1,
+      "finding_pattern_entropy_bits": -0.0,
+      "finding_occurrence_counts": {
+        "ARCH-API-001": 1,
+        "ARCH-HA-001": 1,
+        "ARCH-PERF-001": 1,
+        "ARCH-REV-001": 1
+      },
+      "uncovered_phase_applicable_rules": [
+        "ARCH-DATA-001",
+        "ARCH-IP-001"
+      ],
+      "phase_inapplicable_rules": [],
+      "relevant_field_variation": {
+        "a.multi_az": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "a.multi_region": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.api_gateway_present": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.api_gateway_required": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.data_owner_present": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.ip_overlap": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.latency_target_ms": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.measured_latency_ms": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.reversibility_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "p.business_criticality": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        }
+      },
+      "warnings": [
+        "dominant_decision_above_80_percent",
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "integrate/compliance": {
+      "occurrences": 1,
+      "independent_cases": 1,
+      "decision_counts": {
+        "NO_GO": 1
+      },
+      "decision_entropy_bits": -0.0,
+      "decision_entropy_normalized": -0.0,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 1.0,
+      "majority_class_baseline": 1.0,
+      "potential_dispositions": [
+        "GO",
+        "NO_GO",
+        "REWORK",
+        "SUSPENSION"
+      ],
+      "unobserved_dispositions": [
+        "GO",
+        "REWORK",
+        "SUSPENSION"
+      ],
+      "unique_relevant_fact_signatures": 1,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 1,
+      "finding_pattern_entropy_bits": -0.0,
+      "finding_occurrence_counts": {
+        "COMP-EXPORT-002": 1,
+        "COMP-RESID-001": 1
+      },
+      "uncovered_phase_applicable_rules": [
+        "COMP-A11Y-001",
+        "COMP-AUDIT-001",
+        "COMP-DPIA-001",
+        "COMP-EXPORT-001",
+        "COMP-MAP-001"
+      ],
+      "phase_inapplicable_rules": [],
+      "relevant_field_variation": {
+        "f.accessibility_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.audit_trail": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.dpia_required": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.dpia_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.export_control": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.regulatory_mapping": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.residency_compliant": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        }
+      },
+      "warnings": [
+        "dominant_decision_above_80_percent",
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "integrate/general": {
+      "occurrences": 1,
+      "independent_cases": 1,
+      "decision_counts": {
+        "NO_GO": 1
+      },
+      "decision_entropy_bits": -0.0,
+      "decision_entropy_normalized": -0.0,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 1.0,
+      "majority_class_baseline": 1.0,
+      "potential_dispositions": [
+        "GO",
+        "NO_GO",
+        "REWORK",
+        "SUSPENSION"
+      ],
+      "unobserved_dispositions": [
+        "GO",
+        "REWORK",
+        "SUSPENSION"
+      ],
+      "unique_relevant_fact_signatures": 1,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 1,
+      "finding_pattern_entropy_bits": -0.0,
+      "finding_occurrence_counts": {
+        "GEN-BUDGET-001": 1,
+        "GEN-UPSTREAM-NOGO": 1
+      },
+      "uncovered_phase_applicable_rules": [
+        "GEN-BC-001",
+        "GEN-STRAT-001",
+        "GEN-UPSTREAM-REWORK",
+        "GEN-UPSTREAM-SUSPEND"
+      ],
+      "phase_inapplicable_rules": [
+        "GEN-BENEFITS-001"
+      ],
+      "relevant_field_variation": {
+        "f.budget_approved_eur": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.budget_requested_eur": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.change_plan_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.roi": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.strategic_alignment": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "upstream_dispositions": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        }
+      },
+      "warnings": [
+        "dominant_decision_above_80_percent",
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "integrate/it": {
+      "occurrences": 1,
+      "independent_cases": 1,
+      "decision_counts": {
+        "GO": 1
+      },
+      "decision_entropy_bits": -0.0,
+      "decision_entropy_normalized": -0.0,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 1.0,
+      "majority_class_baseline": 1.0,
+      "potential_dispositions": [
+        "GO",
+        "REWORK"
+      ],
+      "unobserved_dispositions": [
+        "REWORK"
+      ],
+      "unique_relevant_fact_signatures": 1,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 1,
+      "finding_pattern_entropy_bits": -0.0,
+      "finding_occurrence_counts": {},
+      "uncovered_phase_applicable_rules": [
+        "IT-CATALOG-001",
+        "IT-EOL-001",
+        "IT-LICENSE-001",
+        "IT-RATIONAL-001"
+      ],
+      "phase_inapplicable_rules": [
+        "IT-CAPACITY-001",
+        "IT-CHANGE-001",
+        "IT-CMDB-001",
+        "IT-RUN-001"
+      ],
+      "relevant_field_variation": {
+        "f.capacity_headroom_pct": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.catalog_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.change_record_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.cmdb_record_present": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.duplicate_capability": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.license_compliant": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.run_owner_present": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.technology_eol_months": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.waiver_present": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        }
+      },
+      "warnings": [
+        "dominant_decision_above_80_percent",
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "integrate/legal": {
+      "occurrences": 1,
+      "independent_cases": 1,
+      "decision_counts": {
+        "REWORK": 1
+      },
+      "decision_entropy_bits": -0.0,
+      "decision_entropy_normalized": -0.0,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 1.0,
+      "majority_class_baseline": 1.0,
+      "potential_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "REWORK",
+        "SUSPENSION"
+      ],
+      "unobserved_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "SUSPENSION"
+      ],
+      "unique_relevant_fact_signatures": 1,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 1,
+      "finding_pattern_entropy_bits": -0.0,
+      "finding_occurrence_counts": {
+        "LEGAL-IP-001": 1
+      },
+      "uncovered_phase_applicable_rules": [
+        "LEGAL-AUDIT-001",
+        "LEGAL-DPA-001",
+        "LEGAL-EXIT-001",
+        "LEGAL-INS-001",
+        "LEGAL-LIAB-001",
+        "LEGAL-LOG-001",
+        "LEGAL-SIGN-001"
+      ],
+      "phase_inapplicable_rules": [],
+      "relevant_field_variation": {
+        "f.audit_right": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.dpa_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.exit_assistance_days": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.insurance_valid": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.ip_ownership": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.liability_cap_multiplier": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.log_export_clause": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.security_carveout": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.signing_authority_valid": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "p.business_criticality": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "p.personal_data": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        }
+      },
+      "warnings": [
+        "dominant_decision_above_80_percent",
+        "fewer_than_30_independent_cases"
+      ]
+    },
+    "integrate/security": {
+      "occurrences": 1,
+      "independent_cases": 1,
+      "decision_counts": {
+        "NO_GO": 1
+      },
+      "decision_entropy_bits": -0.0,
+      "decision_entropy_normalized": -0.0,
+      "phase_adjusted_decision_entropy_normalized": 0.0,
+      "dominant_decision_share": 1.0,
+      "majority_class_baseline": 1.0,
+      "potential_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "NO_GO",
+        "REWORK"
+      ],
+      "unobserved_dispositions": [
+        "GO",
+        "GO_WITH_RESERVATIONS",
+        "REWORK"
+      ],
+      "unique_relevant_fact_signatures": 1,
+      "largest_fact_duplicate_group": 1,
+      "unique_finding_patterns": 1,
+      "finding_pattern_entropy_bits": -0.0,
+      "finding_occurrence_counts": {
+        "SEC-IAM-001": 1,
+        "SEC-WAF-001": 1
+      },
+      "uncovered_phase_applicable_rules": [
+        "SEC-IAM-002",
+        "SEC-KEY-001",
+        "SEC-LOG-001",
+        "SEC-NET-001",
+        "SEC-VULN-001",
+        "SEC-WAF-002"
+      ],
+      "phase_inapplicable_rules": [
+        "SEC-PENTEST-001"
+      ],
+      "relevant_field_variation": {
+        "f.critical_vulns_open": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.internet_exposed": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.key_rotation_days": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.logs_to_siem": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.mfa": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.pentest_status": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.private_endpoints": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.shared_service_principal": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.waf_mode": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "f.waf_present": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        },
+        "p.data_classification": {
+          "unique_values": 1,
+          "entropy_bits": -0.0
+        }
+      },
+      "warnings": [
+        "dominant_decision_above_80_percent",
+        "fewer_than_30_independent_cases"
+      ]
+    }
+  },
+  "concentrated_gates": [
+    "compliance",
+    "general",
+    "procurement",
+    "security",
+    "tech_readiness"
+  ],
+  "notes": [
+    "IDs/names/dates are excluded from decision-fact signatures.",
+    "Entropy describes this synthetic population, not real enterprise prevalence.",
+    "The 80% concentration warning is a declared diagnostic heuristic, not a statistical validity threshold.",
+    "Rules unavailable in the chosen phases are listed separately from applicable rules not covered.",
+    "Individual gates need not all be unique: finite rule combinations legitimately repeat."
+  ],
+  "sampling_policy": "natural",
+  "sampling_version": "natural-v1"
+}

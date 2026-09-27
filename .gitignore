@@ -1,0 +1,33 @@
+# Secrets
+.env
+*.key
+*.pem
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+build/
+dist/
+*.egg-info/
+
+# Benchmark outputs (datasets, model runs and reports are regenerated, not versioned)
+runs/
+experiments/
+openrouter_results/
+openrouter_dataset/
+generated_cases/
+model_catalog.json
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.bak

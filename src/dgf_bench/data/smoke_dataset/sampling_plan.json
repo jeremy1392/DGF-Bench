@@ -1,0 +1,38 @@
+{
+  "schema": "DGF-Sampling-Plan-v1",
+  "policy": "natural",
+  "sampling_version": "natural-v1",
+  "seed": 12000,
+  "cases_per_route": 1,
+  "difficulty": 3,
+  "cases": [
+    {
+      "seed": 12000,
+      "route": "buy",
+      "difficulty": 3,
+      "architecture_attempt": 0,
+      "architecture_signature": "0f30a15b7b10d8866369",
+      "fact_attempts": {},
+      "canonical_sha256": "17d8e86998330c5c705fd00f2299593586cf107ed593d8f3a682ff7f4c4798c6"
+    },
+    {
+      "seed": 12001,
+      "route": "integrate",
+      "difficulty": 3,
+      "architecture_attempt": 0,
+      "architecture_signature": "54e1dcc570e7bebc8966",
+      "fact_attempts": {},
+      "canonical_sha256": "bd0b6042e99519a0046240c7658a38ddfcd35ac5e00f47707b647262f0a48278"
+    },
+    {
+      "seed": 12002,
+      "route": "build",
+      "difficulty": 3,
+      "architecture_attempt": 0,
+      "architecture_signature": "8df8d6e5343fbba53e32",
+      "fact_attempts": {},
+      "canonical_sha256": "f83d3ac8cd78d3278034db7f3f2e95a3d475912a3c5a5d403def79e31c865587"
+    }
+  ],
+  "note": "Original generator distribution, with unique architecture rejection sampling."
+}

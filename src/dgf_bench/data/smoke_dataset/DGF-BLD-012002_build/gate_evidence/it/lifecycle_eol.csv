@@ -1,0 +1,4 @@
+project_id,technology,eol_months,capacity_headroom_pct
+DGF-PRT-8C2A7,aks,49,21
+DGF-PRT-831A2,app_service,15,6
+DGF-BLD-012002,container_apps,4,8

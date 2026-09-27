@@ -1,0 +1,30 @@
+{
+  "technology": "container_apps",
+  "hosting_model": "container_apps",
+  "decisions": [
+    {
+      "as_of": "2026-10-04",
+      "catalog_status": "standard",
+      "waiver_present": false,
+      "waiver_expiry_days": 365,
+      "existing_capability_overlap": false,
+      "recorded_by": "Enterprise Architecture"
+    },
+    {
+      "as_of": "2026-10-21",
+      "catalog_status": "non_standard",
+      "waiver_present": false,
+      "waiver_expiry_days": 365,
+      "existing_capability_overlap": false,
+      "recorded_by": "Enterprise Architecture"
+    },
+    {
+      "as_of": "2026-09-17",
+      "catalog_status": "standard",
+      "waiver_present": false,
+      "waiver_expiry_days": 365,
+      "existing_capability_overlap": false,
+      "recorded_by": "Enterprise Architecture"
+    }
+  ]
+}

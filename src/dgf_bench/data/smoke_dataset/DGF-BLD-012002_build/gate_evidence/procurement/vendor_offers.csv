@@ -1,0 +1,5 @@
+due_diligence,functional_score,mandatory_criteria_failed,references_checked,sanctions,security_score,tco_3y_eur,vendor,weighted_score
+complete,66,2,True,clear,69,2635210,CedarPoint Digital 3C70A-1,59.7
+complete,69,0,False,pending,86,1130256,DeltaForge Technologies 3C70A-2,69.9
+pending,77,1,True,clear,76,2008732,Everline Software 3C70A-3,69.9
+complete,73,0,False,clear,55,2351128,Fluxbridge Labs 3C70A-4,53.9

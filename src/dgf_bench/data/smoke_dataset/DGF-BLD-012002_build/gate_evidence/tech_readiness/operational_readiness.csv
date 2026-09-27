@@ -1,0 +1,8 @@
+as_of,item,status,owner,recorded_by
+2026-11-07,On-call rota,defined,Operations,IT Operations
+2026-10-21,Operational handover,unsigned,Operations,IT Operations
+2026-11-24,Production runbook,absent,Operations,IT Operations
+2026-11-07,Production runbook,approved,Operations,IT Operations
+2026-11-07,Operational handover,executed,Operations,IT Operations
+2026-10-21,On-call rota,not_defined,Operations,IT Operations
+2026-10-21,Production runbook,in drafting,Operations,IT Operations

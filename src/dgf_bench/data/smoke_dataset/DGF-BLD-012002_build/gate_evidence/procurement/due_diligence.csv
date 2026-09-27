@@ -1,0 +1,7 @@
+as_of,vendor,mandatory_failed,sanctions,due_diligence,references_checked,recorded_by
+2026-10-21,Fluxbridge Labs 3C70A-4,0,cleared,completed,False,Vendor Risk Management
+2026-11-07,Everline Software 3C70A-3,1,cleared,in progress,True,Vendor Risk Management
+2026-10-21,Everline Software 3C70A-3,1,in progress,in progress,False,Vendor Risk Management
+2026-11-07,DeltaForge Technologies 3C70A-2,0,in progress,completed,False,Vendor Risk Management
+2026-10-21,DeltaForge Technologies 3C70A-2,0,in progress,in progress,False,Vendor Risk Management
+2026-10-21,CedarPoint Digital 3C70A-1,2,cleared,completed,True,Vendor Risk Management

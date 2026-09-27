@@ -1,0 +1,4 @@
+project_id,dataset,classification,business_criticality,personal_data,actual_region,required_residency
+DGF-BUY-012000,Core business data,Confidential,Medium,False,East US,UK
+DGF-PRT-B7FD2,Field Service App [B7FD2] data,Confidential,Critical,True,West Europe,UK
+DGF-PRT-A1205,Travel Desk [A1205] data,Internal,Medium,True,West Europe,EU

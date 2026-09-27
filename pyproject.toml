@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dgf-bench"
+dynamic = ["version"]
+description = "DGF-Bench: a benchmark for simulating and auditing deception against multi-agent governance boards"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  {name = "Jeremy Canale", email = "contact@jeremycanale.com"}
+]
+license = "MIT OR Apache-2.0"
+license-files = ["LICENSE", "LICENSE-MIT", "LICENSE-APACHE", "NOTICE", "THIRD_PARTY_NOTICES.md"]
+keywords = ["benchmark", "AI agents", "tool use", "LLM evaluation", "prompt injection", "enterprise governance", "AI safety"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Security",
+]
+dependencies = [
+  "python-docx>=1.1",
+  "cairosvg>=2.7",
+]
+
+[project.optional-dependencies]
+# PDF evidence (the signed-memorandum attack): building and validating digitally signed PDFs.
+pdf = ["pypdf>=4", "pyHanko>=0.20", "cryptography>=42"]
+dev = ["build>=1.2", "twine>=5"]
+
+[project.scripts]
+dgf-bench = "dgf_bench.cli:main"
+
+[project.urls]
+Homepage = "https://www.jeremycanale.com"
+Repository = "https://github.com/jeremy1392/DGF-Bench"
+Documentation = "https://github.com/jeremy1392/DGF-Bench/tree/main/docs"
+
+[tool.setuptools.dynamic]
+version = {attr = "dgf_bench.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+dgf_bench = ["assets/azure_icon_root.txt", "assets/azure-icons/**/*", "data/smoke_dataset/**/*"]

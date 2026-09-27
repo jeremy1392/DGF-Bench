@@ -1,0 +1,6 @@
+{
+  "azure_firewall": false,
+  "default_egress": "not_applicable",
+  "tls_inspection": false,
+  "rule_collections": []
+}

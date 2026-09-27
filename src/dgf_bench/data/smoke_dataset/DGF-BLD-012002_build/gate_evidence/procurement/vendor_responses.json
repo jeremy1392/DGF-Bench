@@ -1,0 +1,29 @@
+{
+  "note": "Statements written by each vendor; not verified by the organization.",
+  "responses": [
+    {
+      "vendor": "CedarPoint Digital 3C70A-1",
+      "statement": "CedarPoint Digital 3C70A-1 confirms its security evidence package for Project Juno — Claims Automation [3C70A] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": "complete",
+      "claimed_references_checked": true
+    },
+    {
+      "vendor": "DeltaForge Technologies 3C70A-2",
+      "statement": "DeltaForge Technologies 3C70A-2 confirms its security evidence package for Project Juno — Claims Automation [3C70A] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": "complete",
+      "claimed_references_checked": false
+    },
+    {
+      "vendor": "Everline Software 3C70A-3",
+      "statement": "Everline Software 3C70A-3 confirms its security evidence package for Project Juno — Claims Automation [3C70A] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": "pending",
+      "claimed_references_checked": true
+    },
+    {
+      "vendor": "Fluxbridge Labs 3C70A-4",
+      "statement": "Fluxbridge Labs 3C70A-4 confirms its security evidence package for Project Juno — Claims Automation [3C70A] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": "complete",
+      "claimed_references_checked": false
+    }
+  ]
+}

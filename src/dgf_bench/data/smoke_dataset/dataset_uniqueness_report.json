@@ -1,0 +1,106 @@
+{
+  "schema": "DGF-Bench-Uniqueness-v1",
+  "case_count": 3,
+  "all_checks_passed": true,
+  "checks": [
+    {
+      "field": "case_id",
+      "count": 3,
+      "unique_count": 3,
+      "ok": true,
+      "duplicates": []
+    },
+    {
+      "field": "project_id",
+      "count": 3,
+      "unique_count": 3,
+      "ok": true,
+      "duplicates": []
+    },
+    {
+      "field": "project_name",
+      "count": 3,
+      "unique_count": 3,
+      "ok": true,
+      "duplicates": []
+    },
+    {
+      "field": "project_code",
+      "count": 3,
+      "unique_count": 3,
+      "ok": true,
+      "duplicates": []
+    },
+    {
+      "field": "architecture_id",
+      "count": 3,
+      "unique_count": 3,
+      "ok": true,
+      "duplicates": []
+    },
+    {
+      "field": "architecture_signature",
+      "count": 3,
+      "unique_count": 3,
+      "ok": true,
+      "duplicates": []
+    },
+    {
+      "field": "resource_prefix",
+      "count": 3,
+      "unique_count": 3,
+      "ok": true,
+      "duplicates": []
+    },
+    {
+      "field": "canonical_truth_sha256",
+      "count": 3,
+      "unique_count": 3,
+      "ok": true,
+      "duplicates": []
+    },
+    {
+      "field": "contract_version",
+      "count": 3,
+      "unique_count": 3,
+      "ok": true,
+      "duplicates": []
+    },
+    {
+      "field": "hld_version",
+      "count": 3,
+      "unique_count": 3,
+      "ok": true,
+      "duplicates": []
+    },
+    {
+      "field": "lld_version",
+      "count": 3,
+      "unique_count": 3,
+      "ok": true,
+      "duplicates": []
+    },
+    {
+      "field": "all_named_people_across_dataset",
+      "count": 18,
+      "unique_count": 18,
+      "ok": true,
+      "duplicates": []
+    },
+    {
+      "field": "all_vendor_names_across_dataset",
+      "count": 12,
+      "unique_count": 12,
+      "ok": true,
+      "duplicates": []
+    },
+    {
+      "field": "all_private_cidrs_across_dataset",
+      "count": 9,
+      "unique_count": 9,
+      "ok": true,
+      "duplicates": []
+    }
+  ],
+  "note": "Case-specific identities/configurations are unique. Controlled benchmark categories such as route, gate type, Azure product names, dispositions, booleans and policy states intentionally remain reusable; prohibiting those repetitions would make cross-case comparison impossible."
+}

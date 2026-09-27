@@ -1,0 +1,3 @@
+control_mapping_status,evidence,evidence_owner,obligation
+partial,See regulatory_mapping.csv,GRC,DORA
+partial,See regulatory_mapping.csv,GRC,NIS2

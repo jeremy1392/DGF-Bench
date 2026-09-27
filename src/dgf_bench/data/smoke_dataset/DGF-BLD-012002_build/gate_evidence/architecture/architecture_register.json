@@ -1,0 +1,58 @@
+{
+  "applications": [
+    {
+      "application": "Pricing Engine [294A7]",
+      "api_gateway": {
+        "required": true,
+        "deployed": true
+      },
+      "latency_s": {
+        "target_p95": 0.3,
+        "measured_p95": 0.357,
+        "measurement_source": "APM"
+      },
+      "exit_plan_status": "draft",
+      "data_domain_owner": "Data Owner 1",
+      "availability": {
+        "zone_redundant": true,
+        "secondary_region": false
+      }
+    },
+    {
+      "application": "Project Juno — Claims Automation [3C70A]",
+      "api_gateway": {
+        "required": false,
+        "deployed": true
+      },
+      "latency_s": {
+        "target_p95": 0.05,
+        "measured_p95": 0.015,
+        "measurement_source": "APM"
+      },
+      "exit_plan_status": "documented",
+      "data_domain_owner": "Adam Volkov-12002-BO",
+      "availability": {
+        "zone_redundant": true,
+        "secondary_region": false
+      }
+    },
+    {
+      "application": "Vendor Portal [EEA63]",
+      "api_gateway": {
+        "required": true,
+        "deployed": true
+      },
+      "latency_s": {
+        "target_p95": 0.3,
+        "measured_p95": 0.209,
+        "measurement_source": "APM"
+      },
+      "exit_plan_status": "tested",
+      "data_domain_owner": "Data Owner 2",
+      "availability": {
+        "zone_redundant": true,
+        "secondary_region": true
+      }
+    }
+  ]
+}

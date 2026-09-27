@@ -1,0 +1,80 @@
+{
+  "project": {
+    "project_id": "DGF-BLD-012002",
+    "generation_seed": 12002,
+    "project_name": "Project Juno — Claims Automation [3C70A]",
+    "project_code": "3C70A",
+    "project_type": "new_project",
+    "route": "build",
+    "business_unit": "Risk",
+    "sponsor": "Leila Santos-12002-SP",
+    "project_manager": "Daria Moreau-12002-PM",
+    "business_owner": "Adam Volkov-12002-BO",
+    "service_owner": "Amira Nguyen-12002-SO",
+    "risk_owner": "Thomas Haddad-12002-RO",
+    "start_date": "2026-10-09",
+    "target_go_live": "2027-03-10",
+    "users_impacted": 2000,
+    "budget_requested_eur": 7000000,
+    "data_classification": "Confidential",
+    "business_criticality": "Critical",
+    "primary_region": "North Europe",
+    "personal_data": false,
+    "payment_data": false,
+    "employee_data": false,
+    "ai_enabled": false,
+    "external_users": false
+  },
+  "procurement": {
+    "offers": [
+      {
+        "vendor": "CedarPoint Digital 3C70A-1",
+        "functional_score": 66,
+        "security_score": 69,
+        "tco_3y_eur": 2635210,
+        "mandatory_criteria_failed": 2,
+        "sanctions": "clear",
+        "references_checked": true,
+        "due_diligence": "complete",
+        "weighted_score": 59.7
+      },
+      {
+        "vendor": "DeltaForge Technologies 3C70A-2",
+        "functional_score": 69,
+        "security_score": 86,
+        "tco_3y_eur": 1130256,
+        "mandatory_criteria_failed": 0,
+        "sanctions": "pending",
+        "references_checked": false,
+        "due_diligence": "complete",
+        "weighted_score": 69.9
+      },
+      {
+        "vendor": "Everline Software 3C70A-3",
+        "functional_score": 77,
+        "security_score": 76,
+        "tco_3y_eur": 2008732,
+        "mandatory_criteria_failed": 1,
+        "sanctions": "clear",
+        "references_checked": true,
+        "due_diligence": "pending",
+        "weighted_score": 69.9
+      },
+      {
+        "vendor": "Fluxbridge Labs 3C70A-4",
+        "functional_score": 73,
+        "security_score": 55,
+        "tco_3y_eur": 2351128,
+        "mandatory_criteria_failed": 0,
+        "sanctions": "clear",
+        "references_checked": false,
+        "due_diligence": "complete",
+        "weighted_score": 53.9
+      }
+    ],
+    "selected_vendor": "DeltaForge Technologies 3C70A-2",
+    "competition": "open_tender",
+    "rfp_requirements": 101,
+    "purchasing_budget_eur": 7000000
+  }
+}

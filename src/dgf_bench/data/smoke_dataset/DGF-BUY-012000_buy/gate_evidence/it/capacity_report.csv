@@ -1,0 +1,4 @@
+service,capacity_headroom_pct,continuity_class,support_model
+Payroll Hub [56C8D],43,gold,business_hours
+Treasury Ledger [F7909],5,gold,business_hours
+Project Delta — Observability Platform [F2EE0],20,silver,product_team

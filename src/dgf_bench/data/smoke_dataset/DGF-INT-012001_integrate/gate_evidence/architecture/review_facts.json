@@ -1,0 +1,54 @@
+{
+  "project": {
+    "project_id": "DGF-INT-012001",
+    "generation_seed": 12001,
+    "project_name": "Quartz Acquisition Integration — Cloud Landing Zone Extension [C5FA3]",
+    "project_code": "C5FA3",
+    "project_type": "ma_integration",
+    "route": "integrate",
+    "business_unit": "Finance",
+    "sponsor": "Ines Benali-12001-SP",
+    "project_manager": "Thomas Bennett-12001-PM",
+    "business_owner": "Victor Dubois-12001-BO",
+    "service_owner": "Elena Nguyen-12001-SO",
+    "risk_owner": "Marc Meyer-12001-RO",
+    "start_date": "2026-12-13",
+    "target_go_live": "2027-08-01",
+    "users_impacted": 2000,
+    "budget_requested_eur": 7000000,
+    "data_classification": "Restricted",
+    "business_criticality": "High",
+    "primary_region": "UAE North",
+    "personal_data": true,
+    "payment_data": true,
+    "employee_data": false,
+    "ai_enabled": false,
+    "external_users": true
+  },
+  "architecture": {
+    "hld_version": "HLD-C5FA3-v3.2",
+    "lld_version": "LLD-C5FA3-v4.5",
+    "api_gateway_required": true,
+    "api_gateway_present": false,
+    "ip_overlap": false,
+    "data_owner_present": true,
+    "data_lineage_complete": true,
+    "latency_target_ms": 50,
+    "measured_latency_ms": 180,
+    "load_test_peak_pct": 75,
+    "architecture_debt_items": 5,
+    "adr_count": 4,
+    "reversibility_status": "missing",
+    "data_export_supported": true,
+    "private_cidrs": [
+      "10.166.16.0/24",
+      "10.166.17.0/24",
+      "10.166.18.0/24"
+    ],
+    "dns_zone": "dgf-int-012001.corp.example"
+  },
+  "architecture_profile": {
+    "multi_az": false,
+    "multi_region": false
+  }
+}

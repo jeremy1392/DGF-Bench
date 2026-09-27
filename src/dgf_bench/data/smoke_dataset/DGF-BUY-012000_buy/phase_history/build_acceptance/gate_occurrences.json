@@ -1,0 +1,13 @@
+{
+  "phase": "build_acceptance",
+  "occurrences": [
+    {
+      "occurrence_id": "BUY-05-IT-1",
+      "gate": "it",
+      "gate_label": "IT Gate",
+      "phase": "build_acceptance",
+      "position": 5
+    }
+  ],
+  "status": "PENDING_EVALUATION"
+}

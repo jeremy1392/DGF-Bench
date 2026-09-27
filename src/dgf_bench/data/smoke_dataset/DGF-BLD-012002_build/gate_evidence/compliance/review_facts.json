@@ -1,0 +1,47 @@
+{
+  "project": {
+    "project_id": "DGF-BLD-012002",
+    "generation_seed": 12002,
+    "project_name": "Project Juno — Claims Automation [3C70A]",
+    "project_code": "3C70A",
+    "project_type": "new_project",
+    "route": "build",
+    "business_unit": "Risk",
+    "sponsor": "Leila Santos-12002-SP",
+    "project_manager": "Daria Moreau-12002-PM",
+    "business_owner": "Adam Volkov-12002-BO",
+    "service_owner": "Amira Nguyen-12002-SO",
+    "risk_owner": "Thomas Haddad-12002-RO",
+    "start_date": "2026-10-09",
+    "target_go_live": "2027-03-10",
+    "users_impacted": 2000,
+    "budget_requested_eur": 7000000,
+    "data_classification": "Confidential",
+    "business_criticality": "Critical",
+    "primary_region": "North Europe",
+    "personal_data": false,
+    "payment_data": false,
+    "employee_data": false,
+    "ai_enabled": false,
+    "external_users": false
+  },
+  "compliance": {
+    "applicable_regulations": [
+      "DORA",
+      "NIS2"
+    ],
+    "dpia_required": false,
+    "dpia_status": "not_required",
+    "required_residency": "UK",
+    "residency_compliant": false,
+    "retention_years": 3,
+    "legal_hold_supported": true,
+    "deletion_enforced": true,
+    "audit_trail": "partial",
+    "accessibility_status": "pass",
+    "ethics_review": "conditional",
+    "regulatory_mapping": "partial",
+    "third_party_monitoring": "onboarding_only",
+    "export_control": "pending"
+  }
+}

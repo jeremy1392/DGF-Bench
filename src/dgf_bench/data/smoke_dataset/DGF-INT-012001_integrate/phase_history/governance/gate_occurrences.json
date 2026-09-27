@@ -1,0 +1,13 @@
+{
+  "phase": "governance",
+  "occurrences": [
+    {
+      "occurrence_id": "INTEGRATE-06-GENERAL-1",
+      "gate": "general",
+      "gate_label": "General Gate",
+      "phase": "governance",
+      "position": 6
+    }
+  ],
+  "status": "PENDING_EVALUATION"
+}

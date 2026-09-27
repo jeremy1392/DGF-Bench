@@ -1,0 +1,78 @@
+{
+  "resources": [
+    {
+      "name": "Azure Container Apps Environment",
+      "publicNetworkAccess": true,
+      "region": "North Europe",
+      "multiAz": true
+    },
+    {
+      "name": "Frontend Container",
+      "publicNetworkAccess": true,
+      "region": "North Europe",
+      "multiAz": true
+    },
+    {
+      "name": "API Container",
+      "publicNetworkAccess": true,
+      "region": "North Europe",
+      "multiAz": true
+    },
+    {
+      "name": "Worker Container",
+      "publicNetworkAccess": true,
+      "region": "North Europe",
+      "multiAz": true
+    },
+    {
+      "name": "Azure SQL Managed Instance",
+      "publicNetworkAccess": true,
+      "region": "North Europe",
+      "multiAz": true
+    },
+    {
+      "name": "Azure Storage Account",
+      "publicNetworkAccess": true,
+      "region": "North Europe",
+      "multiAz": true
+    },
+    {
+      "name": "Azure Key Vault",
+      "publicNetworkAccess": true,
+      "region": "North Europe",
+      "multiAz": true
+    },
+    {
+      "name": "Azure API Management",
+      "publicNetworkAccess": true,
+      "region": "North Europe",
+      "multiAz": true
+    },
+    {
+      "name": "Azure Service Bus",
+      "publicNetworkAccess": true,
+      "region": "North Europe",
+      "multiAz": true
+    },
+    {
+      "name": "Azure Event Hubs",
+      "publicNetworkAccess": true,
+      "region": "North Europe",
+      "multiAz": true
+    },
+    {
+      "name": "Azure CDN",
+      "publicNetworkAccess": true,
+      "region": "North Europe",
+      "multiAz": true
+    },
+    {
+      "name": "Application Gateway WAF",
+      "publicNetworkAccess": true,
+      "region": "North Europe",
+      "multiAz": true
+    }
+  ],
+  "private_endpoints": false,
+  "firewall": true
+}

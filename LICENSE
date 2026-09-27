@@ -1,0 +1,26 @@
+DGF-Bench dual-license notice
+
+Copyright (c) 2026 Jeremy Canale
+
+SPDX-License-Identifier: MIT OR Apache-2.0
+
+The original DGF-Bench source code and original benchmark documentation in
+this repository are licensed, at your option, under either:
+
+  1. the MIT License, reproduced in LICENSE-MIT; or
+  2. the Apache License, Version 2.0, reproduced in LICENSE-APACHE.
+
+You may choose either license when using, modifying, or redistributing the
+covered material.
+
+The following material is NOT relicensed by this dual-license notice:
+
+- paper/ — the research manuscript, its LaTeX source, figures, and compiled
+  PDF remain Copyright (c) 2026 Jeremy Canale, all rights reserved unless an
+  explicit license is stated inside that directory or in the manuscript;
+- Microsoft Azure architecture icons and associated Microsoft files under
+  assets/ — these remain subject to Microsoft's own terms;
+- any other third-party material identified in THIRD_PARTY_NOTICES.md or in
+  the material itself.
+
+For the full license texts, see LICENSE-MIT and LICENSE-APACHE.

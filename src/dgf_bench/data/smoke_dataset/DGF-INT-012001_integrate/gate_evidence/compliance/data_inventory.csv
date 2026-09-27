@@ -1,0 +1,4 @@
+project_id,dataset,classification,business_criticality,personal_data,actual_region,required_residency
+DGF-PRT-17026,Treasury Ledger [17026] data,Internal,High,True,West Europe,UK
+DGF-INT-012001,Core business data,Restricted,High,True,UAE North,EU
+DGF-PRT-345F0,Pricing Engine [345F0] data,Restricted,High,False,West Europe,EU

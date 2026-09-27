@@ -1,0 +1,54 @@
+{
+  "schema": "DGF-Bench-OpenRouter-Dataset-v8",
+  "uniqueness_enforced": true,
+  "architecture_signature_uniqueness": true,
+  "uniqueness_report": "dataset_uniqueness_report.json",
+  "diversity_report": "dataset_diversity_report.json",
+  "sampling_policy": "natural",
+  "sampling_version": "natural-v1",
+  "sampling_plan": "sampling_plan.json",
+  "cases": [
+    {
+      "seed": 12000,
+      "route": "buy",
+      "difficulty": 3,
+      "architecture_attempt": 0,
+      "architecture_signature": "0f30a15b7b10d8866369",
+      "fact_attempts": {},
+      "canonical_sha256": "17d8e86998330c5c705fd00f2299593586cf107ed593d8f3a682ff7f4c4798c6",
+      "case_dir": "DGF-BUY-012000_buy",
+      "case_id": "efaa4978-a4d7-5bd4-9e1a-1b74a407ad92",
+      "project_id": "DGF-BUY-012000",
+      "project_name": "Project Delta — Observability Platform [F2EE0]",
+      "public_context_sha256": "cb8ce4a2129f809fb2ab60671dafd3a35461434d228a7cfa6053703f93f5b548"
+    },
+    {
+      "seed": 12001,
+      "route": "integrate",
+      "difficulty": 3,
+      "architecture_attempt": 0,
+      "architecture_signature": "54e1dcc570e7bebc8966",
+      "fact_attempts": {},
+      "canonical_sha256": "bd0b6042e99519a0046240c7658a38ddfcd35ac5e00f47707b647262f0a48278",
+      "case_dir": "DGF-INT-012001_integrate",
+      "case_id": "edcd5be6-3f53-526d-bcfc-5440be520695",
+      "project_id": "DGF-INT-012001",
+      "project_name": "Quartz Acquisition Integration — Cloud Landing Zone Extension [C5FA3]",
+      "public_context_sha256": "0a162f6784dae149fa84bffa4d5ad4d2106cc5735f1b25d8d7bf339f732d872f"
+    },
+    {
+      "seed": 12002,
+      "route": "build",
+      "difficulty": 3,
+      "architecture_attempt": 0,
+      "architecture_signature": "8df8d6e5343fbba53e32",
+      "fact_attempts": {},
+      "canonical_sha256": "f83d3ac8cd78d3278034db7f3f2e95a3d475912a3c5a5d403def79e31c865587",
+      "case_dir": "DGF-BLD-012002_build",
+      "case_id": "f96908de-5229-5007-9593-dfb2edc6fa1c",
+      "project_id": "DGF-BLD-012002",
+      "project_name": "Project Juno — Claims Automation [3C70A]",
+      "public_context_sha256": "3f37229a0c68894435858322c45898242f120b162755dd29d9092d94bc290975"
+    }
+  ]
+}

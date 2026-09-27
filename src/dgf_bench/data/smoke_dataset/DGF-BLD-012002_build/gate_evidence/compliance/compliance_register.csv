@@ -1,0 +1,11 @@
+as_of,control,required,status,detail,recorded_by
+2026-11-07,Accessibility,True,passed,WCAG 2.2 AA assessment,GRC
+2026-10-21,Export control,True,restricted,Export-control screening,GRC
+2026-11-07,Export control,True,in progress,Export-control screening,GRC
+2026-10-21,DPIA,False,absent,Data protection impact assessment,GRC
+2026-11-24,DPIA,False,not applicable,Data protection impact assessment,GRC
+2026-11-07,DPIA,False,in drafting,Data protection impact assessment,GRC
+2026-10-21,Audit trail,True,partially completed,Compliance audit evidence,GRC
+2026-10-21,Accessibility,True,not assessed,WCAG 2.2 AA assessment,GRC
+2026-10-21,Regulatory mapping,True,partially completed,Obligations mapped to controls,GRC
+2026-10-21,Data residency,True,non_compliant,Required: UK; actual: North Europe,GRC

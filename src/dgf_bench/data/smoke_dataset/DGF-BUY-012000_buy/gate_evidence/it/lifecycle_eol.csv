@@ -1,0 +1,4 @@
+project_id,technology,eol_months,capacity_headroom_pct
+DGF-PRT-F7909,functions,7,5
+DGF-BUY-012000,container_apps,8,20
+DGF-PRT-56C8D,app_service,35,43

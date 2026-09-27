@@ -1,0 +1,58 @@
+{
+  "route": {
+    "key": "integrate",
+    "label": "W2 — Integrate",
+    "trigger": "existing_system"
+  },
+  "occurrences": [
+    {
+      "occurrence_id": "INTEGRATE-01-IT-1",
+      "gate": "it",
+      "gate_label": "IT Gate",
+      "phase": "framing",
+      "position": 1
+    },
+    {
+      "occurrence_id": "INTEGRATE-02-ARCHITECTURE-1",
+      "gate": "architecture",
+      "gate_label": "Architecture Gate",
+      "phase": "design",
+      "position": 2
+    },
+    {
+      "occurrence_id": "INTEGRATE-03-SECURITY-1",
+      "gate": "security",
+      "gate_label": "Security Architecture Gate",
+      "phase": "design",
+      "position": 3
+    },
+    {
+      "occurrence_id": "INTEGRATE-04-LEGAL-1",
+      "gate": "legal",
+      "gate_label": "Legal Gate",
+      "phase": "design",
+      "position": 4
+    },
+    {
+      "occurrence_id": "INTEGRATE-05-COMPLIANCE-1",
+      "gate": "compliance",
+      "gate_label": "Compliance Gate",
+      "phase": "design",
+      "position": 5
+    },
+    {
+      "occurrence_id": "INTEGRATE-06-GENERAL-1",
+      "gate": "general",
+      "gate_label": "General Gate",
+      "phase": "governance",
+      "position": 6
+    }
+  ],
+  "permitted_dispositions": [
+    "GO",
+    "GO_WITH_RESERVATIONS",
+    "REWORK",
+    "SUSPENSION",
+    "NO_GO"
+  ]
+}

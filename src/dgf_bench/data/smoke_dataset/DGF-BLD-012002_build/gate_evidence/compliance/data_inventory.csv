@@ -1,0 +1,4 @@
+project_id,dataset,classification,business_criticality,personal_data,actual_region,required_residency
+DGF-PRT-393EA,Pricing Engine [393EA] data,Public,Low,False,West Europe,EU
+DGF-PRT-F03E6,Claims Workbench [F03E6] data,Restricted,Low,False,UK South,No restriction
+DGF-BLD-012002,Core business data,Confidential,Critical,False,North Europe,UK

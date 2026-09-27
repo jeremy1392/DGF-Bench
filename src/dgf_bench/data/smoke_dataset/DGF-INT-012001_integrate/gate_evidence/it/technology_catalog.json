@@ -1,0 +1,22 @@
+{
+  "technology": "mixed",
+  "hosting_model": "mixed",
+  "decisions": [
+    {
+      "as_of": "2026-12-25",
+      "catalog_status": "approved_exception",
+      "waiver_present": false,
+      "waiver_expiry_days": 180,
+      "existing_capability_overlap": true,
+      "recorded_by": "Enterprise Architecture"
+    },
+    {
+      "as_of": "2027-01-11",
+      "catalog_status": "standard",
+      "waiver_present": true,
+      "waiver_expiry_days": 180,
+      "existing_capability_overlap": false,
+      "recorded_by": "Enterprise Architecture"
+    }
+  ]
+}

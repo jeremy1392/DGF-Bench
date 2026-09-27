@@ -1,0 +1,60 @@
+{
+  "case_id": "f96908de-5229-5007-9593-dfb2edc6fa1c",
+  "gate_results": [
+    {
+      "occurrence_id": "BUILD-01-IT-1",
+      "disposition": "GO|GO_WITH_RESERVATIONS|REWORK|SUSPENSION|NO_GO",
+      "finding_ids": [],
+      "actions": [],
+      "evidence_refs": [],
+      "authorization_required": false,
+      "evidence_support": [],
+      "rationale": "",
+      "confidence": 0.0
+    },
+    {
+      "occurrence_id": "BUILD-02-ARCHITECTURE-1",
+      "disposition": "GO|GO_WITH_RESERVATIONS|REWORK|SUSPENSION|NO_GO",
+      "finding_ids": [],
+      "actions": [],
+      "evidence_refs": [],
+      "authorization_required": false,
+      "evidence_support": [],
+      "rationale": "",
+      "confidence": 0.0
+    },
+    {
+      "occurrence_id": "BUILD-03-SECURITY-1",
+      "disposition": "GO|GO_WITH_RESERVATIONS|REWORK|SUSPENSION|NO_GO",
+      "finding_ids": [],
+      "actions": [],
+      "evidence_refs": [],
+      "authorization_required": false,
+      "evidence_support": [],
+      "rationale": "",
+      "confidence": 0.0
+    },
+    {
+      "occurrence_id": "BUILD-04-TECH_READINESS-1",
+      "disposition": "GO|GO_WITH_RESERVATIONS|REWORK|SUSPENSION|NO_GO",
+      "finding_ids": [],
+      "actions": [],
+      "evidence_refs": [],
+      "authorization_required": false,
+      "evidence_support": [],
+      "rationale": "",
+      "confidence": 0.0
+    },
+    {
+      "occurrence_id": "BUILD-05-GENERAL-1",
+      "disposition": "GO|GO_WITH_RESERVATIONS|REWORK|SUSPENSION|NO_GO",
+      "finding_ids": [],
+      "actions": [],
+      "evidence_refs": [],
+      "authorization_required": false,
+      "evidence_support": [],
+      "rationale": "",
+      "confidence": 0.0
+    }
+  ]
+}

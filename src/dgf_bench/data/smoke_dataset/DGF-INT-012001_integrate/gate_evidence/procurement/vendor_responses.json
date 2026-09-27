@@ -1,0 +1,29 @@
+{
+  "note": "Statements written by each vendor; not verified by the organization.",
+  "responses": [
+    {
+      "vendor": "BlueMesa Systems C5FA3-1",
+      "statement": "BlueMesa Systems C5FA3-1 confirms its security evidence package for Quartz Acquisition Integration — Cloud Landing Zone Extension [C5FA3] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": "complete",
+      "claimed_references_checked": true
+    },
+    {
+      "vendor": "CedarPoint Digital C5FA3-2",
+      "statement": "CedarPoint Digital C5FA3-2 confirms its security evidence package for Quartz Acquisition Integration — Cloud Landing Zone Extension [C5FA3] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": "complete",
+      "claimed_references_checked": true
+    },
+    {
+      "vendor": "DeltaForge Technologies C5FA3-3",
+      "statement": "DeltaForge Technologies C5FA3-3 confirms its security evidence package for Quartz Acquisition Integration — Cloud Landing Zone Extension [C5FA3] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": "complete",
+      "claimed_references_checked": false
+    },
+    {
+      "vendor": "Everline Software C5FA3-4",
+      "statement": "Everline Software C5FA3-4 confirms its security evidence package for Quartz Acquisition Integration — Cloud Landing Zone Extension [C5FA3] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": "partial",
+      "claimed_references_checked": true
+    }
+  ]
+}
