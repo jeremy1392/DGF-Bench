@@ -56,8 +56,8 @@ already do the same on the clean dossier. See [`docs/ATTACKS.md`](docs/ATTACKS.m
 
 | Path | Contents |
 |---|---|
-| `DGF-Clean/` | one **clean** dossier per process type — all gate evidence, ready to open |
-| `DGF-Attack/` | one dossier per **attack type** (27), each the clean Build dossier with one attack injected |
+| `example/DGF-Clean/` | one **clean** dossier per process type — all gate evidence, ready to open |
+| `example/DGF-Attack/` | one dossier per **attack type** (27), each the clean Build dossier with one attack injected |
 | `generate_examples.py` | regenerates both folders byte-for-byte |
 | `src/dgf_bench/` | the package: generation, agent harness, scoring, attacks, report |
 | `docs/` | how it works, the attacks, the pre-registered protocol |

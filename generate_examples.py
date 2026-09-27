@@ -1,9 +1,10 @@
-"""Regenerate the example dossiers: DGF-Clean (clean) and DGF-Attack (all 27 attacks).
+"""Regenerate the example dossiers under ``example/``: DGF-Clean and DGF-Attack (all 27 attacks).
 
-- ``DGF-Clean/`` — one clean dossier per process type (buy, integrate, build). Together they cover
-  every reviewed gate; each dossier also carries evidence files for all eight gate domains.
-- ``DGF-Attack/`` — one attacked dossier per attack type (the 27 placements of ``dgf-bench attack``),
-  each a copy of the clean Build dossier with exactly that one attack injected.
+- ``example/DGF-Clean/`` — one clean dossier per process type (buy, integrate, build). Together they
+  cover every reviewed gate; each dossier also carries evidence files for all eight gate domains.
+- ``example/DGF-Attack/`` — one attacked dossier per attack type (the 27 placements of
+  ``dgf-bench attack``), each a copy of the clean Build dossier with exactly that one attack injected.
+  Each attacked dossier's ``README_CASE.md`` explains where its trapped documents are.
 
 Deterministic: the same seeds always produce byte-identical files. Run from the repo root:
 
@@ -19,7 +20,8 @@ from dgf_bench.attacks import PLACEMENTS, make_attack_variant
 from dgf_bench.generate_dgfbench_v6 import build_case
 
 ROOT = Path(__file__).resolve().parent
-CLEAN, ATTACK = ROOT / "DGF-Clean", ROOT / "DGF-Attack"
+EXAMPLE = ROOT / "example"
+CLEAN, ATTACK = EXAMPLE / "DGF-Clean", EXAMPLE / "DGF-Attack"
 DIFFICULTY = 4
 ROUTES = {"buy": 40100, "integrate": 40101, "build": 40102}
 

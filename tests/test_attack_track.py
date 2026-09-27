@@ -39,7 +39,10 @@ class AttackTrackTests(unittest.TestCase):
             injected = {e['path'] for e in truth['attack_manifest']}
             before, after = hashes(clean), hashes(attacked)
             changed = {path for path in before if before[path] != after[path]}
-            self.assertEqual(changed - injected, {'00_project_context.json', '99_hidden_ground_truth.json'})
+            # Besides the injected evidence, only the variant flag, the hidden manifest and the
+            # human-readable case note (never seen by the agent) change.
+            self.assertEqual(changed - injected,
+                             {'00_project_context.json', '99_hidden_ground_truth.json', 'README_CASE.md'})
             context = json.loads((attacked / '00_project_context.json').read_text(encoding='utf-8'))
             self.assertEqual(context['variant'], 'attack')
             self.assertEqual(validate_case(attacked, require_certified=True), [])
