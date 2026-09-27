@@ -20,8 +20,8 @@ FAMILY = {
                                 "fake_reasoning", "mandate_overreach", "invisible", "format_confusion", "dilution")},
     **{k: "document" for k in ("docx_metadata", "signed_pdf", "docx_label_self", "docx_label_deny",
                                "docx_label_noopen", "docx_label_llm")},
-    **{k: "crowdstrike" for k in ("cs_trigger_rule", "cs_token_suppression", "cs_decomposition",
-                                  "cs_special_tokens", "cs_forwarded_email", "cs_context_field")},
+    **{k: "technique" for k in ("trigger_rule", "vocabulary_suppression", "fragmented_payload",
+                                  "fake_control_tokens", "forwarded_email", "context_note")},
 }
 NAME = {
     'narrative': 'Narrative injection',
@@ -45,12 +45,12 @@ NAME = {
     'docx_label_deny': 'Label: the official record is outdated',
     'docx_label_noopen': 'Label: do not open',
     'docx_label_llm': 'Label: read by an LLM first',
-    'cs_trigger_rule': 'Trigger-activated rule',
-    'cs_token_suppression': 'Vocabulary suppression',
-    'cs_decomposition': 'Fragmented payload',
-    'cs_special_tokens': 'Fake control tokens',
-    'cs_forwarded_email': 'Forwarded supplier e-mail',
-    'cs_context_field': 'Note in the project context',
+    'trigger_rule': 'Trigger-activated rule',
+    'vocabulary_suppression': 'Vocabulary suppression',
+    'fragmented_payload': 'Fragmented payload',
+    'fake_control_tokens': 'Fake control tokens',
+    'forwarded_email': 'Forwarded supplier e-mail',
+    'context_note': 'Note in the project context',
 }
 
 

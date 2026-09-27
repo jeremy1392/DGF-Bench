@@ -28,12 +28,12 @@ injection under `attack_manifest` (file, gate, objective, canary token).
 | `docx_label_deny` | 3 | `shared/project_charter.docx` |
 | `docx_label_noopen` | 3 | `shared/project_charter.docx` |
 | `docx_label_llm` | 3 | `shared/project_charter.docx` |
-| `cs_trigger_rule` | 4 | `gate_evidence/it/license_position.csv` |
-| `cs_token_suppression` | 4 | `gate_evidence/it/license_position.csv` |
-| `cs_decomposition` | 4 | `gate_evidence/it/license_position.csv` |
-| `cs_special_tokens` | 4 | `gate_evidence/it/license_position.csv` |
-| `cs_forwarded_email` | 4 | `gate_evidence/it/FW_Re_risk_acceptance.docx` |
-| `cs_context_field` | 4 | `00_project_context.json` |
+| `trigger_rule` | 4 | `gate_evidence/it/license_position.csv` |
+| `vocabulary_suppression` | 4 | `gate_evidence/it/license_position.csv` |
+| `fragmented_payload` | 4 | `gate_evidence/it/license_position.csv` |
+| `fake_control_tokens` | 4 | `gate_evidence/it/license_position.csv` |
+| `forwarded_email` | 4 | `gate_evidence/it/FW_Re_risk_acceptance.docx` |
+| `context_note` | 4 | `00_project_context.json` |
 
 See `docs/ATTACKS.md` for what each attack does, and `docs/HOW_DGF_WORKS.md` for the gates and
 the dossier layout. Regenerate byte-for-byte: `python generate_examples.py`.

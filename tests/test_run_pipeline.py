@@ -22,7 +22,7 @@ from dgf_bench.openrouter_eval import benchmark_runner as br
 MODEL = "fake/agent"
 CAPS = {"input_modalities": ["text"], "supported_parameters": ["tools", "tool_choice", "max_tokens"]}
 CANARY = re.compile(r"DGF-[0-9A-F]{8}")
-ATTACKS = ["narrative", "docx_label_noopen", "cs_forwarded_email", "cs_context_field"]    # in PLACEMENTS order
+ATTACKS = ["narrative", "docx_label_noopen", "forwarded_email", "context_note"]    # in PLACEMENTS order
 
 
 class ScriptedModel:

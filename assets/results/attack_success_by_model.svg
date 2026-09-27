@@ -11,16 +11,16 @@
 <rect x="148" y="124" width="14" height="12" rx="2" fill="#a36c24" stroke="none"/>
 <text x="169" y="134" font-size="13" fill="#506678" font-weight="400" text-anchor="start" letter-spacing="0">Document vectors</text>
 <rect x="307" y="124" width="14" height="12" rx="2" fill="#506678" stroke="none"/>
-<text x="328" y="134" font-size="13" fill="#506678" font-weight="400" text-anchor="start" letter-spacing="0">CrowdStrike-derived</text>
-<rect x="488" y="124" width="14" height="12" rx="2" fill="#142c40" stroke="none"/>
-<text x="509" y="134" font-size="13" fill="#506678" font-weight="400" text-anchor="start" letter-spacing="0">Adaptive</text>
+<text x="328" y="134" font-size="13" fill="#506678" font-weight="400" text-anchor="start" letter-spacing="0">Known injection techniques</text>
+<rect x="539" y="124" width="14" height="12" rx="2" fill="#142c40" stroke="none"/>
+<text x="560" y="134" font-size="13" fill="#506678" font-weight="400" text-anchor="start" letter-spacing="0">Adaptive</text>
 <text x="960" y="134" font-size="12.5" fill="#506678" font-weight="400" text-anchor="end" letter-spacing="0">attributable successes / attacked gates</text>
 <text x="234" y="184" font-size="15" fill="#142c40" font-weight="700" text-anchor="end" letter-spacing="0">Qwen3 235B A22B</text>
 <text x="234" y="200" font-size="11" fill="#506678" font-weight="400" text-anchor="end" letter-spacing="0">qwen/qwen3-235b-a22b-2507</text>
 <path d="M250 166 V202" fill="none" stroke="#d5dfe6" stroke-width="1"/>
 <g><title>Qwen3 235B A22B: 91 attributable injection successes</title><path d="M250 172 H646.125 V196 H250 Z" fill="#286b89" stroke="none" stroke-width="1"/></g>
 <g><title>Qwen3 235B A22B: 6 attributable document vectors successes</title><path d="M648.125 172 H672.375 V196 H648.125 Z" fill="#a36c24" stroke="none" stroke-width="1"/></g>
-<g><title>Qwen3 235B A22B: 6 attributable crowdstrike-derived successes</title><path d="M674.375 172 H698.625 V196 H674.375 Z" fill="#506678" stroke="none" stroke-width="1"/></g>
+<g><title>Qwen3 235B A22B: 6 attributable known injection techniques successes</title><path d="M674.375 172 H698.625 V196 H674.375 Z" fill="#506678" stroke="none" stroke-width="1"/></g>
 <g><title>Qwen3 235B A22B: 9 attributable adaptive successes</title><path d="M700.625 172 H736.0 a4 4 0 0 1 4 4 V192 a4 4 0 0 1 -4 4 H700.625 Z" fill="#142c40" stroke="none" stroke-width="1"/></g>
 <text x="750.0" y="189" font-size="16" fill="#142c40" font-weight="700" text-anchor="start" letter-spacing="0">112</text>
 <text x="790.0" y="189" font-size="12.5" fill="#506678" font-weight="400" text-anchor="start" letter-spacing="0">of 434 attacked gates</text>
@@ -28,7 +28,7 @@
 <text x="234" y="250" font-size="11" fill="#506678" font-weight="400" text-anchor="end" letter-spacing="0">openai/gpt-6-luna-pro</text>
 <path d="M250 216 V252" fill="none" stroke="#d5dfe6" stroke-width="1"/>
 <g><title>GPT-6 Luna Pro: 47 attributable injection successes</title><path d="M250 222 H453.625 V246 H250 Z" fill="#286b89" stroke="none" stroke-width="1"/></g>
-<g><title>GPT-6 Luna Pro: 1 attributable crowdstrike-derived successes</title><path d="M455.625 222 H458.0 V246 H455.625 Z" fill="#506678" stroke="none" stroke-width="1"/></g>
+<g><title>GPT-6 Luna Pro: 1 attributable known injection techniques successes</title><path d="M455.625 222 H458.0 V246 H455.625 Z" fill="#506678" stroke="none" stroke-width="1"/></g>
 <g><title>GPT-6 Luna Pro: 5 attributable adaptive successes</title><path d="M460.0 222 H477.875 a4 4 0 0 1 4 4 V242 a4 4 0 0 1 -4 4 H460.0 Z" fill="#142c40" stroke="none" stroke-width="1"/></g>
 <text x="491.875" y="239" font-size="16" fill="#142c40" font-weight="700" text-anchor="start" letter-spacing="0">53</text>
 <text x="519.875" y="239" font-size="12.5" fill="#506678" font-weight="400" text-anchor="start" letter-spacing="0">of 440 attacked gates</text>
@@ -36,7 +36,7 @@
 <text x="234" y="300" font-size="11" fill="#506678" font-weight="400" text-anchor="end" letter-spacing="0">deepseek/deepseek-v4-pro-0813</text>
 <path d="M250 266 V302" fill="none" stroke="#d5dfe6" stroke-width="1"/>
 <g><title>DeepSeek V4 Pro: 33 attributable injection successes</title><path d="M250 272 H392.375 V296 H250 Z" fill="#286b89" stroke="none" stroke-width="1"/></g>
-<g><title>DeepSeek V4 Pro: 1 attributable crowdstrike-derived successes</title><path d="M394.375 272 H396.75 V296 H394.375 Z" fill="#506678" stroke="none" stroke-width="1"/></g>
+<g><title>DeepSeek V4 Pro: 1 attributable known injection techniques successes</title><path d="M394.375 272 H396.75 V296 H394.375 Z" fill="#506678" stroke="none" stroke-width="1"/></g>
 <g><title>DeepSeek V4 Pro: 3 attributable adaptive successes</title><path d="M398.75 272 H407.875 a4 4 0 0 1 4 4 V292 a4 4 0 0 1 -4 4 H398.75 Z" fill="#142c40" stroke="none" stroke-width="1"/></g>
 <text x="421.875" y="289" font-size="16" fill="#142c40" font-weight="700" text-anchor="start" letter-spacing="0">37</text>
 <text x="449.875" y="289" font-size="12.5" fill="#506678" font-weight="400" text-anchor="start" letter-spacing="0">of 434 attacked gates</text>
@@ -44,7 +44,7 @@
 <text x="234" y="350" font-size="11" fill="#506678" font-weight="400" text-anchor="end" letter-spacing="0">openai/gpt-5.6-sol-pro</text>
 <path d="M250 316 V352" fill="none" stroke="#d5dfe6" stroke-width="1"/>
 <g><title>GPT-5.6 Sol Pro: 1 attributable injection successes</title><path d="M250 322 H252.375 V346 H250 Z" fill="#286b89" stroke="none" stroke-width="1"/></g>
-<g><title>GPT-5.6 Sol Pro: 2 attributable crowdstrike-derived successes</title><path d="M254.375 322 H261.125 V346 H254.375 Z" fill="#506678" stroke="none" stroke-width="1"/></g>
+<g><title>GPT-5.6 Sol Pro: 2 attributable known injection techniques successes</title><path d="M254.375 322 H261.125 V346 H254.375 Z" fill="#506678" stroke="none" stroke-width="1"/></g>
 <g><title>GPT-5.6 Sol Pro: 1 attributable adaptive successes</title><path d="M263.125 322 H267.5 V346 H263.125 Z" fill="#142c40" stroke="none" stroke-width="1"/></g>
 <text x="277.5" y="339" font-size="16" fill="#142c40" font-weight="700" text-anchor="start" letter-spacing="0">4</text>
 <text x="293.5" y="339" font-size="12.5" fill="#506678" font-weight="400" text-anchor="start" letter-spacing="0">of 440 attacked gates</text>
@@ -57,7 +57,7 @@
 <text x="234" y="434" font-size="15" fill="#142c40" font-weight="700" text-anchor="end" letter-spacing="0">GLM 5.3</text>
 <text x="234" y="450" font-size="11" fill="#506678" font-weight="400" text-anchor="end" letter-spacing="0">z-ai/glm-5.3</text>
 <path d="M250 416 V452" fill="none" stroke="#d5dfe6" stroke-width="1"/>
-<g><title>GLM 5.3: 2 attributable crowdstrike-derived successes</title><path d="M250 422 H256.75 V446 H250 Z" fill="#506678" stroke="none" stroke-width="1"/></g>
+<g><title>GLM 5.3: 2 attributable known injection techniques successes</title><path d="M250 422 H256.75 V446 H250 Z" fill="#506678" stroke="none" stroke-width="1"/></g>
 <g><title>GLM 5.3: 1 attributable adaptive successes</title><path d="M258.75 422 H263.125 V446 H258.75 Z" fill="#142c40" stroke="none" stroke-width="1"/></g>
 <text x="273.125" y="439" font-size="16" fill="#142c40" font-weight="700" text-anchor="start" letter-spacing="0">3</text>
 <text x="289.125" y="439" font-size="12.5" fill="#506678" font-weight="400" text-anchor="start" letter-spacing="0">of 434 attacked gates</text>

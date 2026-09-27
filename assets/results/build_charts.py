@@ -25,8 +25,8 @@ SURFACE = "#fcfdfd"
 FONT = "-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
 
 FAMILY_LABELS = {"injection": "Injection", "document": "Document vectors",
-                 "crowdstrike": "CrowdStrike-derived", "adaptive": "Adaptive"}
-FAMILY_COLORS = {"injection": BLUE, "document": GOLD, "crowdstrike": MUTED, "adaptive": INK}
+                 "technique": "Known injection techniques", "adaptive": "Adaptive"}
+FAMILY_COLORS = {"injection": BLUE, "document": GOLD, "technique": MUTED, "adaptive": INK}
 # The three injection kinds that changed decisions or tool budgets in the pilot (results/PILOT_NOTES.md).
 
 
@@ -202,7 +202,7 @@ def attack_matrix(data):
                "Heatmap of 29 attacks (rows) by 6 models (columns). Each cell shows attributable successes over "
                "attacked gates and is tinted by their ratio; zero cells are pale; n/a cells are hatched where the "
                "attack cannot be sent to a text-only model. Rows are grouped by family: injection (1-15), document "
-               "vectors (16-21), CrowdStrike-derived (22-27) and adaptive (28-29). Totals: " +
+               "vectors (16-21), known injection techniques (22-27) and adaptive (28-29). Totals: " +
                "; ".join(f"{m['name']} {totals[m['id']]['total']}" for m in models) + ".",
                "RESULTS / PILOT 2026-09",
                f"{len(data['setup']['dossiers'])} dossiers, {len(data['attacks'])} attacks, "

@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.2 — 2026-09-28
+
+Attacks 22–27 renamed: they are publicly documented prompt-injection techniques, not attributed to any
+organization.
+
+### Changed
+- The family of attacks 22–27 is now **known injection techniques** (key `technique` in
+  `results/pilot_2026-09.json` and in the report). Their ids are `trigger_rule`,
+  `vocabulary_suppression`, `fragmented_payload`, `fake_control_tokens`, `forwarded_email` and
+  `context_note`, for `--attacks`, the attack manifests, the report and the example dossiers
+  (`example/DGF-Attack/<id>`). The previous ids are no longer accepted.
+- README, `OVERVIEW.md`, `docs/ATTACKS.md`, the charts and the pilot data use the new names.
+
 ## 0.1.1 — 2026-09-28
 
 Fixes to the one-command benchmark, a DGF score out of 100, and release notes for every version.
@@ -17,8 +30,8 @@ Fixes to the one-command benchmark, a DGF score out of 100, and release notes fo
 - **Dossiers with nothing to attack.** About a quarter of the balanced plan aims at dossiers whose gates are
   all GO, which the attacks cannot target. `dgf-bench run` now keeps only dossiers with at least one blocked
   specialist gate, chosen at planning time, as in the pilot.
-- **Three file vectors.** `cs_context_field` wrote its note, then the project context was rewritten and the
-  note erased. `cs_forwarded_email` and `signed_pdf` registered the added file for the first attacked gate
+- **Three file vectors.** `context_note` wrote its note, then the project context was rewritten and the
+  note erased. `forwarded_email` and `signed_pdf` registered the added file for the first attacked gate
   only; each gate now has its own evidence node (`…_<GATE>`). The Word metadata and label vectors let two
   gates share one document, so the second overwrote the first's properties; each attacked gate now gets its
   own document.
@@ -79,7 +92,7 @@ DGF-Bench extracted into a clean repository, protocol `DGF-decision-v9`, focused
 - One-command benchmark: `dgf-bench run --model <id> --openrouter-key <key> --dossier-number N`.
   It generates N synthetic governance dossiers, certifies that every gate is decidable, derives one
   variant per attack type (27 attacks: 15 in-text injections, 6 document/metadata vectors, 6
-  CrowdStrike-derived), runs a model through every gate under the attack condition, scores it,
+  known injection techniques), runs a model through every gate under the attack condition, scores it,
   attributes each success against the paired clean run, and writes `report/REPORT.md`,
   `report.json` and SVG charts. Cost is shown before any paid call; `--max-cost-usd` caps the run;
   `--dry-run` prepares everything offline.

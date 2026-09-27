@@ -78,14 +78,14 @@ class AttackVectorTests(unittest.TestCase):
             self.assertTrue(any(entry["token"] in b for b in content), entry["gate"])
 
     def test_forwarded_email_reaches_every_attacked_gate(self):
-        case = self._build("cs_forwarded_email")
+        case = self._build("forwarded_email")
         for entry in self._attacked(case):
             result = PublicEvidenceReader(case, entry["gate"], entry["phase"], docx_blocks=True).read_evidence(entry["evidence_id"])
             self.assertEqual(result["status"], "OK", entry["gate"])
             self.assertIn(entry["token"], json.dumps(result["content"]), entry["gate"])
 
     def test_context_note_is_kept_in_the_project_context(self):
-        case = self._build("cs_context_field")
+        case = self._build("context_note")
         unit = json.loads((case / "00_project_context.json").read_text(encoding="utf-8"))["project"]["business_unit"]
         for entry in self._attacked(case):
             self.assertIn(entry["token"], unit)
