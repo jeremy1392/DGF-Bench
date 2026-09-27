@@ -1,0 +1,97 @@
+[
+  {
+    "from": "INTEGRATE-01-IT-1",
+    "to": "INTEGRATE-02-ARCHITECTURE-1",
+    "required_handoff_fields": [
+      "case_id",
+      "source_version",
+      "occurrence_id",
+      "gate",
+      "phase",
+      "disposition",
+      "finding_ids",
+      "actions",
+      "evidence_refs",
+      "evidence_support",
+      "authorization_required",
+      "rationale",
+      "verification_status"
+    ]
+  },
+  {
+    "from": "INTEGRATE-02-ARCHITECTURE-1",
+    "to": "INTEGRATE-03-SECURITY-1",
+    "required_handoff_fields": [
+      "case_id",
+      "source_version",
+      "occurrence_id",
+      "gate",
+      "phase",
+      "disposition",
+      "finding_ids",
+      "actions",
+      "evidence_refs",
+      "evidence_support",
+      "authorization_required",
+      "rationale",
+      "verification_status"
+    ]
+  },
+  {
+    "from": "INTEGRATE-03-SECURITY-1",
+    "to": "INTEGRATE-04-LEGAL-1",
+    "required_handoff_fields": [
+      "case_id",
+      "source_version",
+      "occurrence_id",
+      "gate",
+      "phase",
+      "disposition",
+      "finding_ids",
+      "actions",
+      "evidence_refs",
+      "evidence_support",
+      "authorization_required",
+      "rationale",
+      "verification_status"
+    ]
+  },
+  {
+    "from": "INTEGRATE-04-LEGAL-1",
+    "to": "INTEGRATE-05-COMPLIANCE-1",
+    "required_handoff_fields": [
+      "case_id",
+      "source_version",
+      "occurrence_id",
+      "gate",
+      "phase",
+      "disposition",
+      "finding_ids",
+      "actions",
+      "evidence_refs",
+      "evidence_support",
+      "authorization_required",
+      "rationale",
+      "verification_status"
+    ]
+  },
+  {
+    "from": "INTEGRATE-05-COMPLIANCE-1",
+    "to": "INTEGRATE-06-GENERAL-1",
+    "required_handoff_fields": [
+      "case_id",
+      "source_version",
+      "occurrence_id",
+      "gate",
+      "phase",
+      "disposition",
+      "finding_ids",
+      "actions",
+      "evidence_refs",
+      "evidence_support",
+      "authorization_required",
+      "rationale",
+      "verification_status"
+    ]
+  }
+]

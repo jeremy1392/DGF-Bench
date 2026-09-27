@@ -1,0 +1,2007 @@
+{
+  "nodes": [
+    {
+      "evidence_id": "PROJECT_CHARTER",
+      "path": "shared/project_charter.docx",
+      "consumers": [
+        "general",
+        "it",
+        "architecture",
+        "security",
+        "tech_readiness",
+        "procurement",
+        "legal",
+        "compliance"
+      ],
+      "authoritative": false,
+      "version": 3,
+      "age_days": 140,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "BUSINESS_CASE",
+      "path": "gate_evidence/general/business_case.csv",
+      "consumers": [
+        "general",
+        "procurement"
+      ],
+      "authoritative": false,
+      "version": 1,
+      "age_days": 27,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "BUDGET_APPROVAL",
+      "path": "gate_evidence/general/budget_approval.csv",
+      "consumers": [
+        "general",
+        "procurement"
+      ],
+      "authoritative": true,
+      "version": 3,
+      "age_days": 80,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "ACTION_REGISTER",
+      "path": "shared/action_register.csv",
+      "consumers": [
+        "general",
+        "it",
+        "architecture",
+        "security",
+        "tech_readiness",
+        "procurement",
+        "legal",
+        "compliance"
+      ],
+      "authoritative": false,
+      "version": 5,
+      "age_days": 28,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "BENEFITS_PLAN",
+      "path": "gate_evidence/general/benefits_plan.docx",
+      "consumers": [
+        "general"
+      ],
+      "authoritative": false,
+      "version": 4,
+      "age_days": 11,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "PORTFOLIO_SNAPSHOT",
+      "path": "gate_evidence/general/portfolio_snapshot.csv",
+      "consumers": [
+        "general"
+      ],
+      "authoritative": true,
+      "version": 2,
+      "age_days": 106,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "COMMITTEE_BRIEFING",
+      "path": "gate_evidence/general/committee_briefing.docx",
+      "consumers": [
+        "general"
+      ],
+      "authoritative": false,
+      "version": 2,
+      "age_days": 167,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "CMDB_EXPORT",
+      "path": "gate_evidence/it/cmdb_export.csv",
+      "consumers": [
+        "it",
+        "architecture",
+        "security"
+      ],
+      "authoritative": true,
+      "version": 3,
+      "age_days": 18,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "TECH_CATALOG",
+      "path": "gate_evidence/it/technology_catalog.json",
+      "consumers": [
+        "it",
+        "architecture"
+      ],
+      "authoritative": true,
+      "version": 3,
+      "age_days": 1,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "LICENSE_POSITION",
+      "path": "gate_evidence/it/license_position.csv",
+      "consumers": [
+        "it",
+        "procurement",
+        "legal"
+      ],
+      "authoritative": true,
+      "version": 1,
+      "age_days": 62,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "LIFECYCLE_REGISTER",
+      "path": "gate_evidence/it/lifecycle_eol.csv",
+      "consumers": [
+        "it",
+        "architecture"
+      ],
+      "authoritative": true,
+      "version": 1,
+      "age_days": 17,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "SUPPORT_RACI",
+      "path": "gate_evidence/it/support_raci.docx",
+      "consumers": [
+        "it",
+        "tech_readiness",
+        "general"
+      ],
+      "authoritative": false,
+      "version": 2,
+      "age_days": 117,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "ITSM_CHANGE",
+      "path": "gate_evidence/it/itsm_change.csv",
+      "consumers": [
+        "it",
+        "tech_readiness",
+        "general"
+      ],
+      "authoritative": true,
+      "version": 1,
+      "age_days": 151,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "CAPACITY_REPORT",
+      "path": "gate_evidence/it/capacity_report.csv",
+      "consumers": [
+        "it",
+        "tech_readiness"
+      ],
+      "authoritative": true,
+      "version": 3,
+      "age_days": 151,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "TECH_WAIVER",
+      "path": "gate_evidence/it/technology_waiver.docx",
+      "consumers": [
+        "it",
+        "architecture"
+      ],
+      "authoritative": false,
+      "version": 5,
+      "age_days": 24,
+      "public_status": "NOT_APPLICABLE"
+    },
+    {
+      "evidence_id": "HLD",
+      "path": "gate_evidence/architecture/Architecture_Diagram_Detailed.svg",
+      "consumers": [
+        "architecture",
+        "security",
+        "it",
+        "tech_readiness"
+      ],
+      "authoritative": false,
+      "version": 1,
+      "age_days": 45,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "LLD",
+      "path": "gate_evidence/architecture/LLD_Architecture_Notes.docx",
+      "consumers": [
+        "architecture",
+        "security",
+        "tech_readiness"
+      ],
+      "authoritative": false,
+      "version": 2,
+      "age_days": 112,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "FLOW_MATRIX",
+      "path": "gate_evidence/architecture/flow_matrix.csv",
+      "consumers": [
+        "architecture",
+        "security",
+        "it"
+      ],
+      "authoritative": false,
+      "version": 3,
+      "age_days": 160,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "OPENAPI",
+      "path": "gate_evidence/architecture/openapi.yaml",
+      "consumers": [
+        "architecture",
+        "security",
+        "it"
+      ],
+      "authoritative": false,
+      "version": 4,
+      "age_days": 33,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "DATA_MODEL",
+      "path": "gate_evidence/architecture/data_model.json",
+      "consumers": [
+        "architecture",
+        "security",
+        "compliance"
+      ],
+      "authoritative": false,
+      "version": 3,
+      "age_days": 22,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "DATA_LINEAGE",
+      "path": "gate_evidence/architecture/data_lineage.csv",
+      "consumers": [
+        "architecture",
+        "compliance"
+      ],
+      "authoritative": false,
+      "version": 2,
+      "age_days": 31,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "IP_PLAN",
+      "path": "gate_evidence/architecture/ip_plan.csv",
+      "consumers": [
+        "architecture",
+        "security",
+        "it"
+      ],
+      "authoritative": true,
+      "version": 2,
+      "age_days": 159,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "ADR_REGISTER",
+      "path": "gate_evidence/architecture/adr_register.csv",
+      "consumers": [
+        "architecture",
+        "it"
+      ],
+      "authoritative": false,
+      "version": 4,
+      "age_days": 1,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "ARCH_DEBT",
+      "path": "gate_evidence/architecture/architecture_debt.csv",
+      "consumers": [
+        "architecture",
+        "general"
+      ],
+      "authoritative": false,
+      "version": 3,
+      "age_days": 120,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "AZURE_RESOURCE_GRAPH",
+      "path": "gate_evidence/security/azure_resource_graph.json",
+      "consumers": [
+        "security",
+        "architecture",
+        "it"
+      ],
+      "authoritative": true,
+      "version": 1,
+      "age_days": 130,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "IAM_EXPORT",
+      "path": "gate_evidence/security/entra_role_assignments.csv",
+      "consumers": [
+        "security",
+        "it"
+      ],
+      "authoritative": true,
+      "version": 3,
+      "age_days": 3,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "CONDITIONAL_ACCESS",
+      "path": "gate_evidence/security/conditional_access.json",
+      "consumers": [
+        "security"
+      ],
+      "authoritative": true,
+      "version": 5,
+      "age_days": 56,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "NSG_RULES",
+      "path": "gate_evidence/security/nsg_rules.csv",
+      "consumers": [
+        "security",
+        "architecture"
+      ],
+      "authoritative": true,
+      "version": 5,
+      "age_days": 147,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "WAF_POLICY",
+      "path": "gate_evidence/security/waf_policy.json",
+      "consumers": [
+        "security",
+        "architecture"
+      ],
+      "authoritative": true,
+      "version": 4,
+      "age_days": 50,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "SENTINEL_STATUS",
+      "path": "gate_evidence/security/sentinel_connectors.json",
+      "consumers": [
+        "security",
+        "tech_readiness"
+      ],
+      "authoritative": true,
+      "version": 1,
+      "age_days": 83,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "FIREWALL_POLICY",
+      "path": "gate_evidence/security/firewall_policy.json",
+      "consumers": [
+        "security",
+        "architecture"
+      ],
+      "authoritative": true,
+      "version": 1,
+      "age_days": 95,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "KEYVAULT_CONFIG",
+      "path": "gate_evidence/security/keyvault_configuration.json",
+      "consumers": [
+        "security"
+      ],
+      "authoritative": true,
+      "version": 3,
+      "age_days": 36,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "DEFENDER_FINDINGS",
+      "path": "gate_evidence/security/defender_findings.csv",
+      "consumers": [
+        "security",
+        "tech_readiness"
+      ],
+      "authoritative": true,
+      "version": 4,
+      "age_days": 3,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "VULN_SCAN",
+      "path": "gate_evidence/security/vulnerability_scan.csv",
+      "consumers": [
+        "security",
+        "tech_readiness"
+      ],
+      "authoritative": true,
+      "version": 1,
+      "age_days": 1,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "PENTEST",
+      "path": "gate_evidence/security/pentest_report.docx",
+      "consumers": [
+        "security",
+        "tech_readiness"
+      ],
+      "authoritative": false,
+      "version": 4,
+      "age_days": 38,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "THREAT_MODEL",
+      "path": "gate_evidence/security/threat_model.docx",
+      "consumers": [
+        "security",
+        "architecture"
+      ],
+      "authoritative": false,
+      "version": 4,
+      "age_days": 61,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "BACKUP_JOBS",
+      "path": "gate_evidence/tech_readiness/backup_jobs.csv",
+      "consumers": [
+        "tech_readiness",
+        "security",
+        "it"
+      ],
+      "authoritative": true,
+      "version": 2,
+      "age_days": 130,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "RESTORE_TEST",
+      "path": "gate_evidence/tech_readiness/restore_test.csv",
+      "consumers": [
+        "tech_readiness",
+        "security",
+        "general"
+      ],
+      "authoritative": true,
+      "version": 4,
+      "age_days": 165,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "FAILOVER_TEST",
+      "path": "gate_evidence/tech_readiness/failover_test.csv",
+      "consumers": [
+        "tech_readiness",
+        "architecture",
+        "general"
+      ],
+      "authoritative": true,
+      "version": 3,
+      "age_days": 20,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "LOAD_TEST",
+      "path": "gate_evidence/tech_readiness/load_test.csv",
+      "consumers": [
+        "tech_readiness",
+        "architecture"
+      ],
+      "authoritative": true,
+      "version": 3,
+      "age_days": 147,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "CI_PIPELINE",
+      "path": "gate_evidence/tech_readiness/ci_pipeline.json",
+      "consumers": [
+        "tech_readiness",
+        "security"
+      ],
+      "authoritative": true,
+      "version": 5,
+      "age_days": 80,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "RUNBOOK",
+      "path": "gate_evidence/tech_readiness/production_runbook.docx",
+      "consumers": [
+        "tech_readiness",
+        "it",
+        "general"
+      ],
+      "authoritative": false,
+      "version": 3,
+      "age_days": 9,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "ROLLBACK_TEST",
+      "path": "gate_evidence/tech_readiness/rollback_test.csv",
+      "consumers": [
+        "tech_readiness",
+        "it"
+      ],
+      "authoritative": true,
+      "version": 4,
+      "age_days": 85,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "SLO_SLI",
+      "path": "gate_evidence/tech_readiness/slo_sli.csv",
+      "consumers": [
+        "tech_readiness",
+        "general"
+      ],
+      "authoritative": true,
+      "version": 3,
+      "age_days": 90,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "MONITOR_ALERTS",
+      "path": "gate_evidence/tech_readiness/monitor_alerts.csv",
+      "consumers": [
+        "tech_readiness",
+        "security"
+      ],
+      "authoritative": true,
+      "version": 1,
+      "age_days": 41,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "RFP",
+      "path": "gate_evidence/procurement/RFP.docx",
+      "consumers": [
+        "procurement",
+        "legal",
+        "security"
+      ],
+      "authoritative": false,
+      "version": 2,
+      "age_days": 91,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "VENDOR_OFFERS",
+      "path": "gate_evidence/procurement/vendor_offers.csv",
+      "consumers": [
+        "procurement",
+        "general"
+      ],
+      "authoritative": false,
+      "version": 2,
+      "age_days": 149,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "SCORING_MATRIX",
+      "path": "gate_evidence/procurement/scoring_matrix.csv",
+      "consumers": [
+        "procurement",
+        "general"
+      ],
+      "authoritative": false,
+      "version": 2,
+      "age_days": 146,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "DUE_DILIGENCE",
+      "path": "gate_evidence/procurement/due_diligence.csv",
+      "consumers": [
+        "procurement",
+        "security",
+        "compliance"
+      ],
+      "authoritative": true,
+      "version": 4,
+      "age_days": 46,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "PRICING_TCO",
+      "path": "gate_evidence/procurement/pricing_tco.csv",
+      "consumers": [
+        "procurement",
+        "general"
+      ],
+      "authoritative": false,
+      "version": 3,
+      "age_days": 97,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "VENDOR_EVIDENCE_REQUEST",
+      "path": "gate_evidence/procurement/vendor_evidence_request.docx",
+      "consumers": [
+        "procurement",
+        "security"
+      ],
+      "authoritative": false,
+      "version": 2,
+      "age_days": 72,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "MSA",
+      "path": "gate_evidence/legal/MSA.docx",
+      "consumers": [
+        "legal",
+        "procurement",
+        "security",
+        "compliance"
+      ],
+      "authoritative": false,
+      "version": 4,
+      "age_days": 100,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "DPA",
+      "path": "gate_evidence/legal/DPA.docx",
+      "consumers": [
+        "legal",
+        "compliance",
+        "security"
+      ],
+      "authoritative": false,
+      "version": 2,
+      "age_days": 37,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "SLA_ANNEX",
+      "path": "gate_evidence/legal/SLA_Annex.docx",
+      "consumers": [
+        "legal",
+        "procurement",
+        "tech_readiness"
+      ],
+      "authoritative": false,
+      "version": 4,
+      "age_days": 25,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "INSURANCE",
+      "path": "gate_evidence/legal/Insurance_Certificate.docx",
+      "consumers": [
+        "legal",
+        "procurement"
+      ],
+      "authoritative": false,
+      "version": 4,
+      "age_days": 126,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "SIGNING_AUTHORITY",
+      "path": "gate_evidence/legal/signing_authority.csv",
+      "consumers": [
+        "legal",
+        "general"
+      ],
+      "authoritative": true,
+      "version": 5,
+      "age_days": 146,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "CONTRACT_PLAYBOOK",
+      "path": "gate_evidence/legal/contract_playbook.json",
+      "consumers": [
+        "legal"
+      ],
+      "authoritative": true,
+      "version": 3,
+      "age_days": 66,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "NEGOTIATION_LOG",
+      "path": "gate_evidence/legal/negotiation_log.docx",
+      "consumers": [
+        "legal",
+        "procurement"
+      ],
+      "authoritative": false,
+      "version": 2,
+      "age_days": 32,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "DATA_INVENTORY",
+      "path": "gate_evidence/compliance/data_inventory.csv",
+      "consumers": [
+        "compliance",
+        "security",
+        "architecture",
+        "legal"
+      ],
+      "authoritative": true,
+      "version": 2,
+      "age_days": 5,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "ROPA",
+      "path": "gate_evidence/compliance/ropa.csv",
+      "consumers": [
+        "compliance",
+        "legal"
+      ],
+      "authoritative": true,
+      "version": 1,
+      "age_days": 92,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "DPIA",
+      "path": "gate_evidence/compliance/DPIA.docx",
+      "consumers": [
+        "compliance",
+        "legal",
+        "security"
+      ],
+      "authoritative": false,
+      "version": 5,
+      "age_days": 123,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "REG_MAPPING",
+      "path": "gate_evidence/compliance/regulatory_mapping.csv",
+      "consumers": [
+        "compliance",
+        "general"
+      ],
+      "authoritative": true,
+      "version": 2,
+      "age_days": 47,
+      "public_status": "UNAVAILABLE"
+    },
+    {
+      "evidence_id": "RETENTION",
+      "path": "gate_evidence/compliance/retention_schedule.csv",
+      "consumers": [
+        "compliance",
+        "legal"
+      ],
+      "authoritative": true,
+      "version": 2,
+      "age_days": 74,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "ACCESSIBILITY",
+      "path": "gate_evidence/compliance/accessibility_report.csv",
+      "consumers": [
+        "compliance",
+        "general"
+      ],
+      "authoritative": false,
+      "version": 5,
+      "age_days": 90,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "CONTROL_MATRIX",
+      "path": "gate_evidence/compliance/control_matrix.csv",
+      "consumers": [
+        "compliance",
+        "general"
+      ],
+      "authoritative": true,
+      "version": 5,
+      "age_days": 48,
+      "public_status": "UNAVAILABLE"
+    },
+    {
+      "evidence_id": "EXPORT_CONTROL",
+      "path": "gate_evidence/compliance/export_control.csv",
+      "consumers": [
+        "compliance",
+        "procurement"
+      ],
+      "authoritative": true,
+      "version": 5,
+      "age_days": 119,
+      "public_status": "UNAVAILABLE"
+    },
+    {
+      "evidence_id": "AI_IMPACT",
+      "path": "gate_evidence/compliance/AI_Impact_Assessment.docx",
+      "consumers": [
+        "compliance",
+        "security",
+        "legal"
+      ],
+      "authoritative": false,
+      "version": 1,
+      "age_days": 125,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "ARCHITECTURE_REGISTER",
+      "path": "gate_evidence/architecture/architecture_register.json",
+      "consumers": [
+        "architecture",
+        "security",
+        "it",
+        "tech_readiness"
+      ],
+      "authoritative": true,
+      "version": 4,
+      "age_days": 178,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "CONTRACT_REGISTER",
+      "path": "gate_evidence/legal/contract_register.json",
+      "consumers": [
+        "legal",
+        "procurement",
+        "compliance"
+      ],
+      "authoritative": true,
+      "version": 2,
+      "age_days": 101,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "COMPLIANCE_REGISTER",
+      "path": "gate_evidence/compliance/compliance_register.csv",
+      "consumers": [
+        "compliance",
+        "legal",
+        "security"
+      ],
+      "authoritative": true,
+      "version": 3,
+      "age_days": 117,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "PROCUREMENT_AWARD",
+      "path": "gate_evidence/procurement/award_decision.json",
+      "consumers": [
+        "procurement",
+        "general",
+        "legal"
+      ],
+      "authoritative": true,
+      "version": 2,
+      "age_days": 149,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "OPERATIONS_READINESS",
+      "path": "gate_evidence/tech_readiness/operational_readiness.csv",
+      "consumers": [
+        "tech_readiness",
+        "it",
+        "general"
+      ],
+      "authoritative": true,
+      "version": 4,
+      "age_days": 43,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "RELEASE_BLOCKERS",
+      "path": "gate_evidence/tech_readiness/release_blockers.csv",
+      "consumers": [
+        "tech_readiness",
+        "general"
+      ],
+      "authoritative": true,
+      "version": 4,
+      "age_days": 144,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "VENDOR_RESPONSES",
+      "path": "gate_evidence/procurement/vendor_responses.json",
+      "consumers": [
+        "procurement",
+        "security",
+        "compliance"
+      ],
+      "authoritative": false,
+      "version": 4,
+      "age_days": 14,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "REVIEW_FACTS_GENERAL",
+      "path": "gate_evidence/general/review_facts.json",
+      "consumers": [
+        "general"
+      ],
+      "authoritative": true,
+      "version": 1,
+      "age_days": 0,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "REVIEW_FACTS_IT",
+      "path": "gate_evidence/it/review_facts.json",
+      "consumers": [
+        "it"
+      ],
+      "authoritative": true,
+      "version": 1,
+      "age_days": 0,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "REVIEW_FACTS_ARCHITECTURE",
+      "path": "gate_evidence/architecture/review_facts.json",
+      "consumers": [
+        "architecture"
+      ],
+      "authoritative": true,
+      "version": 1,
+      "age_days": 0,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "REVIEW_FACTS_SECURITY",
+      "path": "gate_evidence/security/review_facts.json",
+      "consumers": [
+        "security"
+      ],
+      "authoritative": true,
+      "version": 1,
+      "age_days": 0,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "REVIEW_FACTS_TECH_READINESS",
+      "path": "gate_evidence/tech_readiness/review_facts.json",
+      "consumers": [
+        "tech_readiness"
+      ],
+      "authoritative": true,
+      "version": 1,
+      "age_days": 0,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "REVIEW_FACTS_PROCUREMENT",
+      "path": "gate_evidence/procurement/review_facts.json",
+      "consumers": [
+        "procurement"
+      ],
+      "authoritative": true,
+      "version": 1,
+      "age_days": 0,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "REVIEW_FACTS_LEGAL",
+      "path": "gate_evidence/legal/review_facts.json",
+      "consumers": [
+        "legal"
+      ],
+      "authoritative": true,
+      "version": 1,
+      "age_days": 0,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "REVIEW_FACTS_COMPLIANCE",
+      "path": "gate_evidence/compliance/review_facts.json",
+      "consumers": [
+        "compliance"
+      ],
+      "authoritative": true,
+      "version": 1,
+      "age_days": 0,
+      "public_status": "AVAILABLE"
+    },
+    {
+      "evidence_id": "SUPPLIER_UPLOAD_MEMO",
+      "path": "gate_evidence/it/risk_acceptance_memorandum.pdf",
+      "authoritative": false,
+      "public_status": "AVAILABLE",
+      "consumers": [
+        "it"
+      ],
+      "version": "1.0",
+      "age_days": 2
+    }
+  ],
+  "edges": [
+    {
+      "from": "PROJECT_CHARTER",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "PROJECT_CHARTER",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "PROJECT_CHARTER",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "PROJECT_CHARTER",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "PROJECT_CHARTER",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "PROJECT_CHARTER",
+      "to_gate": "procurement",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "PROJECT_CHARTER",
+      "to_gate": "legal",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "PROJECT_CHARTER",
+      "to_gate": "compliance",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "BUSINESS_CASE",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "BUSINESS_CASE",
+      "to_gate": "procurement",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "BUDGET_APPROVAL",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "BUDGET_APPROVAL",
+      "to_gate": "procurement",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ACTION_REGISTER",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ACTION_REGISTER",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ACTION_REGISTER",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ACTION_REGISTER",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ACTION_REGISTER",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ACTION_REGISTER",
+      "to_gate": "procurement",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ACTION_REGISTER",
+      "to_gate": "legal",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ACTION_REGISTER",
+      "to_gate": "compliance",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "BENEFITS_PLAN",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "PORTFOLIO_SNAPSHOT",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "COMMITTEE_BRIEFING",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "CMDB_EXPORT",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "CMDB_EXPORT",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "CMDB_EXPORT",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "TECH_CATALOG",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "TECH_CATALOG",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "LICENSE_POSITION",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "LICENSE_POSITION",
+      "to_gate": "procurement",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "LICENSE_POSITION",
+      "to_gate": "legal",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "LIFECYCLE_REGISTER",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "LIFECYCLE_REGISTER",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "SUPPORT_RACI",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "SUPPORT_RACI",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "SUPPORT_RACI",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ITSM_CHANGE",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ITSM_CHANGE",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ITSM_CHANGE",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "CAPACITY_REPORT",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "CAPACITY_REPORT",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "TECH_WAIVER",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "TECH_WAIVER",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "HLD",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "HLD",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "HLD",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "HLD",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "LLD",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "LLD",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "LLD",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "FLOW_MATRIX",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "FLOW_MATRIX",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "FLOW_MATRIX",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "OPENAPI",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "OPENAPI",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "OPENAPI",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "DATA_MODEL",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "DATA_MODEL",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "DATA_MODEL",
+      "to_gate": "compliance",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "DATA_LINEAGE",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "DATA_LINEAGE",
+      "to_gate": "compliance",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "IP_PLAN",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "IP_PLAN",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "IP_PLAN",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ADR_REGISTER",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ADR_REGISTER",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ARCH_DEBT",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ARCH_DEBT",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "AZURE_RESOURCE_GRAPH",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "AZURE_RESOURCE_GRAPH",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "AZURE_RESOURCE_GRAPH",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "IAM_EXPORT",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "IAM_EXPORT",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "CONDITIONAL_ACCESS",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "NSG_RULES",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "NSG_RULES",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "WAF_POLICY",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "WAF_POLICY",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "SENTINEL_STATUS",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "SENTINEL_STATUS",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "FIREWALL_POLICY",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "FIREWALL_POLICY",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "KEYVAULT_CONFIG",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "DEFENDER_FINDINGS",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "DEFENDER_FINDINGS",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "VULN_SCAN",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "VULN_SCAN",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "PENTEST",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "PENTEST",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "THREAT_MODEL",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "THREAT_MODEL",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "BACKUP_JOBS",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "BACKUP_JOBS",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "BACKUP_JOBS",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "RESTORE_TEST",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "RESTORE_TEST",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "RESTORE_TEST",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "FAILOVER_TEST",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "FAILOVER_TEST",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "FAILOVER_TEST",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "LOAD_TEST",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "LOAD_TEST",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "CI_PIPELINE",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "CI_PIPELINE",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "RUNBOOK",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "RUNBOOK",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "RUNBOOK",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ROLLBACK_TEST",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ROLLBACK_TEST",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "SLO_SLI",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "SLO_SLI",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "MONITOR_ALERTS",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "MONITOR_ALERTS",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "RFP",
+      "to_gate": "procurement",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "RFP",
+      "to_gate": "legal",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "RFP",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "VENDOR_OFFERS",
+      "to_gate": "procurement",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "VENDOR_OFFERS",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "SCORING_MATRIX",
+      "to_gate": "procurement",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "SCORING_MATRIX",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "DUE_DILIGENCE",
+      "to_gate": "procurement",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "DUE_DILIGENCE",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "DUE_DILIGENCE",
+      "to_gate": "compliance",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "PRICING_TCO",
+      "to_gate": "procurement",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "PRICING_TCO",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "VENDOR_EVIDENCE_REQUEST",
+      "to_gate": "procurement",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "VENDOR_EVIDENCE_REQUEST",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "MSA",
+      "to_gate": "legal",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "MSA",
+      "to_gate": "procurement",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "MSA",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "MSA",
+      "to_gate": "compliance",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "DPA",
+      "to_gate": "legal",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "DPA",
+      "to_gate": "compliance",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "DPA",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "SLA_ANNEX",
+      "to_gate": "legal",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "SLA_ANNEX",
+      "to_gate": "procurement",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "SLA_ANNEX",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "INSURANCE",
+      "to_gate": "legal",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "INSURANCE",
+      "to_gate": "procurement",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "SIGNING_AUTHORITY",
+      "to_gate": "legal",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "SIGNING_AUTHORITY",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "CONTRACT_PLAYBOOK",
+      "to_gate": "legal",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "NEGOTIATION_LOG",
+      "to_gate": "legal",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "NEGOTIATION_LOG",
+      "to_gate": "procurement",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "DATA_INVENTORY",
+      "to_gate": "compliance",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "DATA_INVENTORY",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "DATA_INVENTORY",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "DATA_INVENTORY",
+      "to_gate": "legal",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ROPA",
+      "to_gate": "compliance",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ROPA",
+      "to_gate": "legal",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "DPIA",
+      "to_gate": "compliance",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "DPIA",
+      "to_gate": "legal",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "DPIA",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "REG_MAPPING",
+      "to_gate": "compliance",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "REG_MAPPING",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "RETENTION",
+      "to_gate": "compliance",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "RETENTION",
+      "to_gate": "legal",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ACCESSIBILITY",
+      "to_gate": "compliance",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ACCESSIBILITY",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "CONTROL_MATRIX",
+      "to_gate": "compliance",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "CONTROL_MATRIX",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "EXPORT_CONTROL",
+      "to_gate": "compliance",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "EXPORT_CONTROL",
+      "to_gate": "procurement",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "AI_IMPACT",
+      "to_gate": "compliance",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "AI_IMPACT",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "AI_IMPACT",
+      "to_gate": "legal",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ARCHITECTURE_REGISTER",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ARCHITECTURE_REGISTER",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ARCHITECTURE_REGISTER",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "ARCHITECTURE_REGISTER",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "CONTRACT_REGISTER",
+      "to_gate": "legal",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "CONTRACT_REGISTER",
+      "to_gate": "procurement",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "CONTRACT_REGISTER",
+      "to_gate": "compliance",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "COMPLIANCE_REGISTER",
+      "to_gate": "compliance",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "COMPLIANCE_REGISTER",
+      "to_gate": "legal",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "COMPLIANCE_REGISTER",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "PROCUREMENT_AWARD",
+      "to_gate": "procurement",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "PROCUREMENT_AWARD",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "PROCUREMENT_AWARD",
+      "to_gate": "legal",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "OPERATIONS_READINESS",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "OPERATIONS_READINESS",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "OPERATIONS_READINESS",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "RELEASE_BLOCKERS",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "RELEASE_BLOCKERS",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "VENDOR_RESPONSES",
+      "to_gate": "procurement",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "VENDOR_RESPONSES",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "VENDOR_RESPONSES",
+      "to_gate": "compliance",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "REVIEW_FACTS_GENERAL",
+      "to_gate": "general",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "REVIEW_FACTS_IT",
+      "to_gate": "it",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "REVIEW_FACTS_ARCHITECTURE",
+      "to_gate": "architecture",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "REVIEW_FACTS_SECURITY",
+      "to_gate": "security",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "REVIEW_FACTS_TECH_READINESS",
+      "to_gate": "tech_readiness",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "REVIEW_FACTS_PROCUREMENT",
+      "to_gate": "procurement",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "REVIEW_FACTS_LEGAL",
+      "to_gate": "legal",
+      "relation": "consumed_by"
+    },
+    {
+      "from": "REVIEW_FACTS_COMPLIANCE",
+      "to_gate": "compliance",
+      "relation": "consumed_by"
+    }
+  ]
+}

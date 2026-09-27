@@ -1,0 +1,3 @@
+classification,destination,protocol,purpose,source
+Internal,Application Gateway WAF,HTTPS/443,User traffic,Internet Users
+Internal,Azure AI Search,TLS/Private Link,Application data,Azure VM AZ1

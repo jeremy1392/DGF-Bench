@@ -1,0 +1,10 @@
+as_of,control,required,status,detail,recorded_by
+2026-11-08,Audit trail,True,absent,Compliance audit evidence,GRC
+2026-10-22,Export control,True,restricted,Export-control screening,GRC
+2026-10-22,Data residency,True,compliant,Required: EU; actual: UAE Central,GRC
+2026-10-22,DPIA,True,in drafting,Data protection impact assessment,GRC
+2026-10-22,Audit trail,True,partially completed,Compliance audit evidence,GRC
+2026-11-08,DPIA,True,absent,Data protection impact assessment,GRC
+2026-10-22,Regulatory mapping,True,absent,Obligations mapped to controls,GRC
+2026-10-22,Accessibility,True,not assessed,WCAG 2.2 AA assessment,GRC
+2026-11-08,Data residency,True,non_compliant,Required: EU; actual: UAE Central,GRC

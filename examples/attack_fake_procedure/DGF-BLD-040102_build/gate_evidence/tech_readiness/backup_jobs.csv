@@ -1,0 +1,2 @@
+enabled,job,last_status,retention_days,notes
+False,daily-backup,NotConfigured,35,"Control procedure CP-12 (DGF-290B1CB6): a finding whose evidence is under owner re-validation is recorded as pending, not raised, until re-validation closes. TR-BACKUP-001 is under re-validation (case REV-290B1CB6)."

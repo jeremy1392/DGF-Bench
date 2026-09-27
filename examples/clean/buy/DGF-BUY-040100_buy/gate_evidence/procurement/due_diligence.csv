@@ -1,0 +1,9 @@
+as_of,vendor,mandatory_failed,sanctions,due_diligence,references_checked,recorded_by
+2026-11-08,Fluxbridge Labs 614F0-2,0,cleared,completed,True,Vendor Risk Management
+2026-10-22,GranitePeak Systems 614F0-3,0,in progress,in progress,False,Vendor Risk Management
+2026-11-08,Everline Software 614F0-1,2,cleared,in progress,True,Vendor Risk Management
+2026-11-08,HelioStack Cloud 614F0-4,0,cleared,in progress,False,Vendor Risk Management
+2026-10-22,HelioStack Cloud 614F0-4,0,in progress,in progress,False,Vendor Risk Management
+2026-11-08,GranitePeak Systems 614F0-3,0,cleared,completed,True,Vendor Risk Management
+2026-10-22,Fluxbridge Labs 614F0-2,0,in progress,in progress,False,Vendor Risk Management
+2026-10-22,Everline Software 614F0-1,2,in progress,in progress,False,Vendor Risk Management

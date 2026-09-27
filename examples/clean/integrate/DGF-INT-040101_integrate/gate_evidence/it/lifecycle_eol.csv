@@ -1,0 +1,4 @@
+project_id,technology,eol_months,capacity_headroom_pct
+DGF-INT-040101,aks,18,20
+DGF-PRT-CCD4D,functions,45,24
+DGF-PRT-16F21,aks,45,31

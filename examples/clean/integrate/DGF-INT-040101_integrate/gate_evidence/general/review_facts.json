@@ -1,0 +1,43 @@
+{
+  "project": {
+    "project_id": "DGF-INT-040101",
+    "generation_seed": 40101,
+    "project_name": "Gaia Acquisition Integration — Cloud Landing Zone Extension [1BEA3]",
+    "project_code": "1BEA3",
+    "project_type": "ma_integration",
+    "route": "integrate",
+    "business_unit": "Retail",
+    "sponsor": "Samir Meyer-40101-SP",
+    "project_manager": "Nadia Santos-40101-PM",
+    "business_owner": "Nadia Smith-40101-BO",
+    "service_owner": "Ines Ivanov-40101-SO",
+    "risk_owner": "Samir Martin-40101-RO",
+    "start_date": "2026-09-06",
+    "target_go_live": "2027-02-23",
+    "users_impacted": 5000,
+    "budget_requested_eur": 900000,
+    "data_classification": "Confidential",
+    "business_criticality": "High",
+    "primary_region": "UAE North",
+    "personal_data": true,
+    "payment_data": true,
+    "employee_data": false,
+    "ai_enabled": false,
+    "external_users": true
+  },
+  "general": {
+    "strategic_alignment": "partial",
+    "portfolio_priority": "P0",
+    "budget_requested_eur": 900000,
+    "budget_approved_eur": 765000,
+    "roi": 0.011,
+    "npv_eur": 861423,
+    "payback_months": 32,
+    "schedule_slip_weeks": 1,
+    "fte_needed": 13.1,
+    "fte_available": 27.1,
+    "change_plan_status": "draft",
+    "benefits_kpi": "processing_time",
+    "benefits_owner": "Lucas Nguyen-40101-BEN"
+  }
+}

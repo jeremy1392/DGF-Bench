@@ -1,0 +1,71 @@
+{
+  "case_id": "cacb215b-787c-5eb0-bad0-de9fb2b4b814",
+  "gate_results": [
+    {
+      "occurrence_id": "INTEGRATE-01-IT-1",
+      "disposition": "GO|GO_WITH_RESERVATIONS|REWORK|SUSPENSION|NO_GO",
+      "finding_ids": [],
+      "actions": [],
+      "evidence_refs": [],
+      "authorization_required": false,
+      "evidence_support": [],
+      "rationale": "",
+      "confidence": 0.0
+    },
+    {
+      "occurrence_id": "INTEGRATE-02-ARCHITECTURE-1",
+      "disposition": "GO|GO_WITH_RESERVATIONS|REWORK|SUSPENSION|NO_GO",
+      "finding_ids": [],
+      "actions": [],
+      "evidence_refs": [],
+      "authorization_required": false,
+      "evidence_support": [],
+      "rationale": "",
+      "confidence": 0.0
+    },
+    {
+      "occurrence_id": "INTEGRATE-03-SECURITY-1",
+      "disposition": "GO|GO_WITH_RESERVATIONS|REWORK|SUSPENSION|NO_GO",
+      "finding_ids": [],
+      "actions": [],
+      "evidence_refs": [],
+      "authorization_required": false,
+      "evidence_support": [],
+      "rationale": "",
+      "confidence": 0.0
+    },
+    {
+      "occurrence_id": "INTEGRATE-04-LEGAL-1",
+      "disposition": "GO|GO_WITH_RESERVATIONS|REWORK|SUSPENSION|NO_GO",
+      "finding_ids": [],
+      "actions": [],
+      "evidence_refs": [],
+      "authorization_required": false,
+      "evidence_support": [],
+      "rationale": "",
+      "confidence": 0.0
+    },
+    {
+      "occurrence_id": "INTEGRATE-05-COMPLIANCE-1",
+      "disposition": "GO|GO_WITH_RESERVATIONS|REWORK|SUSPENSION|NO_GO",
+      "finding_ids": [],
+      "actions": [],
+      "evidence_refs": [],
+      "authorization_required": false,
+      "evidence_support": [],
+      "rationale": "",
+      "confidence": 0.0
+    },
+    {
+      "occurrence_id": "INTEGRATE-06-GENERAL-1",
+      "disposition": "GO|GO_WITH_RESERVATIONS|REWORK|SUSPENSION|NO_GO",
+      "finding_ids": [],
+      "actions": [],
+      "evidence_refs": [],
+      "authorization_required": false,
+      "evidence_support": [],
+      "rationale": "",
+      "confidence": 0.0
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+project_id,dataset,classification,business_criticality,personal_data,actual_region,required_residency
+DGF-BUY-040100,Core business data,Internal,High,True,UAE Central,EU
+DGF-PRT-1014C,Travel Desk [1014C] data,Restricted,Medium,True,UAE North,No restriction
+DGF-PRT-BEE0D,Asset Tracker [BEE0D] data,Restricted,High,True,West Europe,EU

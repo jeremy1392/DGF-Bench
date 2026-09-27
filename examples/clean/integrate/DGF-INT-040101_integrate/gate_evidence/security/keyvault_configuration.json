@@ -1,0 +1,6 @@
+{
+  "secrets_in_keyvault": false,
+  "key_rotation_days": 90,
+  "private_endpoint": false,
+  "managed_identity": true
+}

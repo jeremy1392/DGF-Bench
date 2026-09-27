@@ -1,0 +1,72 @@
+{
+  "resources": [
+    {
+      "name": "AKS System Pool",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": true
+    },
+    {
+      "name": "AKS App Pool",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": true
+    },
+    {
+      "name": "Ingress Controller",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": true
+    },
+    {
+      "name": "Worker Pods",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": true
+    },
+    {
+      "name": "Azure SQL Managed Instance",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": true
+    },
+    {
+      "name": "Azure Storage Account",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": true
+    },
+    {
+      "name": "Azure Key Vault",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": true
+    },
+    {
+      "name": "Azure API Management",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": true
+    },
+    {
+      "name": "Azure Service Bus",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": true
+    },
+    {
+      "name": "Azure Event Hubs",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": true
+    },
+    {
+      "name": "Azure Front Door",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": true
+    }
+  ],
+  "private_endpoints": false,
+  "firewall": true
+}

@@ -1,0 +1,4 @@
+project_id,dataset,classification,business_criticality,personal_data,actual_region,required_residency
+DGF-PRT-80D99,Vendor Portal [80D99] data,Restricted,Critical,True,UK South,No restriction
+DGF-PRT-6DF1D,Field Service App [6DF1D] data,Restricted,Low,False,West Europe,No restriction
+DGF-INT-040101,Core business data,Confidential,High,True,UAE North,UAE

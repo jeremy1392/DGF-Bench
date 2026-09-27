@@ -1,0 +1,2 @@
+enabled,job,last_status,retention_days
+True,daily-backup,Succeeded,35

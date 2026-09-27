@@ -1,0 +1,80 @@
+{
+  "project": {
+    "project_id": "DGF-INT-040101",
+    "generation_seed": 40101,
+    "project_name": "Gaia Acquisition Integration — Cloud Landing Zone Extension [1BEA3]",
+    "project_code": "1BEA3",
+    "project_type": "ma_integration",
+    "route": "integrate",
+    "business_unit": "Retail",
+    "sponsor": "Samir Meyer-40101-SP",
+    "project_manager": "Nadia Santos-40101-PM",
+    "business_owner": "Nadia Smith-40101-BO",
+    "service_owner": "Ines Ivanov-40101-SO",
+    "risk_owner": "Samir Martin-40101-RO",
+    "start_date": "2026-09-06",
+    "target_go_live": "2027-02-23",
+    "users_impacted": 5000,
+    "budget_requested_eur": 900000,
+    "data_classification": "Confidential",
+    "business_criticality": "High",
+    "primary_region": "UAE North",
+    "personal_data": true,
+    "payment_data": true,
+    "employee_data": false,
+    "ai_enabled": false,
+    "external_users": true
+  },
+  "procurement": {
+    "offers": [
+      {
+        "vendor": "Fluxbridge Labs 1BEA3-1",
+        "functional_score": 98,
+        "security_score": 59,
+        "tco_3y_eur": 352523,
+        "mandatory_criteria_failed": 2,
+        "sanctions": "clear",
+        "references_checked": true,
+        "due_diligence": "complete",
+        "weighted_score": 83.1
+      },
+      {
+        "vendor": "GranitePeak Systems 1BEA3-2",
+        "functional_score": 96,
+        "security_score": 91,
+        "tco_3y_eur": 2317431,
+        "mandatory_criteria_failed": 2,
+        "sanctions": "clear",
+        "references_checked": true,
+        "due_diligence": "complete",
+        "weighted_score": 79.0
+      },
+      {
+        "vendor": "HelioStack Cloud 1BEA3-3",
+        "functional_score": 69,
+        "security_score": 96,
+        "tco_3y_eur": 1211855,
+        "mandatory_criteria_failed": 1,
+        "sanctions": "clear",
+        "references_checked": true,
+        "due_diligence": "complete",
+        "weighted_score": 78.4
+      },
+      {
+        "vendor": "Asterion Cloud 1BEA3-4",
+        "functional_score": 88,
+        "security_score": 69,
+        "tco_3y_eur": 1323072,
+        "mandatory_criteria_failed": 2,
+        "sanctions": "hit",
+        "references_checked": true,
+        "due_diligence": "pending",
+        "weighted_score": 76.2
+      }
+    ],
+    "selected_vendor": "Fluxbridge Labs 1BEA3-1",
+    "competition": "open_tender",
+    "rfp_requirements": 96,
+    "purchasing_budget_eur": 900000
+  }
+}

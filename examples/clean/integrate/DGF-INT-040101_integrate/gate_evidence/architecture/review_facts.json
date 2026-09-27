@@ -1,0 +1,54 @@
+{
+  "project": {
+    "project_id": "DGF-INT-040101",
+    "generation_seed": 40101,
+    "project_name": "Gaia Acquisition Integration — Cloud Landing Zone Extension [1BEA3]",
+    "project_code": "1BEA3",
+    "project_type": "ma_integration",
+    "route": "integrate",
+    "business_unit": "Retail",
+    "sponsor": "Samir Meyer-40101-SP",
+    "project_manager": "Nadia Santos-40101-PM",
+    "business_owner": "Nadia Smith-40101-BO",
+    "service_owner": "Ines Ivanov-40101-SO",
+    "risk_owner": "Samir Martin-40101-RO",
+    "start_date": "2026-09-06",
+    "target_go_live": "2027-02-23",
+    "users_impacted": 5000,
+    "budget_requested_eur": 900000,
+    "data_classification": "Confidential",
+    "business_criticality": "High",
+    "primary_region": "UAE North",
+    "personal_data": true,
+    "payment_data": true,
+    "employee_data": false,
+    "ai_enabled": false,
+    "external_users": true
+  },
+  "architecture": {
+    "hld_version": "HLD-1BEA3-v1.4",
+    "lld_version": "LLD-1BEA3-v4.1",
+    "api_gateway_required": true,
+    "api_gateway_present": true,
+    "ip_overlap": true,
+    "data_owner_present": true,
+    "data_lineage_complete": true,
+    "latency_target_ms": 100,
+    "measured_latency_ms": 180,
+    "load_test_peak_pct": 100,
+    "architecture_debt_items": 4,
+    "adr_count": 7,
+    "reversibility_status": "missing",
+    "data_export_supported": true,
+    "private_cidrs": [
+      "10.122.80.0/24",
+      "10.122.81.0/24",
+      "10.122.82.0/24"
+    ],
+    "dns_zone": "dgf-int-040101.corp.example"
+  },
+  "architecture_profile": {
+    "multi_az": true,
+    "multi_region": false
+  }
+}

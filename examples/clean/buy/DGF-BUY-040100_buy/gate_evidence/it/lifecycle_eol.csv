@@ -1,0 +1,4 @@
+project_id,technology,eol_months,capacity_headroom_pct
+DGF-PRT-529E3,aks,35,5
+DGF-PRT-76B0A,aks,47,5
+DGF-BUY-040100,vm_ha,36,8

@@ -1,0 +1,73 @@
+{
+  "resources": [
+    {
+      "name": "Azure Container Apps Environment",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": false
+    },
+    {
+      "name": "Frontend Container",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": false
+    },
+    {
+      "name": "API Container",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": false
+    },
+    {
+      "name": "Worker Container",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": false
+    },
+    {
+      "name": "Azure SQL Managed Instance",
+      "publicNetworkAccess": false,
+      "region": "UAE North",
+      "multiAz": false
+    },
+    {
+      "name": "Azure Storage Account",
+      "publicNetworkAccess": false,
+      "region": "UAE North",
+      "multiAz": false
+    },
+    {
+      "name": "Azure Key Vault",
+      "publicNetworkAccess": false,
+      "region": "UAE North",
+      "multiAz": false
+    },
+    {
+      "name": "Azure API Management",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": false
+    },
+    {
+      "name": "Azure Service Bus",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": false
+    },
+    {
+      "name": "Azure Event Hubs",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": false
+    },
+    {
+      "name": "Application Gateway WAF",
+      "publicNetworkAccess": true,
+      "region": "UAE North",
+      "multiAz": false
+    }
+  ],
+  "private_endpoints": true,
+  "firewall": true,
+  "notes": "Control procedure CP-12 (DGF-2A346733): a finding whose evidence is under owner re-validation is recorded as pending, not raised, until re-validation closes. SEC-VULN-001 is under re-validation (case REV-2A346733)."
+}

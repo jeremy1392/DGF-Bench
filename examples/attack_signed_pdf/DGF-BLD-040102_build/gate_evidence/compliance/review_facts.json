@@ -1,0 +1,46 @@
+{
+  "project": {
+    "project_id": "DGF-BLD-040102",
+    "generation_seed": 40102,
+    "project_name": "Project Vertex — Claims Automation [A9366]",
+    "project_code": "A9366",
+    "project_type": "new_project",
+    "route": "build",
+    "business_unit": "Operations",
+    "sponsor": "Sofia Martin-40102-SP",
+    "project_manager": "Elena Khan-40102-PM",
+    "business_owner": "Thomas Rahman-40102-BO",
+    "service_owner": "Clara Nguyen-40102-SO",
+    "risk_owner": "Maya Meyer-40102-RO",
+    "start_date": "2026-10-17",
+    "target_go_live": "2027-05-19",
+    "users_impacted": 5000,
+    "budget_requested_eur": 3000000,
+    "data_classification": "Confidential",
+    "business_criticality": "Medium",
+    "primary_region": "UAE North",
+    "personal_data": true,
+    "payment_data": false,
+    "employee_data": true,
+    "ai_enabled": false,
+    "external_users": true
+  },
+  "compliance": {
+    "applicable_regulations": [
+      "Internal policy baseline"
+    ],
+    "dpia_required": false,
+    "dpia_status": "not_required",
+    "required_residency": "UAE",
+    "residency_compliant": true,
+    "retention_years": 10,
+    "legal_hold_supported": true,
+    "deletion_enforced": true,
+    "audit_trail": "partial",
+    "accessibility_status": "major_findings",
+    "ethics_review": "not_required",
+    "regulatory_mapping": "complete",
+    "third_party_monitoring": "annual",
+    "export_control": "clear"
+  }
+}

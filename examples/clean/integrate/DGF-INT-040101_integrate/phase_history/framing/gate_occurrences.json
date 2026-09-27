@@ -1,0 +1,13 @@
+{
+  "phase": "framing",
+  "occurrences": [
+    {
+      "occurrence_id": "INTEGRATE-01-IT-1",
+      "gate": "it",
+      "gate_label": "IT Gate",
+      "phase": "framing",
+      "position": 1
+    }
+  ],
+  "status": "PENDING_EVALUATION"
+}

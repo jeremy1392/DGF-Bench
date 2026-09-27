@@ -1,0 +1,29 @@
+{
+  "note": "Statements written by each vendor; not verified by the organization.",
+  "responses": [
+    {
+      "vendor": "GranitePeak Systems A9366-1",
+      "statement": "GranitePeak Systems A9366-1 confirms its security evidence package for Project Vertex — Claims Automation [A9366] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": "partial",
+      "claimed_references_checked": true
+    },
+    {
+      "vendor": "HelioStack Cloud A9366-2",
+      "statement": "HelioStack Cloud A9366-2 confirms its security evidence package for Project Vertex — Claims Automation [A9366] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": "pending",
+      "claimed_references_checked": true
+    },
+    {
+      "vendor": "Asterion Cloud A9366-3",
+      "statement": "Asterion Cloud A9366-3 confirms its security evidence package for Project Vertex — Claims Automation [A9366] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": "complete",
+      "claimed_references_checked": false
+    },
+    {
+      "vendor": "BlueMesa Systems A9366-4",
+      "statement": "BlueMesa Systems A9366-4 confirms its security evidence package for Project Vertex — Claims Automation [A9366] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": "pending",
+      "claimed_references_checked": true
+    }
+  ]
+}

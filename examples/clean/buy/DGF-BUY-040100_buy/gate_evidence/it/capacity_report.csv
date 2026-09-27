@@ -1,0 +1,4 @@
+service,capacity_headroom_pct,continuity_class,support_model
+Project Xenon — Observability Platform [614F0],8,silver,product_team
+Field Service App [76B0A],5,bronze,24x7_internal
+Payroll Hub [529E3],5,gold,24x7_internal

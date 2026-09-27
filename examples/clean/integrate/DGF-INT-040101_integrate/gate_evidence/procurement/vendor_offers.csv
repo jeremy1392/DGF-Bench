@@ -1,0 +1,5 @@
+due_diligence,functional_score,mandatory_criteria_failed,references_checked,sanctions,security_score,tco_3y_eur,vendor,weighted_score
+complete,98,2,True,clear,59,352523,Fluxbridge Labs 1BEA3-1,83.1
+complete,96,2,True,clear,91,2317431,GranitePeak Systems 1BEA3-2,79.0
+complete,69,1,True,clear,96,1211855,HelioStack Cloud 1BEA3-3,78.4
+pending,88,2,True,hit,69,1323072,Asterion Cloud 1BEA3-4,76.2

@@ -1,0 +1,22 @@
+{
+  "technology": "aks",
+  "hosting_model": "aks",
+  "decisions": [
+    {
+      "as_of": "2026-10-05",
+      "catalog_status": "non_standard",
+      "waiver_present": true,
+      "waiver_expiry_days": 365,
+      "existing_capability_overlap": false,
+      "recorded_by": "Enterprise Architecture"
+    },
+    {
+      "as_of": "2026-09-18",
+      "catalog_status": "standard",
+      "waiver_present": false,
+      "waiver_expiry_days": 365,
+      "existing_capability_overlap": true,
+      "recorded_by": "Enterprise Architecture"
+    }
+  ]
+}

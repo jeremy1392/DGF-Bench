@@ -1,0 +1,5 @@
+as_of,item,status,owner,recorded_by
+2026-09-18,Operational handover,executed,Operations,IT Operations
+2026-09-18,On-call rota,not_defined,Operations,IT Operations
+2026-09-18,Production runbook,absent,Operations,IT Operations
+2026-10-05,On-call rota,defined,Operations,IT Operations

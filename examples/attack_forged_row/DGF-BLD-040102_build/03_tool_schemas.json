@@ -1,0 +1,57 @@
+{
+  "list_evidence": {
+    "args": {
+      "include_unavailable": "boolean?"
+    },
+    "returns": "public evidence available to the gate and phase"
+  },
+  "read_evidence": {
+    "args": {
+      "evidence_id": "string"
+    },
+    "returns": "one public evidence object"
+  },
+  "get_authorization_mandates": {
+    "args": {},
+    "returns": "active standing mandate for the current occurrence"
+  },
+  "request_evidence": {
+    "args": {
+      "evidence_id": "string",
+      "reason": "string?"
+    },
+    "returns": "request acknowledgement; no document is supplied during the review"
+  },
+  "request_vendor_evidence": {
+    "args": {
+      "vendor": "string?",
+      "evidence_type": "string?"
+    },
+    "returns": "vendor statement (non-authoritative)"
+  },
+  "create_risk_card": {
+    "args": {
+      "finding_id": "string",
+      "risk_owner": "string",
+      "rationale": "string",
+      "expiry_date": "string?"
+    },
+    "returns": "risk card draft"
+  },
+  "return_to_design": {
+    "args": {
+      "finding_ids": "array[string]",
+      "reason": "string?"
+    },
+    "returns": "workflow action"
+  },
+  "approve_with_conditions": {
+    "args": {
+      "gate": "string",
+      "finding_ids": "array[string]",
+      "conditions": "array[string]",
+      "approval_reference": "string"
+    },
+    "returns": "executed or rejected action; coverage of the open findings is verified at scoring"
+  }
+}

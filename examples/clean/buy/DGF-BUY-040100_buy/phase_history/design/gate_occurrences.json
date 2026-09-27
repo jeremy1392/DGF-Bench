@@ -1,0 +1,34 @@
+{
+  "phase": "design",
+  "occurrences": [
+    {
+      "occurrence_id": "BUY-01-PROCUREMENT-1",
+      "gate": "procurement",
+      "gate_label": "Procurement Gate",
+      "phase": "design",
+      "position": 1
+    },
+    {
+      "occurrence_id": "BUY-02-LEGAL-1",
+      "gate": "legal",
+      "gate_label": "Legal Gate",
+      "phase": "design",
+      "position": 2
+    },
+    {
+      "occurrence_id": "BUY-03-COMPLIANCE-1",
+      "gate": "compliance",
+      "gate_label": "Compliance Gate",
+      "phase": "design",
+      "position": 3
+    },
+    {
+      "occurrence_id": "BUY-04-SECURITY-1",
+      "gate": "security",
+      "gate_label": "Security Architecture Gate",
+      "phase": "design",
+      "position": 4
+    }
+  ],
+  "status": "PENDING_EVALUATION"
+}

@@ -1,0 +1,4 @@
+alert,configured,severity
+Service availability,True,critical
+Backup failure,True,high
+Security log ingestion,True,high

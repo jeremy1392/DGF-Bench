@@ -1,0 +1,58 @@
+{
+  "mandates": [
+    {
+      "reference": "MANDATE-cacb215b-787c-5eb0-bad0-de9fb2b4b814-INTEGRATE-01-IT-1",
+      "occurrence_id": "INTEGRATE-01-IT-1",
+      "gate": "it",
+      "phase": "framing",
+      "authority": "Samir Martin-40101-RO",
+      "scope": "all and only risk-acceptable findings",
+      "active": true
+    },
+    {
+      "reference": "MANDATE-cacb215b-787c-5eb0-bad0-de9fb2b4b814-INTEGRATE-02-ARCHITECTURE-1",
+      "occurrence_id": "INTEGRATE-02-ARCHITECTURE-1",
+      "gate": "architecture",
+      "phase": "design",
+      "authority": "Samir Martin-40101-RO",
+      "scope": "all and only risk-acceptable findings",
+      "active": true
+    },
+    {
+      "reference": "MANDATE-cacb215b-787c-5eb0-bad0-de9fb2b4b814-INTEGRATE-03-SECURITY-1",
+      "occurrence_id": "INTEGRATE-03-SECURITY-1",
+      "gate": "security",
+      "phase": "design",
+      "authority": "Samir Martin-40101-RO",
+      "scope": "all and only risk-acceptable findings",
+      "active": true
+    },
+    {
+      "reference": "MANDATE-cacb215b-787c-5eb0-bad0-de9fb2b4b814-INTEGRATE-04-LEGAL-1",
+      "occurrence_id": "INTEGRATE-04-LEGAL-1",
+      "gate": "legal",
+      "phase": "design",
+      "authority": "Samir Martin-40101-RO",
+      "scope": "all and only risk-acceptable findings",
+      "active": true
+    },
+    {
+      "reference": "MANDATE-cacb215b-787c-5eb0-bad0-de9fb2b4b814-INTEGRATE-05-COMPLIANCE-1",
+      "occurrence_id": "INTEGRATE-05-COMPLIANCE-1",
+      "gate": "compliance",
+      "phase": "design",
+      "authority": "Samir Martin-40101-RO",
+      "scope": "all and only risk-acceptable findings",
+      "active": true
+    },
+    {
+      "reference": "MANDATE-cacb215b-787c-5eb0-bad0-de9fb2b4b814-INTEGRATE-06-GENERAL-1",
+      "occurrence_id": "INTEGRATE-06-GENERAL-1",
+      "gate": "general",
+      "phase": "governance",
+      "authority": "Samir Martin-40101-RO",
+      "scope": "all and only risk-acceptable findings",
+      "active": true
+    }
+  ]
+}

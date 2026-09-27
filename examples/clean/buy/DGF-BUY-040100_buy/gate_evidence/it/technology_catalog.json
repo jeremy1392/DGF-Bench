@@ -1,0 +1,30 @@
+{
+  "technology": "vm_ha",
+  "hosting_model": "vm_ha",
+  "decisions": [
+    {
+      "as_of": "2026-11-25",
+      "catalog_status": "approved_exception",
+      "waiver_present": true,
+      "waiver_expiry_days": 365,
+      "existing_capability_overlap": false,
+      "recorded_by": "Enterprise Architecture"
+    },
+    {
+      "as_of": "2026-10-22",
+      "catalog_status": "standard",
+      "waiver_present": true,
+      "waiver_expiry_days": 365,
+      "existing_capability_overlap": true,
+      "recorded_by": "Enterprise Architecture"
+    },
+    {
+      "as_of": "2026-11-08",
+      "catalog_status": "non_standard",
+      "waiver_present": true,
+      "waiver_expiry_days": 365,
+      "existing_capability_overlap": false,
+      "recorded_by": "Enterprise Architecture"
+    }
+  ]
+}

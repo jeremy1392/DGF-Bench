@@ -1,0 +1,6 @@
+{
+  "present": true,
+  "mode": "Detection",
+  "managed_rules": "OWASP",
+  "bot_protection": false
+}

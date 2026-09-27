@@ -1,0 +1,58 @@
+{
+  "applications": [
+    {
+      "application": "Project Xenon — Observability Platform [614F0]",
+      "api_gateway": {
+        "required": false,
+        "deployed": false
+      },
+      "latency_s": {
+        "target_p95": 0.5,
+        "measured_p95": 0.095,
+        "measurement_source": "APM"
+      },
+      "exit_plan_status": "documented",
+      "data_domain_owner": "Noor Rahman-40100-BO",
+      "availability": {
+        "zone_redundant": true,
+        "secondary_region": false
+      }
+    },
+    {
+      "application": "Payroll Hub [86B09]",
+      "api_gateway": {
+        "required": true,
+        "deployed": false
+      },
+      "latency_s": {
+        "target_p95": 0.05,
+        "measured_p95": 0.032,
+        "measurement_source": "APM"
+      },
+      "exit_plan_status": "draft",
+      "data_domain_owner": null,
+      "availability": {
+        "zone_redundant": true,
+        "secondary_region": true
+      }
+    },
+    {
+      "application": "Claims Workbench [6EF02]",
+      "api_gateway": {
+        "required": true,
+        "deployed": true
+      },
+      "latency_s": {
+        "target_p95": 0.05,
+        "measured_p95": 0.058,
+        "measurement_source": "APM"
+      },
+      "exit_plan_status": "documented",
+      "data_domain_owner": null,
+      "availability": {
+        "zone_redundant": false,
+        "secondary_region": false
+      }
+    }
+  ]
+}

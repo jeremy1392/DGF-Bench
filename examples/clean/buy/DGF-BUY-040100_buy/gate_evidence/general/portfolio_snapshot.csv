@@ -1,0 +1,5 @@
+project_id,priority,strategic_alignment,requested_eur,approved_eur,roi,change_plan_status,target_go_live
+DGF-PRT-137EA,P0,weak,989340,791472,0.024,complete,2027-06-22
+DGF-BUY-040100,P0,strong,500000,350000,0.207,draft,2027-06-22
+DGF-PRT-AA061,P0,weak,897615,718092,0.019,missing,2027-06-22
+DGF-PRT-4EE42,P0,strong,719311,575448,0.145,missing,2027-06-22

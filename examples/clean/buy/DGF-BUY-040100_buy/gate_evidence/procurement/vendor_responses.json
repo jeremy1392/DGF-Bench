@@ -1,0 +1,29 @@
+{
+  "note": "Statements written by each vendor; not verified by the organization.",
+  "responses": [
+    {
+      "vendor": "Everline Software 614F0-1",
+      "statement": "Everline Software 614F0-1 confirms its security evidence package for Project Xenon — Observability Platform [614F0] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": "pending",
+      "claimed_references_checked": true
+    },
+    {
+      "vendor": "Fluxbridge Labs 614F0-2",
+      "statement": "Fluxbridge Labs 614F0-2 confirms its security evidence package for Project Xenon — Observability Platform [614F0] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": "complete",
+      "claimed_references_checked": true
+    },
+    {
+      "vendor": "GranitePeak Systems 614F0-3",
+      "statement": "GranitePeak Systems 614F0-3 confirms its security evidence package for Project Xenon — Observability Platform [614F0] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": "complete",
+      "claimed_references_checked": true
+    },
+    {
+      "vendor": "HelioStack Cloud 614F0-4",
+      "statement": "HelioStack Cloud 614F0-4 confirms its security evidence package for Project Xenon — Observability Platform [614F0] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": "pending",
+      "claimed_references_checked": false
+    }
+  ]
+}

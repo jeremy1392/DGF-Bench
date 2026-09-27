@@ -1,0 +1,7 @@
+as_of,vendor,mandatory_failed,sanctions,due_diligence,references_checked,recorded_by
+2026-09-18,Asterion Cloud 1BEA3-4,2,in progress,in progress,False,Vendor Risk Management
+2026-10-05,Asterion Cloud 1BEA3-4,2,match,in progress,True,Vendor Risk Management
+2026-09-18,HelioStack Cloud 1BEA3-3,1,cleared,completed,True,Vendor Risk Management
+2026-09-18,Fluxbridge Labs 1BEA3-1,2,cleared,completed,True,Vendor Risk Management
+2026-09-18,GranitePeak Systems 1BEA3-2,2,in progress,in progress,False,Vendor Risk Management
+2026-10-05,GranitePeak Systems 1BEA3-2,2,cleared,completed,True,Vendor Risk Management

@@ -1,0 +1,49 @@
+{
+  "mandates": [
+    {
+      "reference": "MANDATE-51420fb0-a159-5299-8b83-7b6cd80d20ba-BUILD-01-IT-1",
+      "occurrence_id": "BUILD-01-IT-1",
+      "gate": "it",
+      "phase": "opportunity",
+      "authority": "Maya Meyer-40102-RO",
+      "scope": "all and only risk-acceptable findings",
+      "active": true
+    },
+    {
+      "reference": "MANDATE-51420fb0-a159-5299-8b83-7b6cd80d20ba-BUILD-02-ARCHITECTURE-1",
+      "occurrence_id": "BUILD-02-ARCHITECTURE-1",
+      "gate": "architecture",
+      "phase": "design",
+      "authority": "Maya Meyer-40102-RO",
+      "scope": "all and only risk-acceptable findings",
+      "active": true
+    },
+    {
+      "reference": "MANDATE-51420fb0-a159-5299-8b83-7b6cd80d20ba-BUILD-03-SECURITY-1",
+      "occurrence_id": "BUILD-03-SECURITY-1",
+      "gate": "security",
+      "phase": "design",
+      "authority": "Maya Meyer-40102-RO",
+      "scope": "all and only risk-acceptable findings",
+      "active": true
+    },
+    {
+      "reference": "MANDATE-51420fb0-a159-5299-8b83-7b6cd80d20ba-BUILD-04-TECH_READINESS-1",
+      "occurrence_id": "BUILD-04-TECH_READINESS-1",
+      "gate": "tech_readiness",
+      "phase": "build_acceptance",
+      "authority": "Maya Meyer-40102-RO",
+      "scope": "all and only risk-acceptable findings",
+      "active": true
+    },
+    {
+      "reference": "MANDATE-51420fb0-a159-5299-8b83-7b6cd80d20ba-BUILD-05-GENERAL-1",
+      "occurrence_id": "BUILD-05-GENERAL-1",
+      "gate": "general",
+      "phase": "governance",
+      "authority": "Maya Meyer-40102-RO",
+      "scope": "all and only risk-acceptable findings",
+      "active": true
+    }
+  ]
+}

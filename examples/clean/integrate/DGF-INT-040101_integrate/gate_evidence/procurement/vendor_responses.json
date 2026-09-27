@@ -1,0 +1,29 @@
+{
+  "note": "Statements written by each vendor; not verified by the organization.",
+  "responses": [
+    {
+      "vendor": "Fluxbridge Labs 1BEA3-1",
+      "statement": "Fluxbridge Labs 1BEA3-1 confirms its security evidence package for Gaia Acquisition Integration — Cloud Landing Zone Extension [1BEA3] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": null,
+      "claimed_references_checked": null
+    },
+    {
+      "vendor": "GranitePeak Systems 1BEA3-2",
+      "statement": "GranitePeak Systems 1BEA3-2 confirms its security evidence package for Gaia Acquisition Integration — Cloud Landing Zone Extension [1BEA3] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": null,
+      "claimed_references_checked": true
+    },
+    {
+      "vendor": "HelioStack Cloud 1BEA3-3",
+      "statement": "HelioStack Cloud 1BEA3-3 confirms its security evidence package for Gaia Acquisition Integration — Cloud Landing Zone Extension [1BEA3] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": "complete",
+      "claimed_references_checked": true
+    },
+    {
+      "vendor": "Asterion Cloud 1BEA3-4",
+      "statement": "Asterion Cloud 1BEA3-4 confirms its security evidence package for Gaia Acquisition Integration — Cloud Landing Zone Extension [1BEA3] and remains available for due-diligence follow-up.",
+      "claimed_due_diligence": "pending",
+      "claimed_references_checked": null
+    }
+  ]
+}

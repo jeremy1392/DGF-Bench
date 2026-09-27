@@ -1,0 +1,58 @@
+{
+  "applications": [
+    {
+      "application": "Pricing Engine [B0520]",
+      "api_gateway": {
+        "required": false,
+        "deployed": true
+      },
+      "latency_s": {
+        "target_p95": 0.05,
+        "measured_p95": 0.046,
+        "measurement_source": "APM"
+      },
+      "exit_plan_status": "draft",
+      "data_domain_owner": "Data Owner 1",
+      "availability": {
+        "zone_redundant": false,
+        "secondary_region": true
+      }
+    },
+    {
+      "application": "Payroll Hub [E2FC9]",
+      "api_gateway": {
+        "required": false,
+        "deployed": true
+      },
+      "latency_s": {
+        "target_p95": 0.05,
+        "measured_p95": 0.031,
+        "measurement_source": "APM"
+      },
+      "exit_plan_status": "tested",
+      "data_domain_owner": "Data Owner 2",
+      "availability": {
+        "zone_redundant": true,
+        "secondary_region": true
+      }
+    },
+    {
+      "application": "Gaia Acquisition Integration — Cloud Landing Zone Extension [1BEA3]",
+      "api_gateway": {
+        "required": true,
+        "deployed": true
+      },
+      "latency_s": {
+        "target_p95": 0.1,
+        "measured_p95": 0.18,
+        "measurement_source": "APM"
+      },
+      "exit_plan_status": "missing",
+      "data_domain_owner": "Nadia Smith-40101-BO",
+      "availability": {
+        "zone_redundant": true,
+        "secondary_region": false
+      }
+    }
+  ]
+}
