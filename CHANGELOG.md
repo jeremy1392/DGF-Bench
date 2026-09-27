@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+- The README citation cites the software (repository URL).
+- `LICENSE` no longer carves out a directory that is not part of this repository.
+
 ## 0.1.2 — 2026-09-28
 
 Attacks 22–27 renamed: they are publicly documented prompt-injection techniques, not attributed to any

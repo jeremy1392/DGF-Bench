@@ -15,9 +15,6 @@ covered material.
 
 The following material is NOT relicensed by this dual-license notice:
 
-- paper/ — the research manuscript, its LaTeX source, figures, and compiled
-  PDF remain Copyright (c) 2026 Jeremy Canale, all rights reserved unless an
-  explicit license is stated inside that directory or in the manuscript;
 - Microsoft Azure architecture icons and associated Microsoft files under
   assets/ — these remain subject to Microsoft's own terms;
 - any other third-party material identified in THIRD_PARTY_NOTICES.md or in

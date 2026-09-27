@@ -202,14 +202,14 @@ Rows 22–27 make concrete six publicly documented prompt-injection techniques. 
 
 ## Citation
 
-The paper describing this version of the benchmark is in preparation:
+To cite the software:
 
 ```bibtex
-@misc{canale2026dgfbench,
-  title  = {DGF-Bench: A Benchmark for Simulating and Auditing Deception Against Multi-Agent Governance Boards},
+@software{canale2026dgfbench,
+  title  = {DGF-Bench},
   author = {Canale, Jeremy},
   year   = {2026},
-  note   = {Preprint in preparation}
+  url    = {https://github.com/jeremy1392/DGF-Bench}
 }
 ```
 
