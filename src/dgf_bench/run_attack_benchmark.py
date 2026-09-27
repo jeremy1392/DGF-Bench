@@ -36,10 +36,10 @@ def _die(message):
     raise SystemExit(2)
 
 
-def _generate_clean(dataset_dir, dossier_number, seed, difficulty, workers):
-    """Generate exactly ``dossier_number`` clean dossiers, rotating Buy/Integrate/Build."""
-    per_route = math.ceil(dossier_number / len(ROUTES))
-    plan = build_plan(per_route, seed, difficulty, ROUTES, "balanced")
+def _generate_clean(dataset_dir, dossier_number, seed, difficulty, routes, workers):
+    """Generate exactly ``dossier_number`` clean dossiers over the chosen route(s)."""
+    per_route = math.ceil(dossier_number / len(routes))
+    plan = build_plan(per_route, seed, difficulty, routes, "balanced")
     plan["cases"] = plan["cases"][:dossier_number]
     prepare_dataset(dataset_dir, plan, workers)
     return dataset_dir
@@ -61,6 +61,8 @@ def main(argv=None):
                     help="OpenRouter API key. Falls back to $OPENROUTER_API_KEY or ./.env")
     ap.add_argument("--dossier-number", "--dossiers", dest="dossiers", type=int, default=3,
                     help="Number of clean dossiers to generate (default: 3)")
+    ap.add_argument("--route", "--process", dest="route", choices=[*ROUTES, "all"], default="all",
+                    help="Process type: buy, integrate, build, or all three in rotation (default: all)")
     ap.add_argument("--attacks", nargs="+", default=None, metavar="ATTACK",
                     help="Restrict to these attack placements (default: all 27)")
     ap.add_argument("--provider", default=None, help="Pin the model to one OpenRouter provider, no fallbacks")
@@ -100,8 +102,10 @@ def main(argv=None):
     dataset_dir = run_dir / "dataset"
     results_dir = run_dir / "results"
 
-    print(f"[1/5] Generating {ns.dossiers} clean dossiers (seed {ns.seed}, difficulty {ns.difficulty})...", flush=True)
-    _generate_clean(dataset_dir / "clean", ns.dossiers, ns.seed, ns.difficulty, ns.generation_workers)
+    routes = ROUTES if ns.route == "all" else [ns.route]
+    print(f"[1/5] Generating {ns.dossiers} clean dossiers on route(s) {', '.join(routes)} "
+          f"(seed {ns.seed}, difficulty {ns.difficulty})...", flush=True)
+    _generate_clean(dataset_dir / "clean", ns.dossiers, ns.seed, ns.difficulty, routes, ns.generation_workers)
 
     print("[2/5] Certifying that every gate is decidable...", flush=True)
     cert = certify_dataset(dataset_dir / "clean")

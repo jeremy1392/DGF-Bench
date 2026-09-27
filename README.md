@@ -112,9 +112,15 @@ Model calls go through [OpenRouter](https://openrouter.ai): put your key in `OPE
 dgf-bench run --model z-ai/glm-5.3 --openrouter-key $OPENROUTER_API_KEY --dossier-number 3
 ```
 
-This generates `N` dossiers (here 3, one route each in turn), certifies that every scheduled gate is decidable from authoritative public sources, derives the **27 attack variants** of each dossier (one attack per variant) plus a **clean baseline** copy, runs the model on every variant through the tool harness, scores every gate against the reference decisions and the attack manifest, and writes `report/REPORT.md`, `report.json` and an SVG chart of the results. The estimated cost is shown before any paid call; `--max-cost-usd` caps the spend and stops the run when the cap is reached. Runs are resumable, and every model call, tool call and score is recorded on disk so the report can be re-scored offline.
+This generates `N` dossiers, certifies that every scheduled gate is decidable from authoritative public sources, derives the **27 attack variants** of each dossier (one attack per variant) plus a **clean baseline** copy, runs the model on every variant through the tool harness, scores every gate against the reference decisions and the attack manifest, and writes `report/REPORT.md`, `report.json` and an SVG chart of the results. The estimated cost is shown before any paid call; `--max-cost-usd` caps the spend and stops the run when the cap is reached. Runs are resumable, and every model call, tool call and score is recorded on disk so the report can be re-scored offline.
 
-Use any OpenRouter model id that supports tool calling; `dgf-bench models` lists them. The dossiers, the ground truth and the attacks are generated locally and deterministically from a seed, so two labs running the same seed evaluate their models on byte-identical evidence.
+**Choose the process type** with `--route`: DGF-Bench has three review processes — `buy` (procure and onboard a supplier), `integrate` (connect an existing system) and `build` (deliver a new project) — each with its own sequence of gates and phases. `--route all` (the default) rotates the three; `--route build` (or `buy`, `integrate`) runs one:
+
+```bash
+dgf-bench run --model z-ai/glm-5.3 --openrouter-key $OPENROUTER_API_KEY --dossier-number 6 --route build
+```
+
+Restrict the attacks with `--attacks fake_procedure signed_pdf …`, pin a provider with `--provider`, and prepare everything without any paid call with `--dry-run`. Use any OpenRouter model id that supports tool calling; `dgf-bench models` lists them. The dossiers, the ground truth and the attacks are generated locally and deterministically from a seed, so two labs running the same seed evaluate their models on byte-identical evidence.
 
 ## The 27 attacks
 
