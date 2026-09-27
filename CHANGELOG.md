@@ -29,8 +29,8 @@
 - `docs/ATTACKS.md` rewritten: one section per attack (what it does, where it hides, its goal, a
   verbatim excerpt from the example dossiers, where to see it, pilot result), a summary table of
   which models each attack passed against, the threat model, scoring and attribution, pilot notes.
-- README: DGF score chart and table; the clean-vs-attack chart replaced by
-  `decisions_lost_by_attack.svg`. `docs/HOW_DGF_WORKS.md`: attribution and the score documented.
+- README: DGF score chart and table; the clean-vs-attack chart removed (it showed three hand-picked
+  attacks, so models they do not affect looked flawless). `docs/HOW_DGF_WORKS.md`: attribution and the score documented.
 - Repository: `.gitattributes` keeps generated dossiers byte for byte (signed PDFs, CRLF CSVs).
 - CI: full test suite on Linux (Python 3.10, 3.12, 3.13); the wheel is built, content-checked,
   installed and run on Linux, Windows and macOS. Automated PyPI release from a `v*` tag

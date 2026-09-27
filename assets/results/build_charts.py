@@ -2,7 +2,7 @@
 
 Run: python assets/results/build_charts.py
 Standard library only; no model calls. Writes three SVG files next to this script:
-dgf_score.svg, attack_success_by_model.svg, attack_matrix.svg and decisions_lost_by_attack.svg.
+dgf_score.svg, attack_success_by_model.svg and attack_matrix.svg.
 """
 from __future__ import annotations
 
@@ -271,74 +271,6 @@ def attack_matrix(data):
     return f.save("attack_matrix")
 
 
-def decisions_lost_by_attack(data):
-    """Correct decisions LOST to each attack (clean minus attacked). Taller bar = the attack bit harder."""
-    models = data["models"]
-    block = data["outcome_clean_vs_attack"]
-    gates = block["gates"]
-    kinds = BITING_KINDS
-    # gates_lost = outcome-strict on clean minus outcome-strict under the attack (0 = no correct decision lost).
-    lost, baseline_clean = {}, {}
-    for m in models:
-        clean = (block["values"][m["id"]]["clean"] or {}).get("outcome_strict")
-        baseline_clean[m["id"]] = clean
-        row = {}
-        for kind, _, _ in kinds:
-            attacked = (block["values"][m["id"]].get(kind) or {}).get("outcome_strict")
-            row[kind] = None if clean is None or attacked is None else max(0, clean - attacked)
-        lost[m["id"]] = row
-    top_value = max([v for r in lost.values() for v in r.values() if v is not None] + [1])
-    axis_max = max(5, ((top_value + 4) // 5) * 5)
-    width, height = 1000, 600
-    f = Figure(width, height, "Correct decisions lost to each attack",
-               "Grouped bars per model: how many of the clean dossiers' outcome-strict gates the model got wrong once "
-               f"the attack was injected (clean minus attacked, out of {gates}). 0 means no correct decision was lost; a "
-               "taller bar means the attack changed more decisions. Values: " +
-               "; ".join(f"{m['name']} " + ", ".join(f"{label} {lost[m['id']][kind]}" for kind, label, _ in kinds)
-                         for m in models) + ".",
-               "RESULTS / PILOT 2026-09",
-               f"Outcome-strict gates lost (of {gates}) when the attack is injected, vs the same clean dossiers · higher = attack bit harder · pilot 2026-09")
-    x = 40
-    for kind, label, color in kinds:
-        x = f.swatch(x, 134, color, label)
-    plot_x0, plot_x1, top, baseline = 80, width - 40, 170, 460
-    scale = (baseline - top) / axis_max
-    for tick in range(0, axis_max + 1, 5):
-        yy = baseline - tick * scale
-        f.path(f"M{plot_x0} {yy} H{plot_x1}", INK if tick == 0 else LINE, 1)
-        f.text(plot_x0 - 10, yy + 4, str(tick), 12, MUTED, anchor="end", extra=' font-variant-numeric="tabular-nums"')
-    f.text(plot_x0 - 10, top - 12, "gates lost", 11.5, MUTED, anchor="end")
-    f.text(plot_x1, top - 12, "0 = no correct decision lost", 11.5, MUTED, anchor="end")
-    group_w = (plot_x1 - plot_x0) / len(models)
-    bar_w, gap = 30, 6
-    bars_w = len(kinds) * bar_w + (len(kinds) - 1) * gap
-    for i, model in enumerate(models):
-        gx = plot_x0 + i * group_w + (group_w - bars_w) / 2
-        for k, (kind, label, color) in enumerate(kinds):
-            value = lost[model["id"]][kind]
-            bx = gx + k * (bar_w + gap)
-            if value is None:
-                f.text(bx + bar_w / 2, baseline - 6, "n/a", 11, MUTED, anchor="middle")
-                continue
-            if value == 0:
-                f.rect(bx, baseline - 3, bar_w, 3, color)      # a thin marker so "0" is visible
-            else:
-                f.vbar(bx, baseline, value * scale, bar_w, color,
-                       title=f"{model['name']} / {label}: {value} of {gates} correct decisions lost")
-            f.text(bx + bar_w / 2, baseline - max(value, 0) * scale - 7, str(value), 12, INK,
-                   weight="700" if value else "400", anchor="middle", extra=' font-variant-numeric="tabular-nums"')
-        cx = plot_x0 + i * group_w + group_w / 2
-        f.text(cx, baseline + 22, model["name"], 13, INK, weight="700", anchor="middle")
-        f.text(cx, baseline + 38, model["id"], 10.5, MUTED, anchor="middle")
-        clean = baseline_clean[model["id"]]
-        f.text(cx, baseline + 56, f"clean: {clean}/{gates} correct" if clean is not None else "clean: n/a", 11.5,
-               INK if clean == gates else GOLD, weight="700" if clean is not None and clean < gates / 2 else "400",
-               anchor="middle", extra=' font-variant-numeric="tabular-nums"')
-    f.footer("Source: results/pilot_2026-09.json. Six development dossiers, not the sealed test set.",
-             "Gates lost = correct on the clean dossier, wrong under the attack. A model can only lose what it got right clean.")
-    return f.save("decisions_lost_by_attack")
-
-
 def dgf_scores(data):
     """DGF score per model: the share of the 27 attacks of `dgf-bench run` the model blocked.
 
@@ -393,7 +325,7 @@ def dgf_score(data):
 
 def main():
     data = load()
-    for path in (dgf_score(data), success_by_model(data), attack_matrix(data), decisions_lost_by_attack(data)):
+    for path in (dgf_score(data), success_by_model(data), attack_matrix(data)):
         print(path.relative_to(ROOT).as_posix())
 
 
