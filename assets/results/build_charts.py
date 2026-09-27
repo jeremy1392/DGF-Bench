@@ -272,52 +272,70 @@ def attack_matrix(data):
 
 
 def clean_vs_attack(data):
+    """Correct decisions LOST to each attack (clean minus attacked). Taller bar = the attack bit harder."""
     models = data["models"]
     block = data["outcome_clean_vs_attack"]
     gates = block["gates"]
-    series = [("clean", "Clean dossiers (no attack)", CLEAN_COLOR)] + BITING_KINDS
-    width, height = 1000, 560
-    values = {m["id"]: {kind: (block["values"][m["id"]][kind] or {}).get("outcome_strict") for kind, _, _ in series}
-              for m in models}
-    f = Figure(width, height, "Outcome-strict gates: clean dossiers vs the three attacks that bite",
-               f"Grouped bars per model of outcome-strict gates out of {gates} on the clean dossiers and on the "
-               "fake_procedure, exhaustion and format_confusion attack variants. Values: " +
-               "; ".join(f"{m['name']} " + ", ".join(f"{label} {values[m['id']][kind]}" for kind, label, _ in series)
+    kinds = BITING_KINDS
+    # gates_lost = outcome-strict on clean minus outcome-strict under the attack (0 = fully resisted).
+    lost, baseline_clean = {}, {}
+    for m in models:
+        clean = (block["values"][m["id"]]["clean"] or {}).get("outcome_strict")
+        baseline_clean[m["id"]] = clean
+        row = {}
+        for kind, _, _ in kinds:
+            attacked = (block["values"][m["id"]].get(kind) or {}).get("outcome_strict")
+            row[kind] = None if clean is None or attacked is None else max(0, clean - attacked)
+        lost[m["id"]] = row
+    top_value = max([v for r in lost.values() for v in r.values() if v is not None] + [1])
+    axis_max = max(5, ((top_value + 4) // 5) * 5)
+    width, height = 1000, 600
+    f = Figure(width, height, "Correct decisions lost to each attack",
+               "Grouped bars per model: how many of the clean dossiers' outcome-strict gates the model got wrong once "
+               f"the attack was injected (clean minus attacked, out of {gates}). 0 means the model fully resisted; a "
+               "taller bar means the attack changed more decisions. Values: " +
+               "; ".join(f"{m['name']} " + ", ".join(f"{label} {lost[m['id']][kind]}" for kind, label, _ in kinds)
                          for m in models) + ".",
                "RESULTS / PILOT 2026-09",
-               f"Outcome-strict gates out of {gates} ({len(data['setup']['dossiers'])} dossiers), same dossiers under each condition · pilot 2026-09")
+               f"Outcome-strict gates lost (of {gates}) when the attack is injected, vs the same clean dossiers · higher = attack bit harder · pilot 2026-09")
     x = 40
-    for kind, label, color in series:
+    for kind, label, color in kinds:
         x = f.swatch(x, 134, color, label)
     plot_x0, plot_x1, top, baseline = 80, width - 40, 170, 460
-    scale = (baseline - top) / gates
-    for tick in (0, 10, 20, 30, gates):
+    scale = (baseline - top) / axis_max
+    for tick in range(0, axis_max + 1, 5):
         yy = baseline - tick * scale
-        f.path(f"M{plot_x0} {yy} H{plot_x1}", LINE if tick not in (0, gates) else ("#b9c7d0" if tick else INK), 1)
+        f.path(f"M{plot_x0} {yy} H{plot_x1}", INK if tick == 0 else LINE, 1)
         f.text(plot_x0 - 10, yy + 4, str(tick), 12, MUTED, anchor="end", extra=' font-variant-numeric="tabular-nums"')
-    f.text(plot_x1, top - 8, f"{gates} scheduled gates", 11.5, MUTED, anchor="end")
+    f.text(plot_x0 - 10, top - 12, "gates lost", 11.5, MUTED, anchor="end")
+    f.text(plot_x1, top - 12, "0 = fully resisted", 11.5, MUTED, anchor="end")
     group_w = (plot_x1 - plot_x0) / len(models)
-    bar_w, gap = 24, 2
-    bars_w = len(series) * bar_w + (len(series) - 1) * gap
+    bar_w, gap = 30, 6
+    bars_w = len(kinds) * bar_w + (len(kinds) - 1) * gap
     for i, model in enumerate(models):
         gx = plot_x0 + i * group_w + (group_w - bars_w) / 2
-        for k, (kind, label, color) in enumerate(series):
-            value = values[model["id"]][kind]
+        for k, (kind, label, color) in enumerate(kinds):
+            value = lost[model["id"]][kind]
             bx = gx + k * (bar_w + gap)
             if value is None:
-                f.text(bx + bar_w / 2, baseline - 6, "–", 12, MUTED, anchor="middle")
+                f.text(bx + bar_w / 2, baseline - 6, "n/a", 11, MUTED, anchor="middle")
                 continue
-            f.vbar(bx, baseline, value * scale, bar_w, color,
-                   title=f"{model['name']} / {label}: {value} of {gates} outcome-strict gates")
-            f.text(bx + bar_w / 2, baseline - value * scale - 6, str(value), 12, INK,
-                   weight="700" if kind == "clean" else "400", anchor="middle",
-                   extra=' font-variant-numeric="tabular-nums"')
+            if value == 0:
+                f.rect(bx, baseline - 3, bar_w, 3, color)      # a thin marker so "0" is visible
+            else:
+                f.vbar(bx, baseline, value * scale, bar_w, color,
+                       title=f"{model['name']} / {label}: {value} of {gates} correct decisions lost")
+            f.text(bx + bar_w / 2, baseline - max(value, 0) * scale - 7, str(value), 12, INK,
+                   weight="700" if value else "400", anchor="middle", extra=' font-variant-numeric="tabular-nums"')
         cx = plot_x0 + i * group_w + group_w / 2
         f.text(cx, baseline + 22, model["name"], 13, INK, weight="700", anchor="middle")
         f.text(cx, baseline + 38, model["id"], 10.5, MUTED, anchor="middle")
-    f.footer("Source: results/pilot_2026-09.json (outcome_clean_vs_attack). Six development dossiers, not the sealed test set.",
-             "Outcome-strict: decision, findings, actions and authorization all match the reference. "
-             "Each attack column is the variant dataset of that injection kind, full-route runs.")
+        clean = baseline_clean[model["id"]]
+        f.text(cx, baseline + 56, f"clean: {clean}/{gates} correct" if clean is not None else "clean: n/a", 11.5,
+               INK if clean == gates else GOLD, weight="700" if clean is not None and clean < gates / 2 else "400",
+               anchor="middle", extra=' font-variant-numeric="tabular-nums"')
+    f.footer("Source: results/pilot_2026-09.json. Six development dossiers, not the sealed test set.",
+             "Gates lost = correct on the clean dossier, wrong under the attack. A model can only lose what it got right clean.")
     return f.save("clean_vs_attack")
 
 
